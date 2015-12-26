@@ -1,0 +1,452 @@
+//
+//  NearestStorePopUp.m
+//  Explore
+//
+//  Created by Pranav on 14/07/15.
+//  Copyright (c) 2015 Rahul. All rights reserved.
+//
+
+#import "NearestStorePopUp.h"
+#import "ProductDescripton.h"
+#import "PDPStoresCell.h"
+#import "SSUtility.h"
+#import "PopHeaderView.h"
+
+@interface NearestStorePopUp(){
+    BOOL moreStoresClicked;
+    UIImageView *accesoryImageView;
+    PopHeaderView *popUpHeaderView;
+    NSArray       *daysArray;
+    NSArray       *timeSlotArray;
+}
+@end
+
+@implementation NearestStorePopUp
+
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+}
+*/
+
+- (id)initWithFrame:(CGRect)frame{
+    
+    if(self==[super initWithFrame:frame]){
+        
+        [self setBackgroundColor:[UIColor whiteColor]];
+<<<<<<< HEAD
+
+=======
+        [self showHeader];
+        daysArray = [[NSArray alloc] initWithObjects:@"Today",@"Tomorrow", nil];
+        timeSlotArray = [[NSArray alloc] initWithObjects:@"11:00AM-1:00PM",@"1:00PM-3:00PM",@"3:00PM-5:00PM", nil];
+>>>>>>> db977d0de471a95b5932ebd3d827d90e6717b923
+    }
+    return self;
+}
+-(void)showHeader{
+    popUpHeaderView = [[PopHeaderView alloc] init];
+    NSString *headerString = nil;
+    NSString *imageName = nil;
+    if (self.isViewAllStores) {
+        headerString = @"NEAREST STORE";
+        imageName = @"store";
+    }else{
+        headerString = @"PICK @ STORE";
+        imageName = @"pickAtStore";
+    }
+    
+    [self addSubview:[popUpHeaderView popHeaderViewWithTitle:headerString andImageName:imageName withOrigin:CGPointMake(RelativeSize(-11, 320), self.frame.origin.y-(RelativeSizeHeight(80, 568)))]];
+}
+- (void)generateStores{
+    [self showHeader];
+    CGRect tableFrame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    self.storesTable = [[UITableView alloc] initWithFrame:tableFrame];
+    [self.storesTable setBackgroundColor:[UIColor whiteColor]];
+    self.storesTable.dataSource = self;
+    self.storesTable.delegate = self;
+    if (!self.isViewAllStores) {
+        [self.storesTable setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    }
+    self.storesTable.tableHeaderView = [self configureTableHeader];
+    [self addSubview:self.storesTable];
+}
+
+
+- (UIView *)configureTableHeader{
+    UIView *tableHeader = [[UIView alloc] initWithFrame:CGRectMake(self.frame.origin.x, 0, self.frame.size.width, 60)];
+
+    UIImageView *logoImage = [[UIImageView alloc] initWithFrame:CGRectMake(RelativeSize(20, 320), 15, 32, 24)];
+    [logoImage setBackgroundColor:[UIColor clearColor]];
+    [logoImage setImage:[UIImage imageNamed:@"Logo4.png"]];
+    [tableHeader addSubview:logoImage];
+    
+    UILabel *brandName = [[UILabel alloc] initWithFrame:CGRectMake(logoImage.frame.origin.x + logoImage.frame.size.width + 20, logoImage.frame.origin.y + (logoImage.frame.size.width/2 -20), 300, 40)];
+    [brandName setBackgroundColor:[UIColor clearColor]];
+    [brandName setTextColor:UIColorFromRGB(kDarkPurpleColor)];
+    [brandName setText:@"GLOBAL DESI"];
+    [brandName setFont:[UIFont fontWithName:kMontserrat_Regular size:14.0f]];
+    [tableHeader addSubview:brandName];
+    
+    UILabel *address = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width - 100, brandName.frame.origin.y, 100, 40)];
+    [address setBackgroundColor:[UIColor clearColor]];
+    [address setText:@"Saki Naka"];
+    [address setFont:[UIFont fontWithName:kMontserrat_Light size:12.0f]];
+    [address setTextColor:UIColorFromRGB(kLightGreyColor)];
+    [tableHeader addSubview:address];
+    
+    SSLine *line = [[SSLine alloc] initWithFrame:CGRectMake(tableHeader.frame.origin.x, address.frame.origin.y + address.frame.size.height + 5, tableHeader.frame.size.width, 1)];
+    
+    [tableHeader addSubview:line];
+    
+    return tableHeader;
+}
+
+
+#pragma mark TableView Methods
+/*
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 365, 100)];
+    return aView;
+}*/
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+//    return 3; //[self.storedData count];
+    
+    NSInteger sectionCount =0;
+    if(self.isViewAllStores){
+        sectionCount =2;
+    }else{
+        sectionCount =3;
+    }
+    return sectionCount;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    NSInteger rowCount =0;
+    if(section ==1){
+        if(moreStoresClicked || self.isViewAllStores)
+            rowCount = [self.storedData count];
+        else
+             rowCount = 0;
+    }else{
+        rowCount =1;
+    }
+    
+    return rowCount;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    CGFloat cellHeight = 0.0f;
+    if(indexPath.section == 0){
+        cellHeight = 80.0f;
+    }else if(indexPath.section ==1){
+        cellHeight = 60.0f;
+    }
+    else if(indexPath.section==2){
+            cellHeight = 230.0f;
+    }
+    return cellHeight;
+}
+
+
+-(CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
+{
+    CGFloat headerHeight = 0.0f;
+    if(section == 1)
+        headerHeight = 30;
+    return headerHeight;
+}
+
+
+-(UIView*)tableView:(UITableView*)tableView viewForFooterInSection:(NSInteger)section
+{
+    return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *sectionHeader = nil;
+
+    if(section==1)
+    {
+        if (!self.isViewAllStores) {
+            sectionHeader = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.storesTable.frame.size.width, 30)];
+            [sectionHeader setBackgroundColor:[UIColor clearColor]];
+            UIButton *moreStoreBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+            [moreStoreBtn setBackgroundColor:[UIColor clearColor]];
+            [moreStoreBtn setFrame:CGRectMake(RelativeSize(5, 320), 0, 100, 30)];
+            [moreStoreBtn setTitle:@"More Store" forState:UIControlStateNormal];
+            moreStoreBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
+            [moreStoreBtn addTarget:self action:@selector(showMoreStores:) forControlEvents:UIControlEventTouchUpInside];
+            [moreStoreBtn.titleLabel setFont:[UIFont fontWithName:kMontserrat_Regular size:11.0f]];
+            [moreStoreBtn setTitleColor:UIColorFromRGB(0x5F9DE5) forState:UIControlStateNormal];
+            [sectionHeader addSubview:moreStoreBtn];
+            
+            accesoryImageView = [[UIImageView alloc] initWithFrame:CGRectMake(moreStoreBtn.frame.origin.x + moreStoreBtn.frame.size.width, moreStoreBtn.frame.size.height/2 - 5, 10, 10)];
+            [accesoryImageView setBackgroundColor:[UIColor clearColor]];
+            [accesoryImageView setImage:[UIImage imageNamed:@"CheckDelivery_arrow.png"]];
+            [sectionHeader addSubview:accesoryImageView];
+            
+        }else{
+            sectionHeader = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.storesTable.frame.size.width, 30)];
+            [sectionHeader setBackgroundColor:[UIColor whiteColor]];
+        }
+        
+    }
+    
+    return sectionHeader;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *cellIdentifier = nil; //= @"StoresCell";
+    
+    UITableViewCell *cell= nil;
+    PDPStoresCell *storeCell =nil;
+    if(indexPath.section == 0){
+        cellIdentifier = @"NearestStoreCell";
+        if(cell== nil){
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        }
+        [cell.contentView addSubview:[self generateNearestView]];
+        
+    }
+    else if(indexPath.section ==1){
+        cellIdentifier = @"StoresCell";
+        storeCell =(PDPStoresCell *) [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        if(cell == nil){
+            storeCell = (PDPStoresCell *)[[PDPStoresCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        }
+        storeCell.cellStoreData =[self.storedData objectAtIndex:indexPath.row];
+        [storeCell configureCell];
+        cell = (UITableViewCell *)storeCell;
+        
+    }
+    else if(indexPath.section ==2){
+        cellIdentifier = @"ScheduleVisit";
+        if(cell== nil){
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        }
+        [cell.contentView addSubview:[self generateScheduleVisit]];
+    }
+    return cell;
+}
+
+
+- (UIView *)generateNearestView{
+    
+    UIView *nearView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 365, 80)];
+    UIImageView *anImage = [[UIImageView alloc] initWithFrame:CGRectMake(RelativeSize(20, 320), 5, 20, 15)];
+    [anImage setBackgroundColor:[UIColor clearColor]];
+    [anImage setImage:[UIImage imageNamed:@"Store.png"]];
+    [nearView addSubview:anImage];
+    
+    UILabel *storeHeading = [[UILabel alloc] initWithFrame:CGRectMake(anImage.frame.origin.x + anImage.frame.size.width +10, anImage.frame.origin.y, 200, 20)];
+    [storeHeading setBackgroundColor:[UIColor clearColor]];
+    [storeHeading setText:@"Nearest Store Address"];
+    [storeHeading setFont:[UIFont fontWithName:kMontserrat_Regular size:12.0f]];
+    [nearView addSubview:storeHeading];
+    
+    Store *nearestStore = [self.storedData objectAtIndex:0];
+    
+    CGSize storeNameSize = [SSUtility getLabelDynamicSize:nearestStore.storeName withFont:[UIFont fontWithName:kMontserrat_Regular size:12.0f] withSize:CGSizeMake(MAXFLOAT, 20)];
+    
+    UILabel *nearestStoreName  = [[UILabel alloc] initWithFrame:CGRectMake(anImage.frame.origin.x, anImage.frame.origin.y + anImage.frame.size.height + 10, storeNameSize.width+10, 20)];
+    [nearestStoreName setBackgroundColor:[UIColor clearColor]];
+    nearestStoreName.text = nearestStore.storeName;
+    [nearestStoreName setTextColor:UIColorFromRGB(kGreenColor)];
+    [nearestStoreName setFont:[UIFont fontWithName:kMontserrat_Regular size:12.0f]];
+    [nearView addSubview:nearestStoreName];
+    
+    
+    CGSize storeDistanceSize  = [SSUtility getLabelDynamicSize:[NSString stringWithFormat:@"(%@)",nearestStore.storeDistance] withFont:[UIFont fontWithName:kMontserrat_Regular size:12.0f] withSize:CGSizeMake(MAXFLOAT, 20)];
+    
+    UILabel * nearStoreDistance = [[UILabel alloc] initWithFrame:CGRectMake(nearestStoreName.frame.origin.x + nearestStoreName.frame.size.width + 10, nearestStoreName.frame.origin.y, storeDistanceSize.width, 20)];
+    [nearStoreDistance setFont:[UIFont fontWithName:kMontserrat_Regular size:12.0f]];
+    [nearStoreDistance setTextColor:UIColorFromRGB(kLightGreyColor)];
+    [nearView addSubview:nearStoreDistance];
+    
+    
+    UILabel *nearestStoreAddress = [[UILabel alloc] initWithFrame:CGRectMake(nearestStoreName.frame.origin.x, nearestStoreName.frame.origin.y + nearestStoreName.frame.size.height + 5, 300, 20)];
+    [nearestStoreAddress setBackgroundColor:[UIColor clearColor]];
+    [nearestStoreAddress setFont:[UIFont fontWithName:kMontserrat_Regular size:12.0f]];
+    nearestStoreAddress.text = nearestStore.storeAddress;
+    [nearestStoreAddress setTextColor:UIColorFromRGB(kLightGreyColor)];
+    [nearView addSubview:nearestStoreAddress];
+    
+    return nearView;
+}
+
+- (void)showMoreStores:(id)sender{
+    moreStoresClicked = !moreStoresClicked;
+
+    if(moreStoresClicked){
+        [UIView animateWithDuration:0.33f animations:^()
+         {
+             accesoryImageView.transform=CGAffineTransformMakeRotation(M_PI / 2);
+         }];
+        
+    [self.storesTable insertRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:1],[NSIndexPath indexPathForRow:1 inSection:1],[NSIndexPath indexPathForRow:2 inSection:1],[NSIndexPath indexPathForRow:3 inSection:1],nil] withRowAnimation:UITableViewRowAnimationNone];
+    }else{
+        [UIView animateWithDuration:0.33f animations:^()
+         {
+             accesoryImageView.transform=CGAffineTransformMakeRotation(0);
+         }];
+        [self.storesTable deleteRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:1],[NSIndexPath indexPathForRow:1 inSection:1],[NSIndexPath indexPathForRow:2 inSection:1],[NSIndexPath indexPathForRow:3 inSection:1],nil] withRowAnimation:UITableViewRowAnimationNone];
+
+    }
+    
+
+}
+
+- (UIView *)generateScheduleVisit{
+    
+//    UIView *visitView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, RelativeSize(300, 320), RelativeSizeHeight(300, 568))];
+    UIView *visitView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, RelativeSize(300, 320), RelativeSizeHeight(230, 480))];
+    [visitView setUserInteractionEnabled:TRUE];
+    
+    SSLine *headerLine = [[SSLine alloc] initWithFrame:CGRectMake(visitView.frame.origin.x, 5, visitView.frame.size.width, 1)];
+    [visitView addSubview:headerLine];
+    
+    UIImageView *clockIcon = [[UIImageView alloc] initWithFrame:CGRectMake(RelativeSize(20, 320), 12, 18, 17)];
+    [clockIcon setImage:[UIImage imageNamed:@"schedule"]];
+    [visitView addSubview:clockIcon];
+    
+    UILabel *scheduleHeading = [[UILabel alloc] initWithFrame:CGRectMake(clockIcon.frame.origin.x + clockIcon.frame.size.width + 10, 10, 200, 20)];
+    [scheduleHeading setBackgroundColor:[UIColor clearColor]];
+    [scheduleHeading setText:@"Schedule Visit"];
+    [scheduleHeading setFont:[UIFont fontWithName:kMontserrat_Regular size:12.0f]];
+    [scheduleHeading setTextColor:UIColorFromRGB(kLightGreyColor)];
+    [visitView addSubview:scheduleHeading];
+    
+//    CGRect pickerFrame = CGRectMake(RelativeSize(0, 320),scheduleHeading.frame.origin.y + scheduleHeading.frame.size.height,visitView.frame.size.width-RelativeSize(20, 320),RelativeSizeHeight(200, 480));
+    CGRect pickerFrame = CGRectMake(RelativeSize(10, 320),scheduleHeading.frame.origin.y + scheduleHeading.frame.size.height,visitView.frame.size.width-RelativeSize(20, 320),150);
+    
+    /*
+    UIDatePicker *myPicker = [[UIDatePicker alloc] initWithFrame:pickerFrame];
+    [myPicker addTarget:self action:@selector(pickerChanged:) forControlEvents:UIControlEventValueChanged];
+    [myPicker setDatePickerMode:UIDatePickerModeDateAndTime];
+    [myPicker setBackgroundColor:[UIColor clearColor]];
+    [visitView addSubview:myPicker];
+     */
+    
+    
+    UIPickerView *myPicker = [[UIPickerView alloc] initWithFrame:pickerFrame];
+    myPicker.dataSource = self;
+    myPicker.delegate = self;
+    [myPicker setBackgroundColor:[UIColor clearColor]];
+    [visitView addSubview:myPicker];
+    
+    CGFloat buttonWidth = (self.frame.size.width - (2*(RelativeSize(10, 320)) - 10))/2-10;
+    UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [cancelBtn setBackgroundColor:UIColorFromRGB(kBackgroundGreyColor)];
+    [cancelBtn setFrame:CGRectMake(RelativeSize(10, 320), myPicker.frame.origin.y + myPicker.frame.size.height +10,buttonWidth, 50)];
+    [cancelBtn setTitleColor:UIColorFromRGB(kLightGreyColor) forState:UIControlStateNormal];
+    [cancelBtn setTitle:@"CANCEL" forState:UIControlStateNormal];
+    [cancelBtn.titleLabel setFont:[UIFont fontWithName:kMontserrat_Regular size:14.0f]];
+    [cancelBtn addTarget:self action:@selector(dismissView:) forControlEvents:UIControlEventTouchUpInside];
+    [visitView addSubview:cancelBtn];
+    
+    UIButton *confirmBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [confirmBtn setBackgroundColor:UIColorFromRGB(kGreenColor)];
+    [confirmBtn setFrame:CGRectMake(cancelBtn.frame.origin.x + cancelBtn.frame.size.width +10, cancelBtn.frame.origin.y, cancelBtn.frame.size.width, cancelBtn.frame.size.height)];
+    [confirmBtn setTitle:@"CONFIRM" forState:UIControlStateNormal];
+    [confirmBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [confirmBtn.titleLabel setFont:[UIFont fontWithName:kMontserrat_Regular size:14.0f]];
+    [visitView addSubview:confirmBtn];
+    
+    return visitView;
+}
+
+-(void)dismissView:(id)sender{
+    if (self.tapOnCancel) {
+        self.tapOnCancel();        
+    }
+
+}
+
+- (void)pickerChanged:(id)sender{
+}
+
+
+#pragma Mark UIPicker
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    
+    return 2;
+}
+
+// returns the # of rows in each component..
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    NSInteger rowCount = 0;
+    if(component == 0){
+        rowCount = [daysArray count];
+    }else{
+        rowCount = [timeSlotArray count];
+    }
+    return rowCount;
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+    return 50.0f;
+}
+
+/*
+- (CGSize)rowSizeForComponent:(NSInteger)component{
+    CGSize aSize = CGSizeZero;
+    if(component==0){
+        aSize = CGSizeMake(100, 50);
+    }else{
+        aSize = CGSizeMake(200, 50);
+    }
+    
+    return aSize;
+}
+*/
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component{
+    
+    CGFloat componentWidth = 0.0f;
+    if(component == 0){
+        componentWidth = 110.0f;
+    }else{
+        componentWidth = 300.0f;
+    }
+    return componentWidth;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    NSString *displyTitle = nil;
+    if(component ==0){
+        displyTitle = [daysArray objectAtIndex:row];
+    }else{
+        displyTitle = [timeSlotArray objectAtIndex:row];
+    }
+    return displyTitle;
+    
+}
+
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    NSString *title = [self pickerView:pickerView titleForRow:row forComponent:component];
+    NSAttributedString *attString;
+    attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor blackColor], NSFontAttributeName : [UIFont fontWithName:HELVETICA_NEUE size:3.0f]}];
+    
+//    if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7"))
+//    {
+//        attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+//    }
+//    else{
+//        attString = [[NSAttributedString alloc] initWithString:title attributes:@{NSForegroundColorAttributeName:[UIColor blackColor]}];
+//    }
+    
+    return attString;
+    
+}
+
+
+@end

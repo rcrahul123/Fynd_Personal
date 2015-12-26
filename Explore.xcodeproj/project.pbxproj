@@ -1,0 +1,2243 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		180759DD1B834A810098C2C2 /* PDPFeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 180759DC1B834A810098C2C2 /* PDPFeedBackViewController.m */; };
+		180759E01B835D7B0098C2C2 /* PDPFeedBackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 180759DF1B835D7B0098C2C2 /* PDPFeedBackTableViewCell.m */; };
+		181F193C1B42CE9200148686 /* Arc3.png in Resources */ = {isa = PBXBuildFile; fileRef = 181F193B1B42CE9200148686 /* Arc3.png */; };
+		1848CA931C0DD5D0007D7C6E /* BankCardData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1848CA921C0DD5D0007D7C6E /* BankCardData.m */; };
+		1848CA961C0DE9B1007D7C6E /* PaymentCartRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1848CA951C0DE9B1007D7C6E /* PaymentCartRequestHandler.m */; };
+		185B6C0C1B4FAE7800E363DD /* ProductDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B6C091B4FAE7800E363DD /* ProductDetailView.m */; };
+		185B6C0D1B4FAE7800E363DD /* PDPMoreDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 185B6C0B1B4FAE7800E363DD /* PDPMoreDetail.m */; };
+		1873E3B01C11B01700DE243A /* BKCardExpiryField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873E3A21C11B01700DE243A /* BKCardExpiryField.m */; };
+		1873E3B11C11B01700DE243A /* BKCardNumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873E3A41C11B01700DE243A /* BKCardNumberField.m */; };
+		1873E3B21C11B01700DE243A /* BKCardNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873E3A61C11B01700DE243A /* BKCardNumberFormatter.m */; };
+		1873E3B31C11B01700DE243A /* BKCardPatternInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873E3A81C11B01700DE243A /* BKCardPatternInfo.m */; };
+		1873E3B41C11B01700DE243A /* BKCurrencyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873E3AA1C11B01700DE243A /* BKCurrencyTextField.m */; };
+		1873E3B51C11B01700DE243A /* BKForwardingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873E3AC1C11B01700DE243A /* BKForwardingTextField.m */; };
+		1873E3B61C11B01700DE243A /* BKMoneyUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873E3AE1C11B01700DE243A /* BKMoneyUtils.m */; };
+		1873E3B71C11B01700DE243A /* CardPatterns.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1873E3AF1C11B01700DE243A /* CardPatterns.plist */; };
+		1885FD1B1B99E15700B958DA /* CartRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1885FD1A1B99E15700B958DA /* CartRequestHandler.m */; };
+		1888E46E1BBBDDF2001425DF /* SizeBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888E46D1BBBDDF2001425DF /* SizeBox.m */; };
+		188A64711B7CC6850003EF24 /* MyCoupons.m in Sources */ = {isa = PBXBuildFile; fileRef = 188A64701B7CC6850003EF24 /* MyCoupons.m */; };
+		188A64741B7CC9310003EF24 /* ProfileRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 188A64731B7CC9310003EF24 /* ProfileRequestHandler.m */; };
+		188A647D1B7CD6D50003EF24 /* FreeShipping.m in Sources */ = {isa = PBXBuildFile; fileRef = 188A647C1B7CD6D50003EF24 /* FreeShipping.m */; };
+		188FB88B1BB9203C009A146A /* PDPSizeGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188FB88A1BB9203C009A146A /* PDPSizeGuideViewController.m */; };
+		189492C81B82FBB200FCF824 /* PDPHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 189492C71B82FBB200FCF824 /* PDPHandler.m */; };
+		189950B81B81AD460003D7CB /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189950B71B81AD460003D7CB /* NotificationCell.m */; };
+		18A679D21C0F79C400054DE3 /* Luhn.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A679D11C0F79C400054DE3 /* Luhn.m */; };
+		18AEFF321BCFB9AE001FF77A /* PaymentModeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AEFF311BCFB9AE001FF77A /* PaymentModeCell.m */; };
+		18B477281B79AB90009E0E38 /* MyAccountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B477271B79AB90009E0E38 /* MyAccountView.m */; };
+		18B4772C1B79F7B8009E0E38 /* FyndUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B4772B1B79F7B8009E0E38 /* FyndUser.m */; };
+		18B477321B79F9CC009E0E38 /* MyAccountDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B477311B79F9CC009E0E38 /* MyAccountDetailViewController.m */; };
+		18B477361B7A0AB1009E0E38 /* EditProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B477351B7A0AB1009E0E38 /* EditProfileView.m */; };
+		18BA9EE31B9C61CF00D86F68 /* CartData.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BA9EE21B9C61CF00D86F68 /* CartData.m */; };
+		18BAD6C01C0F1810002738F2 /* Amex.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BAD6BA1C0F1810002738F2 /* Amex.png */; };
+		18BAD6C21C0F1810002738F2 /* Maestro.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BAD6BC1C0F1810002738F2 /* Maestro.png */; };
+		18BAD6C31C0F1810002738F2 /* Master.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BAD6BD1C0F1810002738F2 /* Master.png */; };
+		18BAD6C41C0F1810002738F2 /* Rupay.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BAD6BE1C0F1810002738F2 /* Rupay.png */; };
+		18F4C80C1B8842A700520905 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18F4C80B1B8842A700520905 /* GoogleService-Info.plist */; };
+		18F4C80D1B8842A700520905 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18F4C80B1B8842A700520905 /* GoogleService-Info.plist */; };
+		1B0127DA1BC2458A0086228D /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0127D91BC2458A0086228D /* NotificationViewController.m */; };
+		1B0D97E81B7CD190000699B1 /* CouponsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0D97E51B7CD190000699B1 /* CouponsView.m */; };
+		1B0D97E91B7CD190000699B1 /* NotificationSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0D97E71B7CD190000699B1 /* NotificationSettings.m */; };
+		1B1BAF391C21576B004A99AD /* Discount_Banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B1BAF381C21576B004A99AD /* Discount_Banner.png */; };
+		1B1E9ACB1C101C24001839BB /* PaymentWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E9ACA1C101C24001839BB /* PaymentWebViewController.m */; };
+		1B29FF1C1B726C4C00B3080E /* BrowseByCollectionRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B29FF1B1B726C4C00B3080E /* BrowseByCollectionRequestHandler.m */; };
+		1B29FF621B74C67400B3080E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B29FF611B74C67400B3080E /* Images.xcassets */; };
+		1B29FFCB1B7A083E00B3080E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B29FFC81B7A083E00B3080E /* FBSDKCoreKit.framework */; };
+		1B29FFCC1B7A083E00B3080E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B29FFC91B7A083E00B3080E /* FBSDKLoginKit.framework */; };
+		1B29FFCD1B7A083E00B3080E /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B29FFCA1B7A083E00B3080E /* FBSDKShareKit.framework */; };
+		1B29FFD51B7A157100B3080E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B29FFD41B7A157100B3080E /* HomeViewController.m */; };
+		1B29FFE41B7B0D6400B3080E /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B29FFE31B7B0D6400B3080E /* TabBarViewController.m */; };
+		1B31C27D1C1F3E3300878869 /* OffersTileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B31C27C1C1F3E3300878869 /* OffersTileModel.m */; };
+		1B31C2841C1F49B000878869 /* OffersContainerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B31C2831C1F49B000878869 /* OffersContainerCollectionViewCell.m */; };
+		1B31C2871C1F4A2A00878869 /* OffersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B31C2861C1F4A2A00878869 /* OffersView.m */; };
+		1B31C28A1C200F5000878869 /* LargeOfferCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B31C2891C200F5000878869 /* LargeOfferCell.m */; };
+		1B38BFA31B67A58C008033AE /* SSURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B38BF931B67A58C008033AE /* SSURLSession.m */; };
+		1B38BFA81B67A58C008033AE /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B38BFA11B67A58C008033AE /* SearchViewController.m */; };
+		1B38BFD41B67A5F1008033AE /* cannot_deliver.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B38BFAF1B67A5F1008033AE /* cannot_deliver.png */; };
+		1B38C0041B68DFDC008033AE /* BrowseByCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B38C0031B68DFDC008033AE /* BrowseByCollectionViewController.m */; };
+		1B472E291C205C6300F5165C /* NotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B472E281C205C6300F5165C /* NotificationTableViewCell.m */; };
+		1B47AFE71C0FF3E400268BE4 /* PaymentSummaryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B47AFE51C0FF3E400268BE4 /* PaymentSummaryView.m */; };
+		1B47AFEA1C0FF52B00268BE4 /* PullableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B47AFE91C0FF52B00268BE4 /* PullableView.m */; };
+		1B519AAF1BD4029C00B374EB /* FyndActivityItemProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B519AAE1BD4029C00B374EB /* FyndActivityItemProvider.m */; };
+		1B5C67421B9D4BA900F2DAFC /* OrderHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C67411B9D4BA900F2DAFC /* OrderHeaderView.m */; };
+		1B5C67471B9E077500F2DAFC /* MyOrderProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C67461B9E077500F2DAFC /* MyOrderProductCell.m */; };
+		1B5C674A1B9F012300F2DAFC /* MyOrderAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C67491B9F012300F2DAFC /* MyOrderAddressCell.m */; };
+		1B5C674D1B9F0C1B00F2DAFC /* MyOrderCostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5C674C1B9F0C1B00F2DAFC /* MyOrderCostCell.m */; };
+		1B5D0AE51B96DE89001DF1E0 /* AddFromWishlistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B5D0AE41B96DE89001DF1E0 /* AddFromWishlistViewController.m */; };
+		1B6110F81BC63D550011B886 /* default_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6110F61BC63D550011B886 /* default_cover.png */; };
+		1B6110F91BC63D550011B886 /* default_dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6110F71BC63D550011B886 /* default_dp.png */; };
+		1B67DEA81B7D08400091830D /* SendOTPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B67DEA71B7D08400091830D /* SendOTPViewController.m */; };
+		1B67DEAB1B7D084E0091830D /* VerifyOTPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B67DEAA1B7D084E0091830D /* VerifyOTPViewController.m */; };
+		1B6EB1301BC3FBF10084C57B /* TopLeft11.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6EB1211BC3FBF10084C57B /* TopLeft11.png */; };
+		1B6EB1311BC3FBF10084C57B /* TopRight11.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6EB1221BC3FBF10084C57B /* TopRight11.png */; };
+		1B6EB1321BC3FBF10084C57B /* TopRight12.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6EB1231BC3FBF10084C57B /* TopRight12.png */; };
+		1B6EB1331BC3FBF10084C57B /* TopRight13.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6EB1241BC3FBF10084C57B /* TopRight13.png */; };
+		1B6EB1361BC3FBF10084C57B /* TopRight11@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6EB1281BC3FBF10084C57B /* TopRight11@2x.png */; };
+		1B6EB1381BC3FBF10084C57B /* TopLeft11@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6EB12B1BC3FBF10084C57B /* TopLeft11@3x.png */; };
+		1B6EB1391BC3FBF10084C57B /* TopRight11@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6EB12C1BC3FBF10084C57B /* TopRight11@3x.png */; };
+		1B6EB13A1BC3FBF10084C57B /* TopRight12@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6EB12D1BC3FBF10084C57B /* TopRight12@3x.png */; };
+		1B6EB27C1BC3FE090084C57B /* TopLeft11@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B6EB27B1BC3FE090084C57B /* TopLeft11@2x.png */; };
+		1B73BDF61C26CC4100C385B7 /* VisaRect.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B73BDF51C26CC4100C385B7 /* VisaRect.png */; };
+		1B73BDF81C26CC6500C385B7 /* Visa.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B73BDF71C26CC6500C385B7 /* Visa.png */; };
+		1B79F19D1B7DB44100584D5D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B79F19C1B7DB44100584D5D /* LoginViewController.m */; };
+		1B79F1A01B7DB49800584D5D /* ResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B79F19F1B7DB49800584D5D /* ResetPasswordViewController.m */; };
+		1B8839E41B7F6ECF0014D622 /* FacebookDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8839E31B7F6ECF0014D622 /* FacebookDetailsViewController.m */; };
+		1B8839E71B7FC1540014D622 /* UserAuthenticationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8839E61B7FC1540014D622 /* UserAuthenticationHandler.m */; };
+		1B8FDE8C1BA150C400C21385 /* GridStatusCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B8FDE8B1BA150C400C21385 /* GridStatusCollectionViewCell.m */; };
+		1B8FDE9A1BA2F59E00C21385 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B8FDE991BA2F59E00C21385 /* libPaymentsSDK.a */; };
+		1B9298921C06CB7F002BED4C /* FyndAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9298911C06CB7F002BED4C /* FyndAnalytics.m */; };
+		1B9298A41C06D3C8002BED4C /* MixPanelSuperProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9298A31C06D3C8002BED4C /* MixPanelSuperProperties.m */; };
+		1B9298BD1C06D472002BED4C /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9298AA1C06D472002BED4C /* UIImage+ImageEffects.m */; };
+		1B9298BE1C06D472002BED4C /* FyndActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9298AC1C06D472002BED4C /* FyndActivityIndicator.m */; };
+		1B9298BF1C06D472002BED4C /* FyndBlankPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9298AE1C06D472002BED4C /* FyndBlankPage.m */; };
+		1B9298C01C06D472002BED4C /* FyndErrorInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9298B01C06D472002BED4C /* FyndErrorInfoView.m */; };
+		1B9298C11C06D472002BED4C /* UINavigationBar+Transparency.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9298B31C06D472002BED4C /* UINavigationBar+Transparency.m */; };
+		1B9298C21C06D472002BED4C /* SSLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9298B51C06D472002BED4C /* SSLine.m */; };
+		1B9298C31C06D472002BED4C /* TextFieldWithImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9298B81C06D472002BED4C /* TextFieldWithImage.m */; };
+		1B9298C41C06D472002BED4C /* UIFont+FontWithNameAndSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9298BA1C06D472002BED4C /* UIFont+FontWithNameAndSize.m */; };
+		1B9298C51C06D472002BED4C /* UITextField+NextResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9298BC1C06D472002BED4C /* UITextField+NextResponder.m */; };
+		1B9298C81C06D4B7002BED4C /* SCGIFImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9298C71C06D4B7002BED4C /* SCGIFImageView.m */; };
+		1B9298CE1C09DB6B002BED4C /* ImageSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9298CB1C09DB6B002BED4C /* ImageSubView.m */; };
+		1B9298CF1C09DB6B002BED4C /* ImageViewerContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9298CD1C09DB6B002BED4C /* ImageViewerContainer.m */; };
+		1B9298D51C09DBD9002BED4C /* PDPTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9298D41C09DBD9002BED4C /* PDPTopView.m */; };
+		1B9298D81C09DE20002BED4C /* DeepLinkerHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9298D71C09DE20002BED4C /* DeepLinkerHandler.m */; };
+		1B9C2B8E1BB6784F00FBBCBB /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9C2B8D1BB6784F00FBBCBB /* FilterViewController.m */; };
+		1B9D03661BBEC9A000B43A93 /* Splash screen.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1B9D03641BBEC9A000B43A93 /* Splash screen.gif */; };
+		1B9D30C21B97341F006B469A /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9D30B91B97341F006B469A /* CartViewController.m */; };
+		1B9D30C31B97341F006B469A /* CartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9D30BC1B97341F006B469A /* CartItem.m */; };
+		1B9D30C41B97341F006B469A /* CartItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9D30BF1B97341F006B469A /* CartItemCell.m */; };
+		1B9D30C81B9A10C2006B469A /* MyOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9D30C71B9A10C2006B469A /* MyOrderModel.m */; };
+		1B9D9DD51BFF49D5008FF670 /* loader.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1B9D9DD41BFF49D5008FF670 /* loader.gif */; };
+		1BA53CDD1B722B2C00AFD528 /* BrowseByBrandRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BA53CDC1B722B2C00AFD528 /* BrowseByBrandRequestHandler.m */; };
+		1BB911F01BA037170083D266 /* HTMLTileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB911EF1BA037170083D266 /* HTMLTileModel.m */; };
+		1BB911F31BA039F10083D266 /* HTMLCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB911F21BA039F10083D266 /* HTMLCollectionViewCell.m */; };
+		1BC88FD11BC3FF8300CF06A1 /* TopRight12@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC88FCF1BC3FF8300CF06A1 /* TopRight12@2x.png */; };
+		1BC88FD21BC3FF8300CF06A1 /* TopRight13@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BC88FD01BC3FF8300CF06A1 /* TopRight13@2x.png */; };
+		1BCB17C71BD1877100A3EB20 /* RetunPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BCB17C61BD1877100A3EB20 /* RetunPolicyViewController.m */; };
+		1BD047381B637BDF00E98111 /* PDPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BD047371B637BDF00E98111 /* PDPViewController.m */; };
+		1BDE70491B7B37FA003DB93D /* LocationAccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDE70481B7B37FA003DB93D /* LocationAccessViewController.m */; };
+		1BDE704C1B7B6623003DB93D /* OBBrandSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDE704B1B7B6623003DB93D /* OBBrandSelectionViewController.m */; };
+		1BDE704F1B7B6632003DB93D /* OBCollectionSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDE704E1B7B6632003DB93D /* OBCollectionSelectionViewController.m */; };
+		1BDE70531B7C7A80003DB93D /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDE70521B7C7A80003DB93D /* SignUpViewController.m */; };
+		1BF213FA1B70E374000186A9 /* BrandTabData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF213F51B70E374000186A9 /* BrandTabData.m */; };
+		1BF213FB1B70E374000186A9 /* CollectionTabData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF213F71B70E374000186A9 /* CollectionTabData.m */; };
+		1BF213FC1B70E374000186A9 /* PaginationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF213F91B70E374000186A9 /* PaginationData.m */; };
+		1BF7877C1C032E6A003AD392 /* PDPHeaderScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7877B1C032E6A003AD392 /* PDPHeaderScrollView.m */; };
+		1BF7877F1C0335F6003AD392 /* ImageSubModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF7877E1C0335F6003AD392 /* ImageSubModule.m */; };
+		1BFD34151BB68EA80061C009 /* SortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD34141BB68EA80061C009 /* SortViewController.m */; };
+		3C015DFB1C13209F00E8B2D2 /* CardAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C015DFA1C13209F00E8B2D2 /* CardAuthenticationViewController.m */; };
+		3C0198611C043E5000FD93C0 /* WelcomeCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C0198601C043E5000FD93C0 /* WelcomeCardCell.m */; };
+		3C10DD5E1C197FEB00988FDF /* Diners.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C10DD5D1C197FEB00988FDF /* Diners.png */; };
+		3C4876481BA9530D001DC2F6 /* DeliveryTimeSlotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4876471BA9530D001DC2F6 /* DeliveryTimeSlotModel.m */; };
+		3C48764B1BA9795C001DC2F6 /* PaymentModes.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C48764A1BA9795C001DC2F6 /* PaymentModes.m */; };
+		3C48DC8B1B80759F0077B54C /* PaymentOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C48DC8A1B80759F0077B54C /* PaymentOption.m */; };
+		3C5A91B11C0F1DB600096304 /* AddCartPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A91AE1C0F1DB600096304 /* AddCartPopUp.m */; };
+		3C5A91B21C0F1DB600096304 /* PaymentController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5A91B01C0F1DB600096304 /* PaymentController.m */; };
+		3C6551B71B7B1E0D007BA45D /* ShippingAddressDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6551B61B7B1E0D007BA45D /* ShippingAddressDetailViewController.m */; };
+		3C6551BD1B7B1E5C007BA45D /* ShippingAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6551BC1B7B1E5C007BA45D /* ShippingAddressModel.m */; };
+		3C6B8FA51B7C8561002BA8CE /* ShippingListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B8FA41B7C8561002BA8CE /* ShippingListTableViewCell.m */; };
+		3C6B8FAB1B7CBD2C002BA8CE /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B8FAA1B7CBD2C002BA8CE /* ProfileViewController.m */; };
+		3C8576041B8479CC00A0E466 /* OnBoardingRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8576031B8479CC00A0E466 /* OnBoardingRequestHandler.m */; };
+		3C8BC4711BA28F7A003AE988 /* ShippingAddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8BC4701BA28F7A003AE988 /* ShippingAddressListViewController.m */; };
+		3C8E96E31B7DE1DB00457128 /* FAQView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8E96E21B7DE1DB00457128 /* FAQView.m */; };
+		3C93C3A31BBD0B1500049A9E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C93C3A21BBD0B1500049A9E /* MessageUI.framework */; };
+		3C94120F1BB009580013A696 /* ReturnReasons.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C94120E1BB009580013A696 /* ReturnReasons.m */; };
+		3C9412121BB02F580013A696 /* ReturnReasonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9412111BB02F580013A696 /* ReturnReasonsView.m */; };
+		3C9412151BB03C770013A696 /* ReturnReasonsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9412141BB03C770013A696 /* ReturnReasonsTableViewCell.m */; };
+		3C9C80261B786D5900DAA245 /* BrowseByCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80251B786D5900DAA245 /* BrowseByCategoryViewController.m */; };
+		3C9C802A1B786E3100DAA245 /* SearchRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80291B786E3100DAA245 /* SearchRequestHandler.m */; };
+		3C9C80301B786E9E00DAA245 /* SSBaseRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C802F1B786E9E00DAA245 /* SSBaseRequestHandler.m */; };
+		3C9C80371B786ED600DAA245 /* BrowseByCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80321B786ED600DAA245 /* BrowseByCategoryView.m */; };
+		3C9C80381B786ED600DAA245 /* CustomViewForCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80341B786ED600DAA245 /* CustomViewForCategory.m */; };
+		3C9C80391B786ED600DAA245 /* GenderHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80361B786ED600DAA245 /* GenderHeaderView.m */; };
+		3C9C80471B787A8500DAA245 /* SSUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80401B787A8500DAA245 /* SSUtility.m */; };
+		3C9C80561B787C2D00DAA245 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C804D1B787C2D00DAA245 /* ALView+PureLayout.m */; };
+		3C9C80571B787C2D00DAA245 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3C9C804E1B787C2D00DAA245 /* LICENSE */; };
+		3C9C80581B787C2D00DAA245 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80501B787C2D00DAA245 /* NSArray+PureLayout.m */; };
+		3C9C80591B787C2D00DAA245 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80521B787C2D00DAA245 /* NSLayoutConstraint+PureLayout.m */; };
+		3C9C805C1B787C4F00DAA245 /* UIScrollView+VGParallaxHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C805B1B787C4F00DAA245 /* UIScrollView+VGParallaxHeader.m */; };
+		3C9C80641B787D2300DAA245 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80631B787D2300DAA245 /* AppDelegate.m */; };
+		3C9C80681B787D9400DAA245 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80671B787D9400DAA245 /* ViewController.m */; };
+		3C9C806B1B78803000DAA245 /* HomeRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C806A1B78803000DAA245 /* HomeRequestHandler.m */; };
+		3C9C80811B78813100DAA245 /* CustomPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80751B78813100DAA245 /* CustomPopUp.m */; };
+		3C9C80821B78813100DAA245 /* NearestStorePopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80771B78813100DAA245 /* NearestStorePopUp.m */; };
+		3C9C80831B78813100DAA245 /* NearestStorePopUp.m.orig in Resources */ = {isa = PBXBuildFile; fileRef = 3C9C80781B78813100DAA245 /* NearestStorePopUp.m.orig */; };
+		3C9C80841B78813100DAA245 /* PickAtStorePopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C807A1B78813100DAA245 /* PickAtStorePopUp.m */; };
+		3C9C80851B78813100DAA245 /* PinCodePopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C807C1B78813100DAA245 /* PinCodePopUp.m */; };
+		3C9C80861B78813100DAA245 /* PopHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C807E1B78813100DAA245 /* PopHeaderView.m */; };
+		3C9C80871B78813100DAA245 /* PopOverlayHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80801B78813100DAA245 /* PopOverlayHandler.m */; };
+		3C9C808D1B78821900DAA245 /* CustomFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C808A1B78821900DAA245 /* CustomFlow.m */; };
+		3C9C808E1B78821900DAA245 /* GridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C808C1B78821900DAA245 /* GridView.m */; };
+		3C9C80921B7882B200DAA245 /* PDPStoresCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80911B7882B200DAA245 /* PDPStoresCell.m */; };
+		3C9C80A01B7883BE00DAA245 /* BrandCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80951B7883BE00DAA245 /* BrandCollectionViewCell.m */; };
+		3C9C80A11B7883BE00DAA245 /* BrandProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80971B7883BE00DAA245 /* BrandProductCell.m */; };
+		3C9C80A21B7883BE00DAA245 /* BrandsGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80991B7883BE00DAA245 /* BrandsGrid.m */; };
+		3C9C80A31B7883BE00DAA245 /* CollectionGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C809B1B7883BE00DAA245 /* CollectionGrid.m */; };
+		3C9C80A41B7883BE00DAA245 /* ProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C809D1B7883BE00DAA245 /* ProductCell.m */; };
+		3C9C80A51B7883BE00DAA245 /* TipCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C809F1B7883BE00DAA245 /* TipCollectionViewCell.m */; };
+		3C9C80AA1B78846E00DAA245 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80A71B78846E00DAA245 /* FeedViewController.m */; };
+		3C9C80AB1B78846E00DAA245 /* ProductCollectionAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80A91B78846E00DAA245 /* ProductCollectionAdapter.m */; };
+		3C9C80B71B78850F00DAA245 /* FilterCheckboxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80AE1B78850F00DAA245 /* FilterCheckboxTableViewCell.m */; };
+		3C9C80B81B78850F00DAA245 /* FilterHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80B01B78850F00DAA245 /* FilterHeaderTableViewCell.m */; };
+		3C9C80B91B78850F00DAA245 /* FilterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80B21B78850F00DAA245 /* FilterModel.m */; };
+		3C9C80C61B788DCB00DAA245 /* AutoSuggestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80C31B788DCB00DAA245 /* AutoSuggestModel.m */; };
+		3C9C80C71B788DCB00DAA245 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80C51B788DCB00DAA245 /* CategoryModel.m */; };
+		3C9C80CA1B788E1900DAA245 /* GenderHeaderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80C91B788E1900DAA245 /* GenderHeaderModel.m */; };
+		3C9C80CD1B788FB100DAA245 /* PDPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80CC1B788FB100DAA245 /* PDPModel.m */; };
+		3C9C80D01B78905D00DAA245 /* BrandCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80CF1B78905D00DAA245 /* BrandCollectionHeaderView.m */; };
+		3C9C80D31B78933500DAA245 /* CollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9C80D21B78933500DAA245 /* CollectionsViewController.m */; };
+		3CAC060C1B79B33200EF8563 /* OrdersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC060B1B79B33200EF8563 /* OrdersView.m */; };
+		3CAC060F1B79B34400EF8563 /* WishListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CAC060E1B79B34400EF8563 /* WishListView.m */; };
+		3CB8B9661C16C8A400F0C99C /* NetBankingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB8B9651C16C8A400F0C99C /* NetBankingViewController.m */; };
+		3CC8F4BA1B7FC14A00A7F0DF /* TermsOfService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC8F4B91B7FC14A00A7F0DF /* TermsOfService.m */; };
+		3CDB10541BB4030000C97B12 /* DeviceModel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3CDB10531BB4030000C97B12 /* DeviceModel.plist */; };
+		3CF1DA1A1C25AF3A00B9319E /* AmexRect.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF1DA141C25AF3A00B9319E /* AmexRect.png */; };
+		3CF1DA1B1C25AF3A00B9319E /* DinersRect.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF1DA151C25AF3A00B9319E /* DinersRect.png */; };
+		3CF1DA1C1C25AF3A00B9319E /* MaestroRect.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF1DA161C25AF3A00B9319E /* MaestroRect.png */; };
+		3CF1DA1D1C25AF3A00B9319E /* MasterRect.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF1DA171C25AF3A00B9319E /* MasterRect.png */; };
+		3CF1DA1E1C25AF3A00B9319E /* RupayRect.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CF1DA181C25AF3A00B9319E /* RupayRect.png */; };
+		B1F27C605107D7BF8FF08E5C /* libPods-Explore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D17A19C33A247185FA76BF41 /* libPods-Explore.a */; };
+		B79628DF1B42DF4A00A0FF0F /* LocationSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B79628DE1B42DF4A00A0FF0F /* LocationSearchViewController.m */; };
+		B7BE65B11B41B1D400653E1A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BE65B01B41B1D400653E1A /* main.m */; };
+		B7BE65BF1B41B1D400653E1A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7BE65BD1B41B1D400653E1A /* LaunchScreen.xib */; };
+		B7BE65CB1B41B1D400653E1A /* ExploreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BE65CA1B41B1D400653E1A /* ExploreTests.m */; };
+		B7BE65DA1B41B22200653E1A /* BrandsVIewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BE65D51B41B22200653E1A /* BrandsVIewController.m */; };
+		B7BE66131B41B34A00653E1A /* ProductTileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BE66081B41B34A00653E1A /* ProductTileModel.m */; };
+		B7BE66141B41B34A00653E1A /* BrandTileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BE660A1B41B34A00653E1A /* BrandTileModel.m */; };
+		B7BE66151B41B34A00653E1A /* TipTileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BE660C1B41B34A00653E1A /* TipTileModel.m */; };
+		B7BE66161B41B34A00653E1A /* CollectionTileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BE660E1B41B34A00653E1A /* CollectionTileModel.m */; };
+		B7BE66171B41B34A00653E1A /* ActionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BE66101B41B34A00653E1A /* ActionModel.m */; };
+		B7BE66181B41B34A00653E1A /* SubProductModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B7BE66121B41B34A00653E1A /* SubProductModel.m */; };
+		B7BE661A1B41B39C00653E1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7BE66191B41B39C00653E1A /* Main.storyboard */; };
+		B7C8150B1B5D00DE007C51C9 /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7C815061B5CFAF3007C51C9 /* Montserrat-Black.otf */; };
+		B7C8150C1B5D00DE007C51C9 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7C815071B5CFAF3007C51C9 /* Montserrat-Bold.otf */; };
+		B7C8150D1B5D00DE007C51C9 /* Montserrat-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7C815081B5CFAF3007C51C9 /* Montserrat-Hairline.otf */; };
+		B7C8150E1B5D00DE007C51C9 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7C815091B5CFAF3007C51C9 /* Montserrat-Light.otf */; };
+		B7C8150F1B5D00DE007C51C9 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B7C8150A1B5CFAF3007C51C9 /* Montserrat-Regular.otf */; };
+		B7CCE75D1B4A61A2008F4D32 /* BrowseByBrandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CCE75C1B4A61A2008F4D32 /* BrowseByBrandViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B7BE65C51B41B1D400653E1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B7BE65A31B41B1D400653E1A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7BE65AA1B41B1D400653E1A;
+			remoteInfo = Explore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		180759DB1B834A810098C2C2 /* PDPFeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPFeedBackViewController.h; sourceTree = "<group>"; };
+		180759DC1B834A810098C2C2 /* PDPFeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPFeedBackViewController.m; sourceTree = "<group>"; };
+		180759DE1B835D7B0098C2C2 /* PDPFeedBackTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPFeedBackTableViewCell.h; sourceTree = "<group>"; };
+		180759DF1B835D7B0098C2C2 /* PDPFeedBackTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPFeedBackTableViewCell.m; sourceTree = "<group>"; };
+		181F193B1B42CE9200148686 /* Arc3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arc3.png; sourceTree = "<group>"; };
+		1848CA911C0DD5D0007D7C6E /* BankCardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankCardData.h; sourceTree = "<group>"; };
+		1848CA921C0DD5D0007D7C6E /* BankCardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankCardData.m; sourceTree = "<group>"; };
+		1848CA941C0DE9B1007D7C6E /* PaymentCartRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentCartRequestHandler.h; sourceTree = "<group>"; };
+		1848CA951C0DE9B1007D7C6E /* PaymentCartRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentCartRequestHandler.m; sourceTree = "<group>"; };
+		185B6C081B4FAE7800E363DD /* ProductDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailView.h; sourceTree = "<group>"; };
+		185B6C091B4FAE7800E363DD /* ProductDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailView.m; sourceTree = "<group>"; };
+		185B6C0A1B4FAE7800E363DD /* PDPMoreDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPMoreDetail.h; sourceTree = "<group>"; };
+		185B6C0B1B4FAE7800E363DD /* PDPMoreDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPMoreDetail.m; sourceTree = "<group>"; };
+		1873E3A11C11B01700DE243A /* BKCardExpiryField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCardExpiryField.h; sourceTree = "<group>"; };
+		1873E3A21C11B01700DE243A /* BKCardExpiryField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCardExpiryField.m; sourceTree = "<group>"; };
+		1873E3A31C11B01700DE243A /* BKCardNumberField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCardNumberField.h; sourceTree = "<group>"; };
+		1873E3A41C11B01700DE243A /* BKCardNumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCardNumberField.m; sourceTree = "<group>"; };
+		1873E3A51C11B01700DE243A /* BKCardNumberFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCardNumberFormatter.h; sourceTree = "<group>"; };
+		1873E3A61C11B01700DE243A /* BKCardNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCardNumberFormatter.m; sourceTree = "<group>"; };
+		1873E3A71C11B01700DE243A /* BKCardPatternInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCardPatternInfo.h; sourceTree = "<group>"; };
+		1873E3A81C11B01700DE243A /* BKCardPatternInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCardPatternInfo.m; sourceTree = "<group>"; };
+		1873E3A91C11B01700DE243A /* BKCurrencyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKCurrencyTextField.h; sourceTree = "<group>"; };
+		1873E3AA1C11B01700DE243A /* BKCurrencyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKCurrencyTextField.m; sourceTree = "<group>"; };
+		1873E3AB1C11B01700DE243A /* BKForwardingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKForwardingTextField.h; sourceTree = "<group>"; };
+		1873E3AC1C11B01700DE243A /* BKForwardingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKForwardingTextField.m; sourceTree = "<group>"; };
+		1873E3AD1C11B01700DE243A /* BKMoneyUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKMoneyUtils.h; sourceTree = "<group>"; };
+		1873E3AE1C11B01700DE243A /* BKMoneyUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKMoneyUtils.m; sourceTree = "<group>"; };
+		1873E3AF1C11B01700DE243A /* CardPatterns.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CardPatterns.plist; sourceTree = "<group>"; };
+		1885FD191B99E15700B958DA /* CartRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartRequestHandler.h; sourceTree = "<group>"; };
+		1885FD1A1B99E15700B958DA /* CartRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartRequestHandler.m; sourceTree = "<group>"; };
+		1888E46C1BBBDDF2001425DF /* SizeBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeBox.h; sourceTree = "<group>"; };
+		1888E46D1BBBDDF2001425DF /* SizeBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeBox.m; sourceTree = "<group>"; };
+		188A646F1B7CC6850003EF24 /* MyCoupons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCoupons.h; sourceTree = "<group>"; };
+		188A64701B7CC6850003EF24 /* MyCoupons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCoupons.m; sourceTree = "<group>"; };
+		188A64721B7CC9310003EF24 /* ProfileRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileRequestHandler.h; sourceTree = "<group>"; };
+		188A64731B7CC9310003EF24 /* ProfileRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileRequestHandler.m; sourceTree = "<group>"; };
+		188A647B1B7CD6D50003EF24 /* FreeShipping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeShipping.h; sourceTree = "<group>"; };
+		188A647C1B7CD6D50003EF24 /* FreeShipping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreeShipping.m; sourceTree = "<group>"; };
+		188FB8891BB9203C009A146A /* PDPSizeGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPSizeGuideViewController.h; sourceTree = "<group>"; };
+		188FB88A1BB9203C009A146A /* PDPSizeGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPSizeGuideViewController.m; sourceTree = "<group>"; };
+		189492C61B82FBB200FCF824 /* PDPHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPHandler.h; sourceTree = "<group>"; };
+		189492C71B82FBB200FCF824 /* PDPHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPHandler.m; sourceTree = "<group>"; };
+		189950B61B81AD460003D7CB /* NotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationCell.h; sourceTree = "<group>"; };
+		189950B71B81AD460003D7CB /* NotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationCell.m; sourceTree = "<group>"; };
+		18A679D01C0F79C400054DE3 /* Luhn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Luhn.h; sourceTree = "<group>"; };
+		18A679D11C0F79C400054DE3 /* Luhn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Luhn.m; sourceTree = "<group>"; };
+		18AEFF301BCFB9AE001FF77A /* PaymentModeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentModeCell.h; sourceTree = "<group>"; };
+		18AEFF311BCFB9AE001FF77A /* PaymentModeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentModeCell.m; sourceTree = "<group>"; };
+		18B477261B79AB90009E0E38 /* MyAccountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAccountView.h; sourceTree = "<group>"; };
+		18B477271B79AB90009E0E38 /* MyAccountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAccountView.m; sourceTree = "<group>"; };
+		18B4772A1B79F7B8009E0E38 /* FyndUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FyndUser.h; sourceTree = "<group>"; };
+		18B4772B1B79F7B8009E0E38 /* FyndUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FyndUser.m; sourceTree = "<group>"; };
+		18B477301B79F9CC009E0E38 /* MyAccountDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAccountDetailViewController.h; sourceTree = "<group>"; };
+		18B477311B79F9CC009E0E38 /* MyAccountDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAccountDetailViewController.m; sourceTree = "<group>"; };
+		18B477341B7A0AB1009E0E38 /* EditProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileView.h; sourceTree = "<group>"; };
+		18B477351B7A0AB1009E0E38 /* EditProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = EditProfileView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		18BA9EE11B9C61CF00D86F68 /* CartData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartData.h; sourceTree = "<group>"; };
+		18BA9EE21B9C61CF00D86F68 /* CartData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartData.m; sourceTree = "<group>"; };
+		18BAD6BA1C0F1810002738F2 /* Amex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Amex.png; sourceTree = "<group>"; };
+		18BAD6BC1C0F1810002738F2 /* Maestro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Maestro.png; sourceTree = "<group>"; };
+		18BAD6BD1C0F1810002738F2 /* Master.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Master.png; sourceTree = "<group>"; };
+		18BAD6BE1C0F1810002738F2 /* Rupay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rupay.png; sourceTree = "<group>"; };
+		18F4C80B1B8842A700520905 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1B0127D81BC2458A0086228D /* NotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		1B0127D91BC2458A0086228D /* NotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
+		1B0D97E41B7CD190000699B1 /* CouponsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponsView.h; sourceTree = "<group>"; };
+		1B0D97E51B7CD190000699B1 /* CouponsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponsView.m; sourceTree = "<group>"; };
+		1B0D97E61B7CD190000699B1 /* NotificationSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationSettings.h; sourceTree = "<group>"; };
+		1B0D97E71B7CD190000699B1 /* NotificationSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationSettings.m; sourceTree = "<group>"; };
+		1B1BAF381C21576B004A99AD /* Discount_Banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Discount_Banner.png; sourceTree = "<group>"; };
+		1B1E9AC91C101C24001839BB /* PaymentWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentWebViewController.h; sourceTree = "<group>"; };
+		1B1E9ACA1C101C24001839BB /* PaymentWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentWebViewController.m; sourceTree = "<group>"; };
+		1B29FF1A1B726C4C00B3080E /* BrowseByCollectionRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseByCollectionRequestHandler.h; sourceTree = "<group>"; };
+		1B29FF1B1B726C4C00B3080E /* BrowseByCollectionRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseByCollectionRequestHandler.m; sourceTree = "<group>"; };
+		1B29FF611B74C67400B3080E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1B29FFC81B7A083E00B3080E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		1B29FFC91B7A083E00B3080E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		1B29FFCA1B7A083E00B3080E /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		1B29FFD31B7A157100B3080E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		1B29FFD41B7A157100B3080E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		1B29FFE21B7B0D6400B3080E /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		1B29FFE31B7B0D6400B3080E /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		1B31C27B1C1F3E3300878869 /* OffersTileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersTileModel.h; sourceTree = "<group>"; };
+		1B31C27C1C1F3E3300878869 /* OffersTileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersTileModel.m; sourceTree = "<group>"; };
+		1B31C2821C1F49B000878869 /* OffersContainerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersContainerCollectionViewCell.h; sourceTree = "<group>"; };
+		1B31C2831C1F49B000878869 /* OffersContainerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersContainerCollectionViewCell.m; sourceTree = "<group>"; };
+		1B31C2851C1F4A2A00878869 /* OffersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OffersView.h; sourceTree = "<group>"; };
+		1B31C2861C1F4A2A00878869 /* OffersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OffersView.m; sourceTree = "<group>"; };
+		1B31C2881C200F5000878869 /* LargeOfferCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargeOfferCell.h; sourceTree = "<group>"; };
+		1B31C2891C200F5000878869 /* LargeOfferCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargeOfferCell.m; sourceTree = "<group>"; };
+		1B38BF901B67A58C008033AE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		1B38BF911B67A58C008033AE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		1B38BF921B67A58C008033AE /* SSURLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSURLSession.h; sourceTree = "<group>"; };
+		1B38BF931B67A58C008033AE /* SSURLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSURLSession.m; sourceTree = "<group>"; };
+		1B38BFA01B67A58C008033AE /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		1B38BFA11B67A58C008033AE /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		1B38BFAF1B67A5F1008033AE /* cannot_deliver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cannot_deliver.png; sourceTree = "<group>"; };
+		1B38C0021B68DFDC008033AE /* BrowseByCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseByCollectionViewController.h; sourceTree = "<group>"; };
+		1B38C0031B68DFDC008033AE /* BrowseByCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BrowseByCollectionViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		1B472E271C205C6300F5165C /* NotificationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationTableViewCell.h; sourceTree = "<group>"; };
+		1B472E281C205C6300F5165C /* NotificationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationTableViewCell.m; sourceTree = "<group>"; };
+		1B47AFE41C0FF3E400268BE4 /* PaymentSummaryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentSummaryView.h; sourceTree = "<group>"; };
+		1B47AFE51C0FF3E400268BE4 /* PaymentSummaryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentSummaryView.m; sourceTree = "<group>"; };
+		1B47AFE81C0FF52B00268BE4 /* PullableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullableView.h; sourceTree = "<group>"; };
+		1B47AFE91C0FF52B00268BE4 /* PullableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullableView.m; sourceTree = "<group>"; };
+		1B519AAD1BD4029C00B374EB /* FyndActivityItemProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FyndActivityItemProvider.h; sourceTree = "<group>"; };
+		1B519AAE1BD4029C00B374EB /* FyndActivityItemProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FyndActivityItemProvider.m; sourceTree = "<group>"; };
+		1B5C67401B9D4BA900F2DAFC /* OrderHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderHeaderView.h; sourceTree = "<group>"; };
+		1B5C67411B9D4BA900F2DAFC /* OrderHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderHeaderView.m; sourceTree = "<group>"; };
+		1B5C67451B9E077500F2DAFC /* MyOrderProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderProductCell.h; sourceTree = "<group>"; };
+		1B5C67461B9E077500F2DAFC /* MyOrderProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderProductCell.m; sourceTree = "<group>"; };
+		1B5C67481B9F012300F2DAFC /* MyOrderAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderAddressCell.h; sourceTree = "<group>"; };
+		1B5C67491B9F012300F2DAFC /* MyOrderAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderAddressCell.m; sourceTree = "<group>"; };
+		1B5C674B1B9F0C1B00F2DAFC /* MyOrderCostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderCostCell.h; sourceTree = "<group>"; };
+		1B5C674C1B9F0C1B00F2DAFC /* MyOrderCostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderCostCell.m; sourceTree = "<group>"; };
+		1B5D0AE31B96DE89001DF1E0 /* AddFromWishlistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddFromWishlistViewController.h; path = Explore/Cart/AddFromWishlistViewController.h; sourceTree = SOURCE_ROOT; };
+		1B5D0AE41B96DE89001DF1E0 /* AddFromWishlistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddFromWishlistViewController.m; path = Explore/Cart/AddFromWishlistViewController.m; sourceTree = SOURCE_ROOT; };
+		1B6110F61BC63D550011B886 /* default_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_cover.png; sourceTree = "<group>"; };
+		1B6110F71BC63D550011B886 /* default_dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_dp.png; sourceTree = "<group>"; };
+		1B67DEA61B7D08400091830D /* SendOTPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendOTPViewController.h; sourceTree = "<group>"; };
+		1B67DEA71B7D08400091830D /* SendOTPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SendOTPViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		1B67DEA91B7D084E0091830D /* VerifyOTPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyOTPViewController.h; sourceTree = "<group>"; };
+		1B67DEAA1B7D084E0091830D /* VerifyOTPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = VerifyOTPViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		1B6EB1211BC3FBF10084C57B /* TopLeft11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TopLeft11.png; sourceTree = "<group>"; };
+		1B6EB1221BC3FBF10084C57B /* TopRight11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TopRight11.png; sourceTree = "<group>"; };
+		1B6EB1231BC3FBF10084C57B /* TopRight12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TopRight12.png; sourceTree = "<group>"; };
+		1B6EB1241BC3FBF10084C57B /* TopRight13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TopRight13.png; sourceTree = "<group>"; };
+		1B6EB1281BC3FBF10084C57B /* TopRight11@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TopRight11@2x.png"; sourceTree = "<group>"; };
+		1B6EB12B1BC3FBF10084C57B /* TopLeft11@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TopLeft11@3x.png"; sourceTree = "<group>"; };
+		1B6EB12C1BC3FBF10084C57B /* TopRight11@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TopRight11@3x.png"; sourceTree = "<group>"; };
+		1B6EB12D1BC3FBF10084C57B /* TopRight12@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TopRight12@3x.png"; sourceTree = "<group>"; };
+		1B6EB12E1BC3FBF10084C57B /* TopRight12@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TopRight12@3x.png"; sourceTree = "<group>"; };
+		1B6EB27B1BC3FE090084C57B /* TopLeft11@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TopLeft11@2x.png"; sourceTree = "<group>"; };
+		1B73BDF51C26CC4100C385B7 /* VisaRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VisaRect.png; sourceTree = "<group>"; };
+		1B73BDF71C26CC6500C385B7 /* Visa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Visa.png; sourceTree = "<group>"; };
+		1B79F19B1B7DB44100584D5D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		1B79F19C1B7DB44100584D5D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LoginViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		1B79F19E1B7DB49800584D5D /* ResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordViewController.h; sourceTree = "<group>"; };
+		1B79F19F1B7DB49800584D5D /* ResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ResetPasswordViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		1B8839E21B7F6ECF0014D622 /* FacebookDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookDetailsViewController.h; sourceTree = "<group>"; };
+		1B8839E31B7F6ECF0014D622 /* FacebookDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FacebookDetailsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		1B8839E51B7FC1540014D622 /* UserAuthenticationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAuthenticationHandler.h; sourceTree = "<group>"; };
+		1B8839E61B7FC1540014D622 /* UserAuthenticationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAuthenticationHandler.m; sourceTree = "<group>"; };
+		1B8FDE8A1BA150C400C21385 /* GridStatusCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridStatusCollectionViewCell.h; sourceTree = "<group>"; };
+		1B8FDE8B1BA150C400C21385 /* GridStatusCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridStatusCollectionViewCell.m; sourceTree = "<group>"; };
+		1B8FDE941BA2F58200C21385 /* PaymentsSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaymentsSDK.h; sourceTree = "<group>"; };
+		1B8FDE951BA2F58200C21385 /* PGMerchantConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGMerchantConfiguration.h; sourceTree = "<group>"; };
+		1B8FDE961BA2F58200C21385 /* PGOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGOrder.h; sourceTree = "<group>"; };
+		1B8FDE971BA2F58200C21385 /* PGServerEnvironment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGServerEnvironment.h; sourceTree = "<group>"; };
+		1B8FDE981BA2F58200C21385 /* PGTransactionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGTransactionViewController.h; sourceTree = "<group>"; };
+		1B8FDE991BA2F59E00C21385 /* libPaymentsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentsSDK.a; sourceTree = "<group>"; };
+		1B9298901C06CB7F002BED4C /* FyndAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FyndAnalytics.h; sourceTree = "<group>"; };
+		1B9298911C06CB7F002BED4C /* FyndAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FyndAnalytics.m; sourceTree = "<group>"; };
+		1B9298A21C06D3C8002BED4C /* MixPanelSuperProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixPanelSuperProperties.h; sourceTree = "<group>"; };
+		1B9298A31C06D3C8002BED4C /* MixPanelSuperProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixPanelSuperProperties.m; sourceTree = "<group>"; };
+		1B9298A91C06D472002BED4C /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		1B9298AA1C06D472002BED4C /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		1B9298AB1C06D472002BED4C /* FyndActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FyndActivityIndicator.h; sourceTree = "<group>"; };
+		1B9298AC1C06D472002BED4C /* FyndActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FyndActivityIndicator.m; sourceTree = "<group>"; };
+		1B9298AD1C06D472002BED4C /* FyndBlankPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FyndBlankPage.h; sourceTree = "<group>"; };
+		1B9298AE1C06D472002BED4C /* FyndBlankPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FyndBlankPage.m; sourceTree = "<group>"; };
+		1B9298AF1C06D472002BED4C /* FyndErrorInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FyndErrorInfoView.h; sourceTree = "<group>"; };
+		1B9298B01C06D472002BED4C /* FyndErrorInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FyndErrorInfoView.m; sourceTree = "<group>"; };
+		1B9298B21C06D472002BED4C /* UINavigationBar+Transparency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+Transparency.h"; sourceTree = "<group>"; };
+		1B9298B31C06D472002BED4C /* UINavigationBar+Transparency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+Transparency.m"; sourceTree = "<group>"; };
+		1B9298B41C06D472002BED4C /* SSLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLine.h; sourceTree = "<group>"; };
+		1B9298B51C06D472002BED4C /* SSLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLine.m; sourceTree = "<group>"; };
+		1B9298B71C06D472002BED4C /* TextFieldWithImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldWithImage.h; sourceTree = "<group>"; };
+		1B9298B81C06D472002BED4C /* TextFieldWithImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldWithImage.m; sourceTree = "<group>"; };
+		1B9298B91C06D472002BED4C /* UIFont+FontWithNameAndSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+FontWithNameAndSize.h"; sourceTree = "<group>"; };
+		1B9298BA1C06D472002BED4C /* UIFont+FontWithNameAndSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+FontWithNameAndSize.m"; sourceTree = "<group>"; };
+		1B9298BB1C06D472002BED4C /* UITextField+NextResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+NextResponder.h"; sourceTree = "<group>"; };
+		1B9298BC1C06D472002BED4C /* UITextField+NextResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+NextResponder.m"; sourceTree = "<group>"; };
+		1B9298C61C06D4B7002BED4C /* SCGIFImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGIFImageView.h; sourceTree = "<group>"; };
+		1B9298C71C06D4B7002BED4C /* SCGIFImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGIFImageView.m; sourceTree = "<group>"; };
+		1B9298CA1C09DB6B002BED4C /* ImageSubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageSubView.h; sourceTree = "<group>"; };
+		1B9298CB1C09DB6B002BED4C /* ImageSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageSubView.m; sourceTree = "<group>"; };
+		1B9298CC1C09DB6B002BED4C /* ImageViewerContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewerContainer.h; sourceTree = "<group>"; };
+		1B9298CD1C09DB6B002BED4C /* ImageViewerContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewerContainer.m; sourceTree = "<group>"; };
+		1B9298D31C09DBD9002BED4C /* PDPTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPTopView.h; sourceTree = "<group>"; };
+		1B9298D41C09DBD9002BED4C /* PDPTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPTopView.m; sourceTree = "<group>"; };
+		1B9298D61C09DE20002BED4C /* DeepLinkerHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeepLinkerHandler.h; sourceTree = "<group>"; };
+		1B9298D71C09DE20002BED4C /* DeepLinkerHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeepLinkerHandler.m; sourceTree = "<group>"; };
+		1B9C2B8C1BB6784F00FBBCBB /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		1B9C2B8D1BB6784F00FBBCBB /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		1B9D03641BBEC9A000B43A93 /* Splash screen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Splash screen.gif"; sourceTree = "<group>"; };
+		1B9D30B81B97341F006B469A /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
+		1B9D30B91B97341F006B469A /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CartViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		1B9D30BB1B97341F006B469A /* CartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartItem.h; sourceTree = "<group>"; };
+		1B9D30BC1B97341F006B469A /* CartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartItem.m; sourceTree = "<group>"; };
+		1B9D30BE1B97341F006B469A /* CartItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartItemCell.h; sourceTree = "<group>"; };
+		1B9D30BF1B97341F006B469A /* CartItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartItemCell.m; sourceTree = "<group>"; };
+		1B9D30C61B9A10C2006B469A /* MyOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyOrderModel.h; sourceTree = "<group>"; };
+		1B9D30C71B9A10C2006B469A /* MyOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrderModel.m; sourceTree = "<group>"; };
+		1B9D9DD41BFF49D5008FF670 /* loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loader.gif; sourceTree = "<group>"; };
+		1BA53CDB1B722B2C00AFD528 /* BrowseByBrandRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseByBrandRequestHandler.h; sourceTree = "<group>"; };
+		1BA53CDC1B722B2C00AFD528 /* BrowseByBrandRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseByBrandRequestHandler.m; sourceTree = "<group>"; };
+		1BB911EE1BA037170083D266 /* HTMLTileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLTileModel.h; sourceTree = "<group>"; };
+		1BB911EF1BA037170083D266 /* HTMLTileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLTileModel.m; sourceTree = "<group>"; };
+		1BB911F11BA039F10083D266 /* HTMLCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLCollectionViewCell.h; sourceTree = "<group>"; };
+		1BB911F21BA039F10083D266 /* HTMLCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLCollectionViewCell.m; sourceTree = "<group>"; };
+		1BC88FCF1BC3FF8300CF06A1 /* TopRight12@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TopRight12@2x.png"; sourceTree = "<group>"; };
+		1BC88FD01BC3FF8300CF06A1 /* TopRight13@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TopRight13@2x.png"; sourceTree = "<group>"; };
+		1BCB17C51BD1877100A3EB20 /* RetunPolicyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetunPolicyViewController.h; sourceTree = "<group>"; };
+		1BCB17C61BD1877100A3EB20 /* RetunPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetunPolicyViewController.m; sourceTree = "<group>"; };
+		1BD047361B637BDF00E98111 /* PDPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPViewController.h; sourceTree = "<group>"; };
+		1BD047371B637BDF00E98111 /* PDPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPViewController.m; sourceTree = "<group>"; };
+		1BDE70471B7B37FA003DB93D /* LocationAccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAccessViewController.h; sourceTree = "<group>"; };
+		1BDE70481B7B37FA003DB93D /* LocationAccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAccessViewController.m; sourceTree = "<group>"; };
+		1BDE704A1B7B6623003DB93D /* OBBrandSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBBrandSelectionViewController.h; sourceTree = "<group>"; };
+		1BDE704B1B7B6623003DB93D /* OBBrandSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBBrandSelectionViewController.m; sourceTree = "<group>"; };
+		1BDE704D1B7B6632003DB93D /* OBCollectionSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBCollectionSelectionViewController.h; sourceTree = "<group>"; };
+		1BDE704E1B7B6632003DB93D /* OBCollectionSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBCollectionSelectionViewController.m; sourceTree = "<group>"; };
+		1BDE70511B7C7A80003DB93D /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		1BDE70521B7C7A80003DB93D /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SignUpViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		1BF213F41B70E374000186A9 /* BrandTabData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandTabData.h; sourceTree = "<group>"; };
+		1BF213F51B70E374000186A9 /* BrandTabData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandTabData.m; sourceTree = "<group>"; };
+		1BF213F61B70E374000186A9 /* CollectionTabData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionTabData.h; sourceTree = "<group>"; };
+		1BF213F71B70E374000186A9 /* CollectionTabData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionTabData.m; sourceTree = "<group>"; };
+		1BF213F81B70E374000186A9 /* PaginationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaginationData.h; sourceTree = "<group>"; };
+		1BF213F91B70E374000186A9 /* PaginationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaginationData.m; sourceTree = "<group>"; };
+		1BF7877A1C032E6A003AD392 /* PDPHeaderScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPHeaderScrollView.h; sourceTree = "<group>"; };
+		1BF7877B1C032E6A003AD392 /* PDPHeaderScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPHeaderScrollView.m; sourceTree = "<group>"; };
+		1BF7877D1C0335F6003AD392 /* ImageSubModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageSubModule.h; sourceTree = "<group>"; };
+		1BF7877E1C0335F6003AD392 /* ImageSubModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageSubModule.m; sourceTree = "<group>"; };
+		1BFD34131BB68EA80061C009 /* SortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortViewController.h; sourceTree = "<group>"; };
+		1BFD34141BB68EA80061C009 /* SortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortViewController.m; sourceTree = "<group>"; };
+		3C015DF91C13209F00E8B2D2 /* CardAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardAuthenticationViewController.h; sourceTree = "<group>"; };
+		3C015DFA1C13209F00E8B2D2 /* CardAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardAuthenticationViewController.m; sourceTree = "<group>"; };
+		3C01985F1C043E5000FD93C0 /* WelcomeCardCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeCardCell.h; sourceTree = "<group>"; };
+		3C0198601C043E5000FD93C0 /* WelcomeCardCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeCardCell.m; sourceTree = "<group>"; };
+		3C10DD5D1C197FEB00988FDF /* Diners.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Diners.png; sourceTree = "<group>"; };
+		3C4876461BA9530D001DC2F6 /* DeliveryTimeSlotModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeliveryTimeSlotModel.h; sourceTree = "<group>"; };
+		3C4876471BA9530D001DC2F6 /* DeliveryTimeSlotModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeliveryTimeSlotModel.m; sourceTree = "<group>"; };
+		3C4876491BA9795C001DC2F6 /* PaymentModes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentModes.h; sourceTree = "<group>"; };
+		3C48764A1BA9795C001DC2F6 /* PaymentModes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentModes.m; sourceTree = "<group>"; };
+		3C48DC891B80759F0077B54C /* PaymentOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentOption.h; sourceTree = "<group>"; };
+		3C48DC8A1B80759F0077B54C /* PaymentOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentOption.m; sourceTree = "<group>"; };
+		3C5A91AD1C0F1DB600096304 /* AddCartPopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCartPopUp.h; sourceTree = "<group>"; };
+		3C5A91AE1C0F1DB600096304 /* AddCartPopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCartPopUp.m; sourceTree = "<group>"; };
+		3C5A91AF1C0F1DB600096304 /* PaymentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentController.h; sourceTree = "<group>"; };
+		3C5A91B01C0F1DB600096304 /* PaymentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentController.m; sourceTree = "<group>"; };
+		3C6551B51B7B1E0D007BA45D /* ShippingAddressDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShippingAddressDetailViewController.h; sourceTree = "<group>"; };
+		3C6551B61B7B1E0D007BA45D /* ShippingAddressDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ShippingAddressDetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		3C6551BB1B7B1E5C007BA45D /* ShippingAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShippingAddressModel.h; sourceTree = "<group>"; };
+		3C6551BC1B7B1E5C007BA45D /* ShippingAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShippingAddressModel.m; sourceTree = "<group>"; };
+		3C6B8FA31B7C8561002BA8CE /* ShippingListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShippingListTableViewCell.h; sourceTree = "<group>"; };
+		3C6B8FA41B7C8561002BA8CE /* ShippingListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShippingListTableViewCell.m; sourceTree = "<group>"; };
+		3C6B8FA91B7CBD2C002BA8CE /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		3C6B8FAA1B7CBD2C002BA8CE /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		3C8576021B8479CC00A0E466 /* OnBoardingRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnBoardingRequestHandler.h; sourceTree = "<group>"; };
+		3C8576031B8479CC00A0E466 /* OnBoardingRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnBoardingRequestHandler.m; sourceTree = "<group>"; };
+		3C8BC46F1BA28F7A003AE988 /* ShippingAddressListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShippingAddressListViewController.h; sourceTree = "<group>"; };
+		3C8BC4701BA28F7A003AE988 /* ShippingAddressListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShippingAddressListViewController.m; sourceTree = "<group>"; };
+		3C8E96E11B7DE1DB00457128 /* FAQView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAQView.h; sourceTree = "<group>"; };
+		3C8E96E21B7DE1DB00457128 /* FAQView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAQView.m; sourceTree = "<group>"; };
+		3C93C3A21BBD0B1500049A9E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		3C94120D1BB009580013A696 /* ReturnReasons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnReasons.h; sourceTree = "<group>"; };
+		3C94120E1BB009580013A696 /* ReturnReasons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReturnReasons.m; sourceTree = "<group>"; };
+		3C9412101BB02F580013A696 /* ReturnReasonsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnReasonsView.h; sourceTree = "<group>"; };
+		3C9412111BB02F580013A696 /* ReturnReasonsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReturnReasonsView.m; sourceTree = "<group>"; };
+		3C9412131BB03C770013A696 /* ReturnReasonsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnReasonsTableViewCell.h; sourceTree = "<group>"; };
+		3C9412141BB03C770013A696 /* ReturnReasonsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReturnReasonsTableViewCell.m; sourceTree = "<group>"; };
+		3C9C80241B786D5900DAA245 /* BrowseByCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseByCategoryViewController.h; sourceTree = "<group>"; };
+		3C9C80251B786D5900DAA245 /* BrowseByCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BrowseByCategoryViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		3C9C80281B786E3100DAA245 /* SearchRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchRequestHandler.h; sourceTree = "<group>"; };
+		3C9C80291B786E3100DAA245 /* SearchRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchRequestHandler.m; sourceTree = "<group>"; };
+		3C9C802E1B786E9E00DAA245 /* SSBaseRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBaseRequestHandler.h; sourceTree = "<group>"; };
+		3C9C802F1B786E9E00DAA245 /* SSBaseRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBaseRequestHandler.m; sourceTree = "<group>"; };
+		3C9C80311B786ED600DAA245 /* BrowseByCategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseByCategoryView.h; sourceTree = "<group>"; };
+		3C9C80321B786ED600DAA245 /* BrowseByCategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseByCategoryView.m; sourceTree = "<group>"; };
+		3C9C80331B786ED600DAA245 /* CustomViewForCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewForCategory.h; sourceTree = "<group>"; };
+		3C9C80341B786ED600DAA245 /* CustomViewForCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewForCategory.m; sourceTree = "<group>"; };
+		3C9C80351B786ED600DAA245 /* GenderHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenderHeaderView.h; sourceTree = "<group>"; };
+		3C9C80361B786ED600DAA245 /* GenderHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenderHeaderView.m; sourceTree = "<group>"; };
+		3C9C803F1B787A8500DAA245 /* SSUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUtility.h; sourceTree = "<group>"; };
+		3C9C80401B787A8500DAA245 /* SSUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUtility.m; sourceTree = "<group>"; };
+		3C9C804C1B787C2D00DAA245 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
+		3C9C804D1B787C2D00DAA245 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
+		3C9C804E1B787C2D00DAA245 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		3C9C804F1B787C2D00DAA245 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		3C9C80501B787C2D00DAA245 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		3C9C80511B787C2D00DAA245 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		3C9C80521B787C2D00DAA245 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		3C9C80531B787C2D00DAA245 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
+		3C9C80541B787C2D00DAA245 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
+		3C9C80551B787C2D00DAA245 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
+		3C9C805A1B787C4F00DAA245 /* UIScrollView+VGParallaxHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+VGParallaxHeader.h"; sourceTree = "<group>"; };
+		3C9C805B1B787C4F00DAA245 /* UIScrollView+VGParallaxHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+VGParallaxHeader.m"; sourceTree = "<group>"; };
+		3C9C80621B787D2300DAA245 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3C9C80631B787D2300DAA245 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3C9C80661B787D9400DAA245 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3C9C80671B787D9400DAA245 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3C9C80691B78803000DAA245 /* HomeRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeRequestHandler.h; sourceTree = "<group>"; };
+		3C9C806A1B78803000DAA245 /* HomeRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeRequestHandler.m; sourceTree = "<group>"; };
+		3C9C80741B78813100DAA245 /* CustomPopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPopUp.h; sourceTree = "<group>"; };
+		3C9C80751B78813100DAA245 /* CustomPopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPopUp.m; sourceTree = "<group>"; };
+		3C9C80761B78813100DAA245 /* NearestStorePopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NearestStorePopUp.h; sourceTree = "<group>"; };
+		3C9C80771B78813100DAA245 /* NearestStorePopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NearestStorePopUp.m; sourceTree = "<group>"; };
+		3C9C80781B78813100DAA245 /* NearestStorePopUp.m.orig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NearestStorePopUp.m.orig; sourceTree = "<group>"; };
+		3C9C80791B78813100DAA245 /* PickAtStorePopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickAtStorePopUp.h; sourceTree = "<group>"; };
+		3C9C807A1B78813100DAA245 /* PickAtStorePopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickAtStorePopUp.m; sourceTree = "<group>"; };
+		3C9C807B1B78813100DAA245 /* PinCodePopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinCodePopUp.h; sourceTree = "<group>"; };
+		3C9C807C1B78813100DAA245 /* PinCodePopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = PinCodePopUp.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		3C9C807D1B78813100DAA245 /* PopHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopHeaderView.h; sourceTree = "<group>"; };
+		3C9C807E1B78813100DAA245 /* PopHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopHeaderView.m; sourceTree = "<group>"; };
+		3C9C807F1B78813100DAA245 /* PopOverlayHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopOverlayHandler.h; sourceTree = "<group>"; };
+		3C9C80801B78813100DAA245 /* PopOverlayHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopOverlayHandler.m; sourceTree = "<group>"; };
+		3C9C80891B78821900DAA245 /* CustomFlow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFlow.h; sourceTree = "<group>"; };
+		3C9C808A1B78821900DAA245 /* CustomFlow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFlow.m; sourceTree = "<group>"; };
+		3C9C808B1B78821900DAA245 /* GridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridView.h; sourceTree = "<group>"; };
+		3C9C808C1B78821900DAA245 /* GridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridView.m; sourceTree = "<group>"; };
+		3C9C80901B7882B200DAA245 /* PDPStoresCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPStoresCell.h; sourceTree = "<group>"; };
+		3C9C80911B7882B200DAA245 /* PDPStoresCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPStoresCell.m; sourceTree = "<group>"; };
+		3C9C80941B7883BE00DAA245 /* BrandCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandCollectionViewCell.h; sourceTree = "<group>"; };
+		3C9C80951B7883BE00DAA245 /* BrandCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandCollectionViewCell.m; sourceTree = "<group>"; };
+		3C9C80961B7883BE00DAA245 /* BrandProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandProductCell.h; sourceTree = "<group>"; };
+		3C9C80971B7883BE00DAA245 /* BrandProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandProductCell.m; sourceTree = "<group>"; };
+		3C9C80981B7883BE00DAA245 /* BrandsGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandsGrid.h; sourceTree = "<group>"; };
+		3C9C80991B7883BE00DAA245 /* BrandsGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandsGrid.m; sourceTree = "<group>"; };
+		3C9C809A1B7883BE00DAA245 /* CollectionGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionGrid.h; sourceTree = "<group>"; };
+		3C9C809B1B7883BE00DAA245 /* CollectionGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionGrid.m; sourceTree = "<group>"; };
+		3C9C809C1B7883BE00DAA245 /* ProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCell.h; sourceTree = "<group>"; };
+		3C9C809D1B7883BE00DAA245 /* ProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCell.m; sourceTree = "<group>"; };
+		3C9C809E1B7883BE00DAA245 /* TipCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipCollectionViewCell.h; sourceTree = "<group>"; };
+		3C9C809F1B7883BE00DAA245 /* TipCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipCollectionViewCell.m; sourceTree = "<group>"; };
+		3C9C80A61B78846E00DAA245 /* FeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		3C9C80A71B78846E00DAA245 /* FeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		3C9C80A81B78846E00DAA245 /* ProductCollectionAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionAdapter.h; sourceTree = "<group>"; };
+		3C9C80A91B78846E00DAA245 /* ProductCollectionAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionAdapter.m; sourceTree = "<group>"; };
+		3C9C80AD1B78850F00DAA245 /* FilterCheckboxTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterCheckboxTableViewCell.h; sourceTree = "<group>"; };
+		3C9C80AE1B78850F00DAA245 /* FilterCheckboxTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FilterCheckboxTableViewCell.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		3C9C80AF1B78850F00DAA245 /* FilterHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterHeaderTableViewCell.h; sourceTree = "<group>"; };
+		3C9C80B01B78850F00DAA245 /* FilterHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterHeaderTableViewCell.m; sourceTree = "<group>"; };
+		3C9C80B11B78850F00DAA245 /* FilterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterModel.h; sourceTree = "<group>"; };
+		3C9C80B21B78850F00DAA245 /* FilterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterModel.m; sourceTree = "<group>"; };
+		3C9C80C21B788DCB00DAA245 /* AutoSuggestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoSuggestModel.h; sourceTree = "<group>"; };
+		3C9C80C31B788DCB00DAA245 /* AutoSuggestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoSuggestModel.m; sourceTree = "<group>"; };
+		3C9C80C41B788DCB00DAA245 /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
+		3C9C80C51B788DCB00DAA245 /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
+		3C9C80C81B788E1900DAA245 /* GenderHeaderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenderHeaderModel.h; sourceTree = "<group>"; };
+		3C9C80C91B788E1900DAA245 /* GenderHeaderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenderHeaderModel.m; sourceTree = "<group>"; };
+		3C9C80CB1B788FB100DAA245 /* PDPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPModel.h; sourceTree = "<group>"; };
+		3C9C80CC1B788FB100DAA245 /* PDPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPModel.m; sourceTree = "<group>"; };
+		3C9C80CE1B78905D00DAA245 /* BrandCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandCollectionHeaderView.h; sourceTree = "<group>"; };
+		3C9C80CF1B78905D00DAA245 /* BrandCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandCollectionHeaderView.m; sourceTree = "<group>"; };
+		3C9C80D11B78933500DAA245 /* CollectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionsViewController.h; sourceTree = "<group>"; };
+		3C9C80D21B78933500DAA245 /* CollectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionsViewController.m; sourceTree = "<group>"; };
+		3CAC060A1B79B33200EF8563 /* OrdersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersView.h; sourceTree = "<group>"; };
+		3CAC060B1B79B33200EF8563 /* OrdersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersView.m; sourceTree = "<group>"; };
+		3CAC060D1B79B34400EF8563 /* WishListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishListView.h; sourceTree = "<group>"; };
+		3CAC060E1B79B34400EF8563 /* WishListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishListView.m; sourceTree = "<group>"; };
+		3CB8B9641C16C8A400F0C99C /* NetBankingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetBankingViewController.h; sourceTree = "<group>"; };
+		3CB8B9651C16C8A400F0C99C /* NetBankingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetBankingViewController.m; sourceTree = "<group>"; };
+		3CC8F4B81B7FC14A00A7F0DF /* TermsOfService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsOfService.h; sourceTree = "<group>"; };
+		3CC8F4B91B7FC14A00A7F0DF /* TermsOfService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsOfService.m; sourceTree = "<group>"; };
+		3CDB10531BB4030000C97B12 /* DeviceModel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeviceModel.plist; sourceTree = "<group>"; };
+		3CF1DA141C25AF3A00B9319E /* AmexRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AmexRect.png; sourceTree = "<group>"; };
+		3CF1DA151C25AF3A00B9319E /* DinersRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DinersRect.png; sourceTree = "<group>"; };
+		3CF1DA161C25AF3A00B9319E /* MaestroRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MaestroRect.png; sourceTree = "<group>"; };
+		3CF1DA171C25AF3A00B9319E /* MasterRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MasterRect.png; sourceTree = "<group>"; };
+		3CF1DA181C25AF3A00B9319E /* RupayRect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RupayRect.png; sourceTree = "<group>"; };
+		90CA6B640B7A307326A8BA49 /* Pods-Explore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Explore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Explore/Pods-Explore.debug.xcconfig"; sourceTree = "<group>"; };
+		B706828B1B456B68004EF525 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = PrefixHeader.pch; path = ../PrefixHeader.pch; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		B79628DD1B42DF4A00A0FF0F /* LocationSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationSearchViewController.h; sourceTree = "<group>"; };
+		B79628DE1B42DF4A00A0FF0F /* LocationSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationSearchViewController.m; sourceTree = "<group>"; };
+		B7BE65AB1B41B1D400653E1A /* Fynd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fynd.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7BE65AF1B41B1D400653E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7BE65B01B41B1D400653E1A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B7BE65BE1B41B1D400653E1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B7BE65C41B41B1D400653E1A /* ExploreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExploreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7BE65C91B41B1D400653E1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7BE65CA1B41B1D400653E1A /* ExploreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExploreTests.m; sourceTree = "<group>"; };
+		B7BE65D41B41B22200653E1A /* BrandsVIewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandsVIewController.h; sourceTree = "<group>"; };
+		B7BE65D51B41B22200653E1A /* BrandsVIewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandsVIewController.m; sourceTree = "<group>"; };
+		B7BE66071B41B34A00653E1A /* ProductTileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductTileModel.h; sourceTree = "<group>"; };
+		B7BE66081B41B34A00653E1A /* ProductTileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductTileModel.m; sourceTree = "<group>"; };
+		B7BE66091B41B34A00653E1A /* BrandTileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandTileModel.h; sourceTree = "<group>"; };
+		B7BE660A1B41B34A00653E1A /* BrandTileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandTileModel.m; sourceTree = "<group>"; };
+		B7BE660B1B41B34A00653E1A /* TipTileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipTileModel.h; sourceTree = "<group>"; };
+		B7BE660C1B41B34A00653E1A /* TipTileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipTileModel.m; sourceTree = "<group>"; };
+		B7BE660D1B41B34A00653E1A /* CollectionTileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionTileModel.h; sourceTree = "<group>"; };
+		B7BE660E1B41B34A00653E1A /* CollectionTileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionTileModel.m; sourceTree = "<group>"; };
+		B7BE660F1B41B34A00653E1A /* ActionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionModel.h; sourceTree = "<group>"; };
+		B7BE66101B41B34A00653E1A /* ActionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionModel.m; sourceTree = "<group>"; };
+		B7BE66111B41B34A00653E1A /* SubProductModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubProductModel.h; sourceTree = "<group>"; };
+		B7BE66121B41B34A00653E1A /* SubProductModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubProductModel.m; sourceTree = "<group>"; };
+		B7BE66191B41B39C00653E1A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B7C815061B5CFAF3007C51C9 /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.otf"; sourceTree = "<group>"; };
+		B7C815071B5CFAF3007C51C9 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		B7C815081B5CFAF3007C51C9 /* Montserrat-Hairline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Hairline.otf"; sourceTree = "<group>"; };
+		B7C815091B5CFAF3007C51C9 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		B7C8150A1B5CFAF3007C51C9 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		B7CCE75B1B4A61A2008F4D32 /* BrowseByBrandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseByBrandViewController.h; sourceTree = "<group>"; };
+		B7CCE75C1B4A61A2008F4D32 /* BrowseByBrandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BrowseByBrandViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		C047372AE1FE27802F020329 /* Pods-Explore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Explore.release.xcconfig"; path = "Pods/Target Support Files/Pods-Explore/Pods-Explore.release.xcconfig"; sourceTree = "<group>"; };
+		D17A19C33A247185FA76BF41 /* libPods-Explore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Explore.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B7BE65A81B41B1D400653E1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C93C3A31BBD0B1500049A9E /* MessageUI.framework in Frameworks */,
+				1B29FFCC1B7A083E00B3080E /* FBSDKLoginKit.framework in Frameworks */,
+				1B29FFCB1B7A083E00B3080E /* FBSDKCoreKit.framework in Frameworks */,
+				1B29FFCD1B7A083E00B3080E /* FBSDKShareKit.framework in Frameworks */,
+				B1F27C605107D7BF8FF08E5C /* libPods-Explore.a in Frameworks */,
+				1B8FDE9A1BA2F59E00C21385 /* libPaymentsSDK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7BE65C11B41B1D400653E1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		185B6BF01B4FAD1100E363DD /* PDP */ = {
+			isa = PBXGroup;
+			children = (
+				1BF787791C032E47003AD392 /* PDPHeader */,
+				3C9C80CB1B788FB100DAA245 /* PDPModel.h */,
+				3C9C80CC1B788FB100DAA245 /* PDPModel.m */,
+				1BD047361B637BDF00E98111 /* PDPViewController.h */,
+				1BD047371B637BDF00E98111 /* PDPViewController.m */,
+				180759DB1B834A810098C2C2 /* PDPFeedBackViewController.h */,
+				180759DC1B834A810098C2C2 /* PDPFeedBackViewController.m */,
+				188FB8891BB9203C009A146A /* PDPSizeGuideViewController.h */,
+				188FB88A1BB9203C009A146A /* PDPSizeGuideViewController.m */,
+				189492C61B82FBB200FCF824 /* PDPHandler.h */,
+				189492C71B82FBB200FCF824 /* PDPHandler.m */,
+				185B6C071B4FAE5200E363DD /* UI */,
+			);
+			path = PDP;
+			sourceTree = "<group>";
+		};
+		185B6C071B4FAE5200E363DD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1B9298C91C09DB4B002BED4C /* ImageViewer */,
+				3C9C80901B7882B200DAA245 /* PDPStoresCell.h */,
+				3C9C80911B7882B200DAA245 /* PDPStoresCell.m */,
+				185B6C081B4FAE7800E363DD /* ProductDetailView.h */,
+				185B6C091B4FAE7800E363DD /* ProductDetailView.m */,
+				185B6C0A1B4FAE7800E363DD /* PDPMoreDetail.h */,
+				185B6C0B1B4FAE7800E363DD /* PDPMoreDetail.m */,
+				180759DE1B835D7B0098C2C2 /* PDPFeedBackTableViewCell.h */,
+				180759DF1B835D7B0098C2C2 /* PDPFeedBackTableViewCell.m */,
+				1B9298D31C09DBD9002BED4C /* PDPTopView.h */,
+				1B9298D41C09DBD9002BED4C /* PDPTopView.m */,
+				3C9C80731B78811300DAA245 /* CustomPopUp */,
+				1BCB17C51BD1877100A3EB20 /* RetunPolicyViewController.h */,
+				1BCB17C61BD1877100A3EB20 /* RetunPolicyViewController.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		1873E3A01C11AFC600DE243A /* CardInputFieldComponents */ = {
+			isa = PBXGroup;
+			children = (
+				1873E3A11C11B01700DE243A /* BKCardExpiryField.h */,
+				1873E3A21C11B01700DE243A /* BKCardExpiryField.m */,
+				1873E3A31C11B01700DE243A /* BKCardNumberField.h */,
+				1873E3A41C11B01700DE243A /* BKCardNumberField.m */,
+				1873E3A51C11B01700DE243A /* BKCardNumberFormatter.h */,
+				1873E3A61C11B01700DE243A /* BKCardNumberFormatter.m */,
+				1873E3A71C11B01700DE243A /* BKCardPatternInfo.h */,
+				1873E3A81C11B01700DE243A /* BKCardPatternInfo.m */,
+				1873E3A91C11B01700DE243A /* BKCurrencyTextField.h */,
+				1873E3AA1C11B01700DE243A /* BKCurrencyTextField.m */,
+				1873E3AB1C11B01700DE243A /* BKForwardingTextField.h */,
+				1873E3AC1C11B01700DE243A /* BKForwardingTextField.m */,
+				1873E3AD1C11B01700DE243A /* BKMoneyUtils.h */,
+				1873E3AE1C11B01700DE243A /* BKMoneyUtils.m */,
+				1873E3AF1C11B01700DE243A /* CardPatterns.plist */,
+			);
+			path = CardInputFieldComponents;
+			sourceTree = "<group>";
+		};
+		188A646E1B7CC6520003EF24 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				188A646F1B7CC6850003EF24 /* MyCoupons.h */,
+				188A64701B7CC6850003EF24 /* MyCoupons.m */,
+				1B9D30C61B9A10C2006B469A /* MyOrderModel.h */,
+				1B9D30C71B9A10C2006B469A /* MyOrderModel.m */,
+				1848CA911C0DD5D0007D7C6E /* BankCardData.h */,
+				1848CA921C0DD5D0007D7C6E /* BankCardData.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18B477251B79AB90009E0E38 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1B5C673F1B9D4B7900F2DAFC /* MyOrders */,
+				3CC8F4B81B7FC14A00A7F0DF /* TermsOfService.h */,
+				3CC8F4B91B7FC14A00A7F0DF /* TermsOfService.m */,
+				1B0D97E41B7CD190000699B1 /* CouponsView.h */,
+				1B0D97E51B7CD190000699B1 /* CouponsView.m */,
+				1B0D97E61B7CD190000699B1 /* NotificationSettings.h */,
+				1B0D97E71B7CD190000699B1 /* NotificationSettings.m */,
+				189950B61B81AD460003D7CB /* NotificationCell.h */,
+				189950B71B81AD460003D7CB /* NotificationCell.m */,
+				3C6551B41B7B1129007BA45D /* ShippingAddress */,
+				18B477261B79AB90009E0E38 /* MyAccountView.h */,
+				18B477271B79AB90009E0E38 /* MyAccountView.m */,
+				3CAC060A1B79B33200EF8563 /* OrdersView.h */,
+				3CAC060B1B79B33200EF8563 /* OrdersView.m */,
+				3CAC060D1B79B34400EF8563 /* WishListView.h */,
+				3CAC060E1B79B34400EF8563 /* WishListView.m */,
+				18B477341B7A0AB1009E0E38 /* EditProfileView.h */,
+				18B477351B7A0AB1009E0E38 /* EditProfileView.m */,
+				188A647B1B7CD6D50003EF24 /* FreeShipping.h */,
+				188A647C1B7CD6D50003EF24 /* FreeShipping.m */,
+				3C8E96E11B7DE1DB00457128 /* FAQView.h */,
+				3C8E96E21B7DE1DB00457128 /* FAQView.m */,
+				3C48DC891B80759F0077B54C /* PaymentOption.h */,
+				3C48DC8A1B80759F0077B54C /* PaymentOption.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		18C7542F1C0ECD6C0026F343 /* BankCardType */ = {
+			isa = PBXGroup;
+			children = (
+				3CF1DA141C25AF3A00B9319E /* AmexRect.png */,
+				3CF1DA151C25AF3A00B9319E /* DinersRect.png */,
+				3CF1DA161C25AF3A00B9319E /* MaestroRect.png */,
+				3CF1DA171C25AF3A00B9319E /* MasterRect.png */,
+				3CF1DA181C25AF3A00B9319E /* RupayRect.png */,
+				18BAD6BA1C0F1810002738F2 /* Amex.png */,
+				3C10DD5D1C197FEB00988FDF /* Diners.png */,
+				18BAD6BC1C0F1810002738F2 /* Maestro.png */,
+				18BAD6BD1C0F1810002738F2 /* Master.png */,
+				18BAD6BE1C0F1810002738F2 /* Rupay.png */,
+				1B73BDF71C26CC6500C385B7 /* Visa.png */,
+				1B73BDF51C26CC4100C385B7 /* VisaRect.png */,
+			);
+			path = BankCardType;
+			sourceTree = "<group>";
+		};
+		1B0127D71BC245050086228D /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				1B0127D81BC2458A0086228D /* NotificationViewController.h */,
+				1B0127D91BC2458A0086228D /* NotificationViewController.m */,
+				1B472E271C205C6300F5165C /* NotificationTableViewCell.h */,
+				1B472E281C205C6300F5165C /* NotificationTableViewCell.m */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		1B29FFC71B7A080E00B3080E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1B29FFC81B7A083E00B3080E /* FBSDKCoreKit.framework */,
+				1B29FFC91B7A083E00B3080E /* FBSDKLoginKit.framework */,
+				1B29FFCA1B7A083E00B3080E /* FBSDKShareKit.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		1B29FFD21B7A14A200B3080E /* UserAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+				1B8839E11B7F6E9F0014D622 /* Facebook */,
+				1B79F19A1B7DB41F00584D5D /* Login */,
+				1B67DEA51B7D08140091830D /* OTP */,
+				1BDE70501B7C7A5C003DB93D /* SignUp */,
+				1B29FFD31B7A157100B3080E /* HomeViewController.h */,
+				1B29FFD41B7A157100B3080E /* HomeViewController.m */,
+				1B8839E51B7FC1540014D622 /* UserAuthenticationHandler.h */,
+				1B8839E61B7FC1540014D622 /* UserAuthenticationHandler.m */,
+			);
+			path = UserAuthentication;
+			sourceTree = "<group>";
+		};
+		1B31C2811C1F497D00878869 /* Offers */ = {
+			isa = PBXGroup;
+			children = (
+				1B31C2821C1F49B000878869 /* OffersContainerCollectionViewCell.h */,
+				1B31C2831C1F49B000878869 /* OffersContainerCollectionViewCell.m */,
+				1B31C2851C1F4A2A00878869 /* OffersView.h */,
+				1B31C2861C1F4A2A00878869 /* OffersView.m */,
+				1B31C2881C200F5000878869 /* LargeOfferCell.h */,
+				1B31C2891C200F5000878869 /* LargeOfferCell.m */,
+			);
+			path = Offers;
+			sourceTree = "<group>";
+		};
+		1B38BF8F1B67A58C008033AE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C802D1B786E7800DAA245 /* BaseHandler */,
+				1B38BF901B67A58C008033AE /* Reachability.h */,
+				1B38BF911B67A58C008033AE /* Reachability.m */,
+				1B38BF921B67A58C008033AE /* SSURLSession.h */,
+				1B38BF931B67A58C008033AE /* SSURLSession.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1B38BF9B1B67A58C008033AE /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1B38BFA01B67A58C008033AE /* SearchViewController.h */,
+				1B38BFA11B67A58C008033AE /* SearchViewController.m */,
+				3C9C80281B786E3100DAA245 /* SearchRequestHandler.h */,
+				3C9C80291B786E3100DAA245 /* SearchRequestHandler.m */,
+				3C9C80C11B788DA000DAA245 /* Model */,
+				3C9C80271B786DE600DAA245 /* UI */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		1B38BFAD1B67A5F1008033AE /* PDPIcons */ = {
+			isa = PBXGroup;
+			children = (
+				1B38BFAF1B67A5F1008033AE /* cannot_deliver.png */,
+			);
+			path = PDPIcons;
+			sourceTree = "<group>";
+		};
+		1B38C0011B68DF5D008033AE /* BrowseByCollection */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C80D11B78933500DAA245 /* CollectionsViewController.h */,
+				3C9C80D21B78933500DAA245 /* CollectionsViewController.m */,
+				1B38C0021B68DFDC008033AE /* BrowseByCollectionViewController.h */,
+				1B38C0031B68DFDC008033AE /* BrowseByCollectionViewController.m */,
+				1B29FF1A1B726C4C00B3080E /* BrowseByCollectionRequestHandler.h */,
+				1B29FF1B1B726C4C00B3080E /* BrowseByCollectionRequestHandler.m */,
+			);
+			path = BrowseByCollection;
+			sourceTree = "<group>";
+		};
+		1B5C673F1B9D4B7900F2DAFC /* MyOrders */ = {
+			isa = PBXGroup;
+			children = (
+				1B5C67401B9D4BA900F2DAFC /* OrderHeaderView.h */,
+				1B5C67411B9D4BA900F2DAFC /* OrderHeaderView.m */,
+				1B5C67451B9E077500F2DAFC /* MyOrderProductCell.h */,
+				1B5C67461B9E077500F2DAFC /* MyOrderProductCell.m */,
+				1B5C67481B9F012300F2DAFC /* MyOrderAddressCell.h */,
+				1B5C67491B9F012300F2DAFC /* MyOrderAddressCell.m */,
+				1B5C674B1B9F0C1B00F2DAFC /* MyOrderCostCell.h */,
+				1B5C674C1B9F0C1B00F2DAFC /* MyOrderCostCell.m */,
+			);
+			path = MyOrders;
+			sourceTree = "<group>";
+		};
+		1B67DEA51B7D08140091830D /* OTP */ = {
+			isa = PBXGroup;
+			children = (
+				1B67DEA61B7D08400091830D /* SendOTPViewController.h */,
+				1B67DEA71B7D08400091830D /* SendOTPViewController.m */,
+				1B67DEA91B7D084E0091830D /* VerifyOTPViewController.h */,
+				1B67DEAA1B7D084E0091830D /* VerifyOTPViewController.m */,
+			);
+			path = OTP;
+			sourceTree = "<group>";
+		};
+		1B6EB11E1BC3FBCB0084C57B /* CarousalImages */ = {
+			isa = PBXGroup;
+			children = (
+				1B6EB11F1BC3FBF10084C57B /* 1x */,
+				1B6EB1251BC3FBF10084C57B /* 2x */,
+				1B6EB1291BC3FBF10084C57B /* 3x */,
+			);
+			name = CarousalImages;
+			sourceTree = "<group>";
+		};
+		1B6EB11F1BC3FBF10084C57B /* 1x */ = {
+			isa = PBXGroup;
+			children = (
+				1B6EB1211BC3FBF10084C57B /* TopLeft11.png */,
+				1B6EB1221BC3FBF10084C57B /* TopRight11.png */,
+				1B6EB1231BC3FBF10084C57B /* TopRight12.png */,
+				1B6EB1241BC3FBF10084C57B /* TopRight13.png */,
+			);
+			path = 1x;
+			sourceTree = "<group>";
+		};
+		1B6EB1251BC3FBF10084C57B /* 2x */ = {
+			isa = PBXGroup;
+			children = (
+				1BC88FCF1BC3FF8300CF06A1 /* TopRight12@2x.png */,
+				1BC88FD01BC3FF8300CF06A1 /* TopRight13@2x.png */,
+				1B6EB27B1BC3FE090084C57B /* TopLeft11@2x.png */,
+				1B6EB1281BC3FBF10084C57B /* TopRight11@2x.png */,
+			);
+			path = 2x;
+			sourceTree = "<group>";
+		};
+		1B6EB1291BC3FBF10084C57B /* 3x */ = {
+			isa = PBXGroup;
+			children = (
+				1B6EB12B1BC3FBF10084C57B /* TopLeft11@3x.png */,
+				1B6EB12C1BC3FBF10084C57B /* TopRight11@3x.png */,
+				1B6EB12D1BC3FBF10084C57B /* TopRight12@3x.png */,
+				1B6EB12E1BC3FBF10084C57B /* TopRight12@3x.png */,
+			);
+			path = 3x;
+			sourceTree = "<group>";
+		};
+		1B79F19A1B7DB41F00584D5D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1B79F19B1B7DB44100584D5D /* LoginViewController.h */,
+				1B79F19C1B7DB44100584D5D /* LoginViewController.m */,
+				1B79F19E1B7DB49800584D5D /* ResetPasswordViewController.h */,
+				1B79F19F1B7DB49800584D5D /* ResetPasswordViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		1B8839E11B7F6E9F0014D622 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				1B8839E21B7F6ECF0014D622 /* FacebookDetailsViewController.h */,
+				1B8839E31B7F6ECF0014D622 /* FacebookDetailsViewController.m */,
+			);
+			path = Facebook;
+			sourceTree = "<group>";
+		};
+		1B8FDE931BA2F55B00C21385 /* PaytmSDK */ = {
+			isa = PBXGroup;
+			children = (
+				1B8FDE991BA2F59E00C21385 /* libPaymentsSDK.a */,
+				1B8FDE941BA2F58200C21385 /* PaymentsSDK.h */,
+				1B8FDE951BA2F58200C21385 /* PGMerchantConfiguration.h */,
+				1B8FDE961BA2F58200C21385 /* PGOrder.h */,
+				1B8FDE971BA2F58200C21385 /* PGServerEnvironment.h */,
+				1B8FDE981BA2F58200C21385 /* PGTransactionViewController.h */,
+			);
+			path = PaytmSDK;
+			sourceTree = "<group>";
+		};
+		1B92988F1C06CB48002BED4C /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				1B9298A21C06D3C8002BED4C /* MixPanelSuperProperties.h */,
+				1B9298A31C06D3C8002BED4C /* MixPanelSuperProperties.m */,
+				1B9298901C06CB7F002BED4C /* FyndAnalytics.h */,
+				1B9298911C06CB7F002BED4C /* FyndAnalytics.m */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		1B9298981C06D2D5002BED4C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1B9298B61C06D472002BED4C /* TextFieldWithImage */,
+				1B9298B11C06D472002BED4C /* NavBarTransparency */,
+				1B9298A81C06D472002BED4C /* BlurImage */,
+				1B9298C61C06D4B7002BED4C /* SCGIFImageView.h */,
+				1B9298C71C06D4B7002BED4C /* SCGIFImageView.m */,
+				1B9298AB1C06D472002BED4C /* FyndActivityIndicator.h */,
+				1B9298AC1C06D472002BED4C /* FyndActivityIndicator.m */,
+				1B9298AD1C06D472002BED4C /* FyndBlankPage.h */,
+				1B9298AE1C06D472002BED4C /* FyndBlankPage.m */,
+				1B9298AF1C06D472002BED4C /* FyndErrorInfoView.h */,
+				1B9298B01C06D472002BED4C /* FyndErrorInfoView.m */,
+				1B9298B41C06D472002BED4C /* SSLine.h */,
+				1B9298B51C06D472002BED4C /* SSLine.m */,
+				1B9298B91C06D472002BED4C /* UIFont+FontWithNameAndSize.h */,
+				1B9298BA1C06D472002BED4C /* UIFont+FontWithNameAndSize.m */,
+				1B9298BB1C06D472002BED4C /* UITextField+NextResponder.h */,
+				1B47AFE81C0FF52B00268BE4 /* PullableView.h */,
+				1B47AFE91C0FF52B00268BE4 /* PullableView.m */,
+				1B9298BC1C06D472002BED4C /* UITextField+NextResponder.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		1B9298A81C06D472002BED4C /* BlurImage */ = {
+			isa = PBXGroup;
+			children = (
+				1B9298A91C06D472002BED4C /* UIImage+ImageEffects.h */,
+				1B9298AA1C06D472002BED4C /* UIImage+ImageEffects.m */,
+			);
+			path = BlurImage;
+			sourceTree = "<group>";
+		};
+		1B9298B11C06D472002BED4C /* NavBarTransparency */ = {
+			isa = PBXGroup;
+			children = (
+				1B9298B21C06D472002BED4C /* UINavigationBar+Transparency.h */,
+				1B9298B31C06D472002BED4C /* UINavigationBar+Transparency.m */,
+			);
+			path = NavBarTransparency;
+			sourceTree = "<group>";
+		};
+		1B9298B61C06D472002BED4C /* TextFieldWithImage */ = {
+			isa = PBXGroup;
+			children = (
+				1B9298B71C06D472002BED4C /* TextFieldWithImage.h */,
+				1B9298B81C06D472002BED4C /* TextFieldWithImage.m */,
+			);
+			path = TextFieldWithImage;
+			sourceTree = "<group>";
+		};
+		1B9298C91C09DB4B002BED4C /* ImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				1B9298CA1C09DB6B002BED4C /* ImageSubView.h */,
+				1B9298CB1C09DB6B002BED4C /* ImageSubView.m */,
+				1B9298CC1C09DB6B002BED4C /* ImageViewerContainer.h */,
+				1B9298CD1C09DB6B002BED4C /* ImageViewerContainer.m */,
+			);
+			path = ImageViewer;
+			sourceTree = "<group>";
+		};
+		1B9D30BA1B97341F006B469A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1B9D30BB1B97341F006B469A /* CartItem.h */,
+				1B9D30BC1B97341F006B469A /* CartItem.m */,
+				18BA9EE11B9C61CF00D86F68 /* CartData.h */,
+				18BA9EE21B9C61CF00D86F68 /* CartData.m */,
+				3C4876461BA9530D001DC2F6 /* DeliveryTimeSlotModel.h */,
+				3C4876471BA9530D001DC2F6 /* DeliveryTimeSlotModel.m */,
+				3C94120D1BB009580013A696 /* ReturnReasons.h */,
+				3C94120E1BB009580013A696 /* ReturnReasons.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1B9D30BD1B97341F006B469A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				1B47AFE41C0FF3E400268BE4 /* PaymentSummaryView.h */,
+				1B47AFE51C0FF3E400268BE4 /* PaymentSummaryView.m */,
+				1B9D30BE1B97341F006B469A /* CartItemCell.h */,
+				1B9D30BF1B97341F006B469A /* CartItemCell.m */,
+				3C9412101BB02F580013A696 /* ReturnReasonsView.h */,
+				3C9412111BB02F580013A696 /* ReturnReasonsView.m */,
+				3C9412131BB03C770013A696 /* ReturnReasonsTableViewCell.h */,
+				3C9412141BB03C770013A696 /* ReturnReasonsTableViewCell.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		1BDE70461B7B37DC003DB93D /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				1BDE70471B7B37FA003DB93D /* LocationAccessViewController.h */,
+				1BDE70481B7B37FA003DB93D /* LocationAccessViewController.m */,
+				1BDE704A1B7B6623003DB93D /* OBBrandSelectionViewController.h */,
+				1BDE704B1B7B6623003DB93D /* OBBrandSelectionViewController.m */,
+				1BDE704D1B7B6632003DB93D /* OBCollectionSelectionViewController.h */,
+				1BDE704E1B7B6632003DB93D /* OBCollectionSelectionViewController.m */,
+				3C8576021B8479CC00A0E466 /* OnBoardingRequestHandler.h */,
+				3C8576031B8479CC00A0E466 /* OnBoardingRequestHandler.m */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		1BDE70501B7C7A5C003DB93D /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				1BDE70511B7C7A80003DB93D /* SignUpViewController.h */,
+				1BDE70521B7C7A80003DB93D /* SignUpViewController.m */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		1BF787791C032E47003AD392 /* PDPHeader */ = {
+			isa = PBXGroup;
+			children = (
+				1BF7877A1C032E6A003AD392 /* PDPHeaderScrollView.h */,
+				1BF7877B1C032E6A003AD392 /* PDPHeaderScrollView.m */,
+				1BF7877D1C0335F6003AD392 /* ImageSubModule.h */,
+				1BF7877E1C0335F6003AD392 /* ImageSubModule.m */,
+			);
+			name = PDPHeader;
+			sourceTree = "<group>";
+		};
+		3C6551B41B7B1129007BA45D /* ShippingAddress */ = {
+			isa = PBXGroup;
+			children = (
+				3C6551B51B7B1E0D007BA45D /* ShippingAddressDetailViewController.h */,
+				3C6551B61B7B1E0D007BA45D /* ShippingAddressDetailViewController.m */,
+				3C6B8FA31B7C8561002BA8CE /* ShippingListTableViewCell.h */,
+				3C6B8FA41B7C8561002BA8CE /* ShippingListTableViewCell.m */,
+			);
+			path = ShippingAddress;
+			sourceTree = "<group>";
+		};
+		3C8F8E451BA17FEC00FA04DA /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				1B8FDE931BA2F55B00C21385 /* PaytmSDK */,
+				3C4876491BA9795C001DC2F6 /* PaymentModes.h */,
+				3C48764A1BA9795C001DC2F6 /* PaymentModes.m */,
+				18AEFF301BCFB9AE001FF77A /* PaymentModeCell.h */,
+				18AEFF311BCFB9AE001FF77A /* PaymentModeCell.m */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		3C9C80231B786CEE00DAA245 /* BrowseByCategory */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C80241B786D5900DAA245 /* BrowseByCategoryViewController.h */,
+				3C9C80251B786D5900DAA245 /* BrowseByCategoryViewController.m */,
+			);
+			path = BrowseByCategory;
+			sourceTree = "<group>";
+		};
+		3C9C80271B786DE600DAA245 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C80311B786ED600DAA245 /* BrowseByCategoryView.h */,
+				3C9C80321B786ED600DAA245 /* BrowseByCategoryView.m */,
+				3C9C80331B786ED600DAA245 /* CustomViewForCategory.h */,
+				3C9C80341B786ED600DAA245 /* CustomViewForCategory.m */,
+				3C9C80351B786ED600DAA245 /* GenderHeaderView.h */,
+				3C9C80361B786ED600DAA245 /* GenderHeaderView.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		3C9C802D1B786E7800DAA245 /* BaseHandler */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C802E1B786E9E00DAA245 /* SSBaseRequestHandler.h */,
+				3C9C802F1B786E9E00DAA245 /* SSBaseRequestHandler.m */,
+			);
+			path = BaseHandler;
+			sourceTree = "<group>";
+		};
+		3C9C803A1B78712100DAA245 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1B9298D61C09DE20002BED4C /* DeepLinkerHandler.h */,
+				1B9298D71C09DE20002BED4C /* DeepLinkerHandler.m */,
+				18A679D01C0F79C400054DE3 /* Luhn.h */,
+				18A679D11C0F79C400054DE3 /* Luhn.m */,
+				1B9298981C06D2D5002BED4C /* UI */,
+				1B92988F1C06CB48002BED4C /* Analytics */,
+				3C9C803F1B787A8500DAA245 /* SSUtility.h */,
+				3C9C80401B787A8500DAA245 /* SSUtility.m */,
+				18B4772A1B79F7B8009E0E38 /* FyndUser.h */,
+				18B4772B1B79F7B8009E0E38 /* FyndUser.m */,
+				1B519AAD1BD4029C00B374EB /* FyndActivityItemProvider.h */,
+				1B519AAE1BD4029C00B374EB /* FyndActivityItemProvider.m */,
+				1873E3A01C11AFC600DE243A /* CardInputFieldComponents */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3C9C804A1B787A9600DAA245 /* Parallax */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C805A1B787C4F00DAA245 /* UIScrollView+VGParallaxHeader.h */,
+				3C9C805B1B787C4F00DAA245 /* UIScrollView+VGParallaxHeader.m */,
+				3C9C804B1B787BB000DAA245 /* PureLayout */,
+			);
+			path = Parallax;
+			sourceTree = "<group>";
+		};
+		3C9C804B1B787BB000DAA245 /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C804C1B787C2D00DAA245 /* ALView+PureLayout.h */,
+				3C9C804D1B787C2D00DAA245 /* ALView+PureLayout.m */,
+				3C9C804E1B787C2D00DAA245 /* LICENSE */,
+				3C9C804F1B787C2D00DAA245 /* NSArray+PureLayout.h */,
+				3C9C80501B787C2D00DAA245 /* NSArray+PureLayout.m */,
+				3C9C80511B787C2D00DAA245 /* NSLayoutConstraint+PureLayout.h */,
+				3C9C80521B787C2D00DAA245 /* NSLayoutConstraint+PureLayout.m */,
+				3C9C80531B787C2D00DAA245 /* PureLayout.h */,
+				3C9C80541B787C2D00DAA245 /* PureLayout+Internal.h */,
+				3C9C80551B787C2D00DAA245 /* PureLayoutDefines.h */,
+			);
+			path = PureLayout;
+			sourceTree = "<group>";
+		};
+		3C9C805D1B787CB200DAA245 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3C5A91AD1C0F1DB600096304 /* AddCartPopUp.h */,
+				3C5A91AE1C0F1DB600096304 /* AddCartPopUp.m */,
+				3C5A91AF1C0F1DB600096304 /* PaymentController.h */,
+				3C5A91B01C0F1DB600096304 /* PaymentController.m */,
+				3C6B8FA91B7CBD2C002BA8CE /* ProfileViewController.h */,
+				3C6B8FAA1B7CBD2C002BA8CE /* ProfileViewController.m */,
+				18B477301B79F9CC009E0E38 /* MyAccountDetailViewController.h */,
+				18B477311B79F9CC009E0E38 /* MyAccountDetailViewController.m */,
+				188A64721B7CC9310003EF24 /* ProfileRequestHandler.h */,
+				188A64731B7CC9310003EF24 /* ProfileRequestHandler.m */,
+				1848CA941C0DE9B1007D7C6E /* PaymentCartRequestHandler.h */,
+				1848CA951C0DE9B1007D7C6E /* PaymentCartRequestHandler.m */,
+				3C8BC46F1BA28F7A003AE988 /* ShippingAddressListViewController.h */,
+				3C8BC4701BA28F7A003AE988 /* ShippingAddressListViewController.m */,
+				188A646E1B7CC6520003EF24 /* Model */,
+				18B477251B79AB90009E0E38 /* UI */,
+				3C6551BB1B7B1E5C007BA45D /* ShippingAddressModel.h */,
+				3C6551BC1B7B1E5C007BA45D /* ShippingAddressModel.m */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		3C9C80611B787CF100DAA245 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C80621B787D2300DAA245 /* AppDelegate.h */,
+				3C9C80631B787D2300DAA245 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		3C9C80651B787D3900DAA245 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C80691B78803000DAA245 /* HomeRequestHandler.h */,
+				3C9C806A1B78803000DAA245 /* HomeRequestHandler.m */,
+				3C9C80661B787D9400DAA245 /* ViewController.h */,
+				3C9C80671B787D9400DAA245 /* ViewController.m */,
+				1B29FFE21B7B0D6400B3080E /* TabBarViewController.h */,
+				1B29FFE31B7B0D6400B3080E /* TabBarViewController.m */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		3C9C80731B78811300DAA245 /* CustomPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C80741B78813100DAA245 /* CustomPopUp.h */,
+				3C9C80751B78813100DAA245 /* CustomPopUp.m */,
+				3C9C80761B78813100DAA245 /* NearestStorePopUp.h */,
+				3C9C80771B78813100DAA245 /* NearestStorePopUp.m */,
+				3C9C80781B78813100DAA245 /* NearestStorePopUp.m.orig */,
+				3C9C80791B78813100DAA245 /* PickAtStorePopUp.h */,
+				3C9C807A1B78813100DAA245 /* PickAtStorePopUp.m */,
+				1888E46C1BBBDDF2001425DF /* SizeBox.h */,
+				1888E46D1BBBDDF2001425DF /* SizeBox.m */,
+				3C9C807B1B78813100DAA245 /* PinCodePopUp.h */,
+				3C9C807C1B78813100DAA245 /* PinCodePopUp.m */,
+				3C9C807D1B78813100DAA245 /* PopHeaderView.h */,
+				3C9C807E1B78813100DAA245 /* PopHeaderView.m */,
+				3C9C807F1B78813100DAA245 /* PopOverlayHandler.h */,
+				3C9C80801B78813100DAA245 /* PopOverlayHandler.m */,
+			);
+			path = CustomPopUp;
+			sourceTree = "<group>";
+		};
+		3C9C80881B78820300DAA245 /* GridView */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C80931B7883A600DAA245 /* Cells */,
+				3C9C80CE1B78905D00DAA245 /* BrandCollectionHeaderView.h */,
+				3C9C80CF1B78905D00DAA245 /* BrandCollectionHeaderView.m */,
+				3C9C80891B78821900DAA245 /* CustomFlow.h */,
+				3C9C808A1B78821900DAA245 /* CustomFlow.m */,
+				3C9C808B1B78821900DAA245 /* GridView.h */,
+				3C9C808C1B78821900DAA245 /* GridView.m */,
+			);
+			path = GridView;
+			sourceTree = "<group>";
+		};
+		3C9C80931B7883A600DAA245 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1B31C2811C1F497D00878869 /* Offers */,
+				3C9C80941B7883BE00DAA245 /* BrandCollectionViewCell.h */,
+				3C9C80951B7883BE00DAA245 /* BrandCollectionViewCell.m */,
+				3C9C80961B7883BE00DAA245 /* BrandProductCell.h */,
+				3C9C80971B7883BE00DAA245 /* BrandProductCell.m */,
+				3C9C80981B7883BE00DAA245 /* BrandsGrid.h */,
+				3C9C80991B7883BE00DAA245 /* BrandsGrid.m */,
+				3C9C809A1B7883BE00DAA245 /* CollectionGrid.h */,
+				3C9C809B1B7883BE00DAA245 /* CollectionGrid.m */,
+				3C9C809C1B7883BE00DAA245 /* ProductCell.h */,
+				3C9C809D1B7883BE00DAA245 /* ProductCell.m */,
+				3C9C809E1B7883BE00DAA245 /* TipCollectionViewCell.h */,
+				3C9C809F1B7883BE00DAA245 /* TipCollectionViewCell.m */,
+				1BB911F11BA039F10083D266 /* HTMLCollectionViewCell.h */,
+				1BB911F21BA039F10083D266 /* HTMLCollectionViewCell.m */,
+				1B8FDE8A1BA150C400C21385 /* GridStatusCollectionViewCell.h */,
+				1B8FDE8B1BA150C400C21385 /* GridStatusCollectionViewCell.m */,
+				3C01985F1C043E5000FD93C0 /* WelcomeCardCell.h */,
+				3C0198601C043E5000FD93C0 /* WelcomeCardCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3C9C80AC1B78849C00DAA245 /* SortNFilter */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C80AD1B78850F00DAA245 /* FilterCheckboxTableViewCell.h */,
+				3C9C80AE1B78850F00DAA245 /* FilterCheckboxTableViewCell.m */,
+				3C9C80AF1B78850F00DAA245 /* FilterHeaderTableViewCell.h */,
+				3C9C80B01B78850F00DAA245 /* FilterHeaderTableViewCell.m */,
+				3C9C80B11B78850F00DAA245 /* FilterModel.h */,
+				3C9C80B21B78850F00DAA245 /* FilterModel.m */,
+				1B9C2B8C1BB6784F00FBBCBB /* FilterViewController.h */,
+				1B9C2B8D1BB6784F00FBBCBB /* FilterViewController.m */,
+				1BFD34131BB68EA80061C009 /* SortViewController.h */,
+				1BFD34141BB68EA80061C009 /* SortViewController.m */,
+			);
+			path = SortNFilter;
+			sourceTree = "<group>";
+		};
+		3C9C80BC1B78857800DAA245 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				3CB8B9641C16C8A400F0C99C /* NetBankingViewController.h */,
+				3CB8B9651C16C8A400F0C99C /* NetBankingViewController.m */,
+				3C015DF91C13209F00E8B2D2 /* CardAuthenticationViewController.h */,
+				3C015DFA1C13209F00E8B2D2 /* CardAuthenticationViewController.m */,
+				1B9D30B81B97341F006B469A /* CartViewController.h */,
+				1B9D30B91B97341F006B469A /* CartViewController.m */,
+				1885FD191B99E15700B958DA /* CartRequestHandler.h */,
+				1885FD1A1B99E15700B958DA /* CartRequestHandler.m */,
+				1B9D30BA1B97341F006B469A /* Model */,
+				1B9D30BD1B97341F006B469A /* UI */,
+				1B5D0AE31B96DE89001DF1E0 /* AddFromWishlistViewController.h */,
+				1B5D0AE41B96DE89001DF1E0 /* AddFromWishlistViewController.m */,
+				1B1E9AC91C101C24001839BB /* PaymentWebViewController.h */,
+				1B1E9ACA1C101C24001839BB /* PaymentWebViewController.m */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		3C9C80C11B788DA000DAA245 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C80C21B788DCB00DAA245 /* AutoSuggestModel.h */,
+				3C9C80C31B788DCB00DAA245 /* AutoSuggestModel.m */,
+				3C9C80C41B788DCB00DAA245 /* CategoryModel.h */,
+				3C9C80C51B788DCB00DAA245 /* CategoryModel.m */,
+				3C9C80C81B788E1900DAA245 /* GenderHeaderModel.h */,
+				3C9C80C91B788E1900DAA245 /* GenderHeaderModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9F40AF0DF2BD23C2044D5F83 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90CA6B640B7A307326A8BA49 /* Pods-Explore.debug.xcconfig */,
+				C047372AE1FE27802F020329 /* Pods-Explore.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B77B97B01B42DDFB00A868C4 /* LocationSearch */ = {
+			isa = PBXGroup;
+			children = (
+				B79628DD1B42DF4A00A0FF0F /* LocationSearchViewController.h */,
+				B79628DE1B42DF4A00A0FF0F /* LocationSearchViewController.m */,
+			);
+			path = LocationSearch;
+			sourceTree = "<group>";
+		};
+		B78953871B4A6055002BDDA8 /* Brands */ = {
+			isa = PBXGroup;
+			children = (
+				B7BE65D41B41B22200653E1A /* BrandsVIewController.h */,
+				B7BE65D51B41B22200653E1A /* BrandsVIewController.m */,
+				1BA53CDB1B722B2C00AFD528 /* BrowseByBrandRequestHandler.h */,
+				1BA53CDC1B722B2C00AFD528 /* BrowseByBrandRequestHandler.m */,
+				B7CCE75B1B4A61A2008F4D32 /* BrowseByBrandViewController.h */,
+				B7CCE75C1B4A61A2008F4D32 /* BrowseByBrandViewController.m */,
+			);
+			path = Brands;
+			sourceTree = "<group>";
+		};
+		B7BE65A21B41B1D400653E1A = {
+			isa = PBXGroup;
+			children = (
+				18F4C80B1B8842A700520905 /* GoogleService-Info.plist */,
+				B7BE65AD1B41B1D400653E1A /* Explore */,
+				B7BE65C71B41B1D400653E1A /* ExploreTests */,
+				B7BE65AC1B41B1D400653E1A /* Products */,
+				9F40AF0DF2BD23C2044D5F83 /* Pods */,
+				CFCF7C43224E3FC99D31F5A9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B7BE65AC1B41B1D400653E1A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B7BE65AB1B41B1D400653E1A /* Fynd.app */,
+				B7BE65C41B41B1D400653E1A /* ExploreTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B7BE65AD1B41B1D400653E1A /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				1B0127D71BC245050086228D /* Notification */,
+				3C8F8E451BA17FEC00FA04DA /* Payment */,
+				1BDE70461B7B37DC003DB93D /* OnBoarding */,
+				1B29FFD21B7A14A200B3080E /* UserAuthentication */,
+				1B29FFC71B7A080E00B3080E /* Frameworks */,
+				3C9C80611B787CF100DAA245 /* AppDelegate */,
+				3C9C804A1B787A9600DAA245 /* Parallax */,
+				1B38BF8F1B67A58C008033AE /* Network */,
+				3C9C803A1B78712100DAA245 /* Utilities */,
+				3C9C80651B787D3900DAA245 /* HomeView */,
+				B7BE65DE1B41B25D00653E1A /* Feed */,
+				B78953871B4A6055002BDDA8 /* Brands */,
+				1B38C0011B68DF5D008033AE /* BrowseByCollection */,
+				3C9C805D1B787CB200DAA245 /* Profile */,
+				3C9C80BC1B78857800DAA245 /* Cart */,
+				3C9C80231B786CEE00DAA245 /* BrowseByCategory */,
+				1B38BF9B1B67A58C008033AE /* Search */,
+				B77B97B01B42DDFB00A868C4 /* LocationSearch */,
+				185B6BF01B4FAD1100E363DD /* PDP */,
+				3C9C80AC1B78849C00DAA245 /* SortNFilter */,
+				B7BE66191B41B39C00653E1A /* Main.storyboard */,
+				B7BE65BD1B41B1D400653E1A /* LaunchScreen.xib */,
+				B7BE65AE1B41B1D400653E1A /* Supporting Files */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
+		B7BE65AE1B41B1D400653E1A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1B29FF611B74C67400B3080E /* Images.xcassets */,
+				B7C815051B5CFAAF007C51C9 /* Fonts */,
+				B706828B1B456B68004EF525 /* PrefixHeader.pch */,
+				B7BE66231B41B43000653E1A /* Images */,
+				B7BE65AF1B41B1D400653E1A /* Info.plist */,
+				B7BE65B01B41B1D400653E1A /* main.m */,
+				3CDB10531BB4030000C97B12 /* DeviceModel.plist */,
+				1B1BAF381C21576B004A99AD /* Discount_Banner.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B7BE65C71B41B1D400653E1A /* ExploreTests */ = {
+			isa = PBXGroup;
+			children = (
+				B7BE65CA1B41B1D400653E1A /* ExploreTests.m */,
+				B7BE65C81B41B1D400653E1A /* Supporting Files */,
+			);
+			path = ExploreTests;
+			sourceTree = "<group>";
+		};
+		B7BE65C81B41B1D400653E1A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B7BE65C91B41B1D400653E1A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B7BE65DE1B41B25D00653E1A /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C80A61B78846E00DAA245 /* FeedViewController.h */,
+				3C9C80A71B78846E00DAA245 /* FeedViewController.m */,
+				3C9C80A81B78846E00DAA245 /* ProductCollectionAdapter.h */,
+				3C9C80A91B78846E00DAA245 /* ProductCollectionAdapter.m */,
+				B7BE65E21B41B29A00653E1A /* Model */,
+				B7BE65DF1B41B27B00653E1A /* UI */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		B7BE65DF1B41B27B00653E1A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3C9C80881B78820300DAA245 /* GridView */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B7BE65E21B41B29A00653E1A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BF213F41B70E374000186A9 /* BrandTabData.h */,
+				1BF213F51B70E374000186A9 /* BrandTabData.m */,
+				1BF213F61B70E374000186A9 /* CollectionTabData.h */,
+				1BF213F71B70E374000186A9 /* CollectionTabData.m */,
+				1BF213F81B70E374000186A9 /* PaginationData.h */,
+				1BF213F91B70E374000186A9 /* PaginationData.m */,
+				B7BE66071B41B34A00653E1A /* ProductTileModel.h */,
+				B7BE66081B41B34A00653E1A /* ProductTileModel.m */,
+				B7BE66091B41B34A00653E1A /* BrandTileModel.h */,
+				B7BE660A1B41B34A00653E1A /* BrandTileModel.m */,
+				B7BE660B1B41B34A00653E1A /* TipTileModel.h */,
+				B7BE660C1B41B34A00653E1A /* TipTileModel.m */,
+				B7BE660D1B41B34A00653E1A /* CollectionTileModel.h */,
+				B7BE660E1B41B34A00653E1A /* CollectionTileModel.m */,
+				B7BE660F1B41B34A00653E1A /* ActionModel.h */,
+				B7BE66101B41B34A00653E1A /* ActionModel.m */,
+				B7BE66111B41B34A00653E1A /* SubProductModel.h */,
+				B7BE66121B41B34A00653E1A /* SubProductModel.m */,
+				1BB911EE1BA037170083D266 /* HTMLTileModel.h */,
+				1BB911EF1BA037170083D266 /* HTMLTileModel.m */,
+				1B31C27B1C1F3E3300878869 /* OffersTileModel.h */,
+				1B31C27C1C1F3E3300878869 /* OffersTileModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B7BE66231B41B43000653E1A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				18C7542F1C0ECD6C0026F343 /* BankCardType */,
+				1B9D9DD41BFF49D5008FF670 /* loader.gif */,
+				1B6110F61BC63D550011B886 /* default_cover.png */,
+				1B6110F71BC63D550011B886 /* default_dp.png */,
+				1B6EB11E1BC3FBCB0084C57B /* CarousalImages */,
+				1B9D03641BBEC9A000B43A93 /* Splash screen.gif */,
+				1B38BFAD1B67A5F1008033AE /* PDPIcons */,
+				181F193B1B42CE9200148686 /* Arc3.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		B7C815051B5CFAAF007C51C9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B7C815061B5CFAF3007C51C9 /* Montserrat-Black.otf */,
+				B7C815071B5CFAF3007C51C9 /* Montserrat-Bold.otf */,
+				B7C815081B5CFAF3007C51C9 /* Montserrat-Hairline.otf */,
+				B7C815091B5CFAF3007C51C9 /* Montserrat-Light.otf */,
+				B7C8150A1B5CFAF3007C51C9 /* Montserrat-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CFCF7C43224E3FC99D31F5A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C93C3A21BBD0B1500049A9E /* MessageUI.framework */,
+				D17A19C33A247185FA76BF41 /* libPods-Explore.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B7BE65AA1B41B1D400653E1A /* Explore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7BE65CE1B41B1D400653E1A /* Build configuration list for PBXNativeTarget "Explore" */;
+			buildPhases = (
+				F3050FD6C4439049D7B37E98 /* Check Pods Manifest.lock */,
+				B7BE65A71B41B1D400653E1A /* Sources */,
+				B7BE65A81B41B1D400653E1A /* Frameworks */,
+				B7BE65A91B41B1D400653E1A /* Resources */,
+				B09FA17FF166F1FD0F155326 /* Copy Pods Resources */,
+				1BA020ED1BC26A6A00008477 /* Run Script */,
+				E6C78F53479A111935FB1F92 /* Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Explore;
+			productName = Explore;
+			productReference = B7BE65AB1B41B1D400653E1A /* Fynd.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B7BE65C31B41B1D400653E1A /* ExploreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7BE65D11B41B1D400653E1A /* Build configuration list for PBXNativeTarget "ExploreTests" */;
+			buildPhases = (
+				B7BE65C01B41B1D400653E1A /* Sources */,
+				B7BE65C11B41B1D400653E1A /* Frameworks */,
+				B7BE65C21B41B1D400653E1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7BE65C61B41B1D400653E1A /* PBXTargetDependency */,
+			);
+			name = ExploreTests;
+			productName = ExploreTests;
+			productReference = B7BE65C41B41B1D400653E1A /* ExploreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B7BE65A31B41B1D400653E1A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Rahul;
+				TargetAttributes = {
+					B7BE65AA1B41B1D400653E1A = {
+						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = LNED8E26QN;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 0;
+							};
+						};
+					};
+					B7BE65C31B41B1D400653E1A = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = B7BE65AA1B41B1D400653E1A;
+					};
+				};
+			};
+			buildConfigurationList = B7BE65A61B41B1D400653E1A /* Build configuration list for PBXProject "Explore" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B7BE65A21B41B1D400653E1A;
+			productRefGroup = B7BE65AC1B41B1D400653E1A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B7BE65AA1B41B1D400653E1A /* Explore */,
+				B7BE65C31B41B1D400653E1A /* ExploreTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B7BE65A91B41B1D400653E1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7C8150B1B5D00DE007C51C9 /* Montserrat-Black.otf in Resources */,
+				3CF1DA1E1C25AF3A00B9319E /* RupayRect.png in Resources */,
+				18BAD6C41C0F1810002738F2 /* Rupay.png in Resources */,
+				3CF1DA1A1C25AF3A00B9319E /* AmexRect.png in Resources */,
+				3CF1DA1C1C25AF3A00B9319E /* MaestroRect.png in Resources */,
+				B7C8150C1B5D00DE007C51C9 /* Montserrat-Bold.otf in Resources */,
+				B7C8150D1B5D00DE007C51C9 /* Montserrat-Hairline.otf in Resources */,
+				1B73BDF81C26CC6500C385B7 /* Visa.png in Resources */,
+				1B6EB1391BC3FBF10084C57B /* TopRight11@3x.png in Resources */,
+				B7C8150E1B5D00DE007C51C9 /* Montserrat-Light.otf in Resources */,
+				3C10DD5E1C197FEB00988FDF /* Diners.png in Resources */,
+				1873E3B71C11B01700DE243A /* CardPatterns.plist in Resources */,
+				1B6EB1331BC3FBF10084C57B /* TopRight13.png in Resources */,
+				18BAD6C01C0F1810002738F2 /* Amex.png in Resources */,
+				B7C8150F1B5D00DE007C51C9 /* Montserrat-Regular.otf in Resources */,
+				3C9C80831B78813100DAA245 /* NearestStorePopUp.m.orig in Resources */,
+				1B6EB1381BC3FBF10084C57B /* TopLeft11@3x.png in Resources */,
+				3CDB10541BB4030000C97B12 /* DeviceModel.plist in Resources */,
+				18BAD6C21C0F1810002738F2 /* Maestro.png in Resources */,
+				1B6EB1321BC3FBF10084C57B /* TopRight12.png in Resources */,
+				3C9C80571B787C2D00DAA245 /* LICENSE in Resources */,
+				1B9D03661BBEC9A000B43A93 /* Splash screen.gif in Resources */,
+				1B1BAF391C21576B004A99AD /* Discount_Banner.png in Resources */,
+				1B9D9DD51BFF49D5008FF670 /* loader.gif in Resources */,
+				1B29FF621B74C67400B3080E /* Images.xcassets in Resources */,
+				1B6110F91BC63D550011B886 /* default_dp.png in Resources */,
+				3CF1DA1B1C25AF3A00B9319E /* DinersRect.png in Resources */,
+				1B6110F81BC63D550011B886 /* default_cover.png in Resources */,
+				18F4C80C1B8842A700520905 /* GoogleService-Info.plist in Resources */,
+				1B38BFD41B67A5F1008033AE /* cannot_deliver.png in Resources */,
+				1B6EB1301BC3FBF10084C57B /* TopLeft11.png in Resources */,
+				1B6EB1361BC3FBF10084C57B /* TopRight11@2x.png in Resources */,
+				1B6EB13A1BC3FBF10084C57B /* TopRight12@3x.png in Resources */,
+				3CF1DA1D1C25AF3A00B9319E /* MasterRect.png in Resources */,
+				1BC88FD21BC3FF8300CF06A1 /* TopRight13@2x.png in Resources */,
+				1BC88FD11BC3FF8300CF06A1 /* TopRight12@2x.png in Resources */,
+				18BAD6C31C0F1810002738F2 /* Master.png in Resources */,
+				1B6EB1311BC3FBF10084C57B /* TopRight11.png in Resources */,
+				1B6EB27C1BC3FE090084C57B /* TopLeft11@2x.png in Resources */,
+				181F193C1B42CE9200148686 /* Arc3.png in Resources */,
+				1B73BDF61C26CC4100C385B7 /* VisaRect.png in Resources */,
+				B7BE65BF1B41B1D400653E1A /* LaunchScreen.xib in Resources */,
+				B7BE661A1B41B39C00653E1A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7BE65C21B41B1D400653E1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18F4C80D1B8842A700520905 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1BA020ED1BC26A6A00008477 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SCRIPT=`/usr/bin/find \"${SRCROOT}\" -name newrelic_postbuild.sh | head -n 1`\n\n/bin/sh \"${SCRIPT}\" \"AA2f6d9641d69ad4a1d7ec32ba7502cf29e2e193b4\"";
+		};
+		B09FA17FF166F1FD0F155326 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Explore/Pods-Explore-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6C78F53479A111935FB1F92 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Explore/Pods-Explore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3050FD6C4439049D7B37E98 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B7BE65A71B41B1D400653E1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18B477281B79AB90009E0E38 /* MyAccountView.m in Sources */,
+				188A647D1B7CD6D50003EF24 /* FreeShipping.m in Sources */,
+				1B9298BD1C06D472002BED4C /* UIImage+ImageEffects.m in Sources */,
+				1BF213FB1B70E374000186A9 /* CollectionTabData.m in Sources */,
+				3C9C80AB1B78846E00DAA245 /* ProductCollectionAdapter.m in Sources */,
+				3C9C80B81B78850F00DAA245 /* FilterHeaderTableViewCell.m in Sources */,
+				3C9C80561B787C2D00DAA245 /* ALView+PureLayout.m in Sources */,
+				3C5A91B21C0F1DB600096304 /* PaymentController.m in Sources */,
+				3C9412151BB03C770013A696 /* ReturnReasonsTableViewCell.m in Sources */,
+				3C0198611C043E5000FD93C0 /* WelcomeCardCell.m in Sources */,
+				1BDE70531B7C7A80003DB93D /* SignUpViewController.m in Sources */,
+				3C9C80261B786D5900DAA245 /* BrowseByCategoryViewController.m in Sources */,
+				3C48764B1BA9795C001DC2F6 /* PaymentModes.m in Sources */,
+				1B47AFE71C0FF3E400268BE4 /* PaymentSummaryView.m in Sources */,
+				1B38BFA31B67A58C008033AE /* SSURLSession.m in Sources */,
+				1B5C674A1B9F012300F2DAFC /* MyOrderAddressCell.m in Sources */,
+				18B4772C1B79F7B8009E0E38 /* FyndUser.m in Sources */,
+				3C9C80CD1B788FB100DAA245 /* PDPModel.m in Sources */,
+				1B31C2841C1F49B000878869 /* OffersContainerCollectionViewCell.m in Sources */,
+				1BFD34151BB68EA80061C009 /* SortViewController.m in Sources */,
+				1873E3B31C11B01700DE243A /* BKCardPatternInfo.m in Sources */,
+				1B38BFA81B67A58C008033AE /* SearchViewController.m in Sources */,
+				1B9298BF1C06D472002BED4C /* FyndBlankPage.m in Sources */,
+				1B0D97E81B7CD190000699B1 /* CouponsView.m in Sources */,
+				3C9C80391B786ED600DAA245 /* GenderHeaderView.m in Sources */,
+				B7BE66161B41B34A00653E1A /* CollectionTileModel.m in Sources */,
+				1BCB17C71BD1877100A3EB20 /* RetunPolicyViewController.m in Sources */,
+				3C9C80841B78813100DAA245 /* PickAtStorePopUp.m in Sources */,
+				1888E46E1BBBDDF2001425DF /* SizeBox.m in Sources */,
+				3C9C80371B786ED600DAA245 /* BrowseByCategoryView.m in Sources */,
+				3CC8F4BA1B7FC14A00A7F0DF /* TermsOfService.m in Sources */,
+				1B9D30C21B97341F006B469A /* CartViewController.m in Sources */,
+				1B1E9ACB1C101C24001839BB /* PaymentWebViewController.m in Sources */,
+				1B5C67471B9E077500F2DAFC /* MyOrderProductCell.m in Sources */,
+				3CAC060C1B79B33200EF8563 /* OrdersView.m in Sources */,
+				3C9C80C61B788DCB00DAA245 /* AutoSuggestModel.m in Sources */,
+				1BF7877F1C0335F6003AD392 /* ImageSubModule.m in Sources */,
+				3C9C80A21B7883BE00DAA245 /* BrandsGrid.m in Sources */,
+				1B5C67421B9D4BA900F2DAFC /* OrderHeaderView.m in Sources */,
+				1B47AFEA1C0FF52B00268BE4 /* PullableView.m in Sources */,
+				1B67DEAB1B7D084E0091830D /* VerifyOTPViewController.m in Sources */,
+				1B8839E71B7FC1540014D622 /* UserAuthenticationHandler.m in Sources */,
+				18A679D21C0F79C400054DE3 /* Luhn.m in Sources */,
+				3C9C80B91B78850F00DAA245 /* FilterModel.m in Sources */,
+				3C6B8FAB1B7CBD2C002BA8CE /* ProfileViewController.m in Sources */,
+				1B9298C01C06D472002BED4C /* FyndErrorInfoView.m in Sources */,
+				3C9C80641B787D2300DAA245 /* AppDelegate.m in Sources */,
+				3C9C805C1B787C4F00DAA245 /* UIScrollView+VGParallaxHeader.m in Sources */,
+				180759E01B835D7B0098C2C2 /* PDPFeedBackTableViewCell.m in Sources */,
+				3C9C80681B787D9400DAA245 /* ViewController.m in Sources */,
+				3C9C80A31B7883BE00DAA245 /* CollectionGrid.m in Sources */,
+				B7BE66141B41B34A00653E1A /* BrandTileModel.m in Sources */,
+				1873E3B11C11B01700DE243A /* BKCardNumberField.m in Sources */,
+				185B6C0D1B4FAE7800E363DD /* PDPMoreDetail.m in Sources */,
+				3C94120F1BB009580013A696 /* ReturnReasons.m in Sources */,
+				1B9D30C31B97341F006B469A /* CartItem.m in Sources */,
+				1BD047381B637BDF00E98111 /* PDPViewController.m in Sources */,
+				1B9D30C81B9A10C2006B469A /* MyOrderModel.m in Sources */,
+				1B9298CF1C09DB6B002BED4C /* ImageViewerContainer.m in Sources */,
+				3C9C80A51B7883BE00DAA245 /* TipCollectionViewCell.m in Sources */,
+				1B9298D51C09DBD9002BED4C /* PDPTopView.m in Sources */,
+				3C9C80821B78813100DAA245 /* NearestStorePopUp.m in Sources */,
+				3C8E96E31B7DE1DB00457128 /* FAQView.m in Sources */,
+				1B9298C51C06D472002BED4C /* UITextField+NextResponder.m in Sources */,
+				3C9C80851B78813100DAA245 /* PinCodePopUp.m in Sources */,
+				1B29FFD51B7A157100B3080E /* HomeViewController.m in Sources */,
+				1B9298BE1C06D472002BED4C /* FyndActivityIndicator.m in Sources */,
+				1BDE704C1B7B6623003DB93D /* OBBrandSelectionViewController.m in Sources */,
+				1B9298C21C06D472002BED4C /* SSLine.m in Sources */,
+				3C9C80A01B7883BE00DAA245 /* BrandCollectionViewCell.m in Sources */,
+				3C6551BD1B7B1E5C007BA45D /* ShippingAddressModel.m in Sources */,
+				3C9C80D01B78905D00DAA245 /* BrandCollectionHeaderView.m in Sources */,
+				18B477321B79F9CC009E0E38 /* MyAccountDetailViewController.m in Sources */,
+				3C8576041B8479CC00A0E466 /* OnBoardingRequestHandler.m in Sources */,
+				1B9298C11C06D472002BED4C /* UINavigationBar+Transparency.m in Sources */,
+				3C9C80811B78813100DAA245 /* CustomPopUp.m in Sources */,
+				3C9C80D31B78933500DAA245 /* CollectionsViewController.m in Sources */,
+				1848CA961C0DE9B1007D7C6E /* PaymentCartRequestHandler.m in Sources */,
+				1BF7877C1C032E6A003AD392 /* PDPHeaderScrollView.m in Sources */,
+				3C9C806B1B78803000DAA245 /* HomeRequestHandler.m in Sources */,
+				1873E3B41C11B01700DE243A /* BKCurrencyTextField.m in Sources */,
+				1B79F1A01B7DB49800584D5D /* ResetPasswordViewController.m in Sources */,
+				180759DD1B834A810098C2C2 /* PDPFeedBackViewController.m in Sources */,
+				1B9298D81C09DE20002BED4C /* DeepLinkerHandler.m in Sources */,
+				1B9298C81C06D4B7002BED4C /* SCGIFImageView.m in Sources */,
+				3C9C80A41B7883BE00DAA245 /* ProductCell.m in Sources */,
+				3C9C808D1B78821900DAA245 /* CustomFlow.m in Sources */,
+				B7BE66151B41B34A00653E1A /* TipTileModel.m in Sources */,
+				1BA53CDD1B722B2C00AFD528 /* BrowseByBrandRequestHandler.m in Sources */,
+				3C9C80471B787A8500DAA245 /* SSUtility.m in Sources */,
+				1B9298C41C06D472002BED4C /* UIFont+FontWithNameAndSize.m in Sources */,
+				3C9C80581B787C2D00DAA245 /* NSArray+PureLayout.m in Sources */,
+				1873E3B01C11B01700DE243A /* BKCardExpiryField.m in Sources */,
+				B7BE66181B41B34A00653E1A /* SubProductModel.m in Sources */,
+				1BB911F01BA037170083D266 /* HTMLTileModel.m in Sources */,
+				3C9C80301B786E9E00DAA245 /* SSBaseRequestHandler.m in Sources */,
+				1B8FDE8C1BA150C400C21385 /* GridStatusCollectionViewCell.m in Sources */,
+				1BDE704F1B7B6632003DB93D /* OBCollectionSelectionViewController.m in Sources */,
+				1873E3B51C11B01700DE243A /* BKForwardingTextField.m in Sources */,
+				B7CCE75D1B4A61A2008F4D32 /* BrowseByBrandViewController.m in Sources */,
+				1848CA931C0DD5D0007D7C6E /* BankCardData.m in Sources */,
+				1873E3B21C11B01700DE243A /* BKCardNumberFormatter.m in Sources */,
+				3C9C80861B78813100DAA245 /* PopHeaderView.m in Sources */,
+				B79628DF1B42DF4A00A0FF0F /* LocationSearchViewController.m in Sources */,
+				1885FD1B1B99E15700B958DA /* CartRequestHandler.m in Sources */,
+				1B29FFE41B7B0D6400B3080E /* TabBarViewController.m in Sources */,
+				3C48DC8B1B80759F0077B54C /* PaymentOption.m in Sources */,
+				B7BE66171B41B34A00653E1A /* ActionModel.m in Sources */,
+				1B0D97E91B7CD190000699B1 /* NotificationSettings.m in Sources */,
+				1B29FF1C1B726C4C00B3080E /* BrowseByCollectionRequestHandler.m in Sources */,
+				185B6C0C1B4FAE7800E363DD /* ProductDetailView.m in Sources */,
+				3C9C80591B787C2D00DAA245 /* NSLayoutConstraint+PureLayout.m in Sources */,
+				1B9C2B8E1BB6784F00FBBCBB /* FilterViewController.m in Sources */,
+				3C9412121BB02F580013A696 /* ReturnReasonsView.m in Sources */,
+				1B9D30C41B97341F006B469A /* CartItemCell.m in Sources */,
+				3C9C80871B78813100DAA245 /* PopOverlayHandler.m in Sources */,
+				188A64711B7CC6850003EF24 /* MyCoupons.m in Sources */,
+				1B38C0041B68DFDC008033AE /* BrowseByCollectionViewController.m in Sources */,
+				1B31C2871C1F4A2A00878869 /* OffersView.m in Sources */,
+				3C9C80C71B788DCB00DAA245 /* CategoryModel.m in Sources */,
+				3CB8B9661C16C8A400F0C99C /* NetBankingViewController.m in Sources */,
+				3C9C80921B7882B200DAA245 /* PDPStoresCell.m in Sources */,
+				18BA9EE31B9C61CF00D86F68 /* CartData.m in Sources */,
+				3C4876481BA9530D001DC2F6 /* DeliveryTimeSlotModel.m in Sources */,
+				1B31C28A1C200F5000878869 /* LargeOfferCell.m in Sources */,
+				B7BE66131B41B34A00653E1A /* ProductTileModel.m in Sources */,
+				189492C81B82FBB200FCF824 /* PDPHandler.m in Sources */,
+				1B31C27D1C1F3E3300878869 /* OffersTileModel.m in Sources */,
+				3C9C80B71B78850F00DAA245 /* FilterCheckboxTableViewCell.m in Sources */,
+				3C015DFB1C13209F00E8B2D2 /* CardAuthenticationViewController.m in Sources */,
+				1B472E291C205C6300F5165C /* NotificationTableViewCell.m in Sources */,
+				1B79F19D1B7DB44100584D5D /* LoginViewController.m in Sources */,
+				1B8839E41B7F6ECF0014D622 /* FacebookDetailsViewController.m in Sources */,
+				3C9C80CA1B788E1900DAA245 /* GenderHeaderModel.m in Sources */,
+				1BDE70491B7B37FA003DB93D /* LocationAccessViewController.m in Sources */,
+				3C9C808E1B78821900DAA245 /* GridView.m in Sources */,
+				1B9298921C06CB7F002BED4C /* FyndAnalytics.m in Sources */,
+				18B477361B7A0AB1009E0E38 /* EditProfileView.m in Sources */,
+				3CAC060F1B79B34400EF8563 /* WishListView.m in Sources */,
+				3C6B8FA51B7C8561002BA8CE /* ShippingListTableViewCell.m in Sources */,
+				1B0127DA1BC2458A0086228D /* NotificationViewController.m in Sources */,
+				1B67DEA81B7D08400091830D /* SendOTPViewController.m in Sources */,
+				3C9C80AA1B78846E00DAA245 /* FeedViewController.m in Sources */,
+				3C5A91B11C0F1DB600096304 /* AddCartPopUp.m in Sources */,
+				3C9C80A11B7883BE00DAA245 /* BrandProductCell.m in Sources */,
+				188A64741B7CC9310003EF24 /* ProfileRequestHandler.m in Sources */,
+				B7BE65B11B41B1D400653E1A /* main.m in Sources */,
+				1B519AAF1BD4029C00B374EB /* FyndActivityItemProvider.m in Sources */,
+				1B9298C31C06D472002BED4C /* TextFieldWithImage.m in Sources */,
+				1B9298CE1C09DB6B002BED4C /* ImageSubView.m in Sources */,
+				B7BE65DA1B41B22200653E1A /* BrandsVIewController.m in Sources */,
+				1B5D0AE51B96DE89001DF1E0 /* AddFromWishlistViewController.m in Sources */,
+				3C6551B71B7B1E0D007BA45D /* ShippingAddressDetailViewController.m in Sources */,
+				188FB88B1BB9203C009A146A /* PDPSizeGuideViewController.m in Sources */,
+				1BF213FC1B70E374000186A9 /* PaginationData.m in Sources */,
+				3C8BC4711BA28F7A003AE988 /* ShippingAddressListViewController.m in Sources */,
+				3C9C80381B786ED600DAA245 /* CustomViewForCategory.m in Sources */,
+				1BB911F31BA039F10083D266 /* HTMLCollectionViewCell.m in Sources */,
+				189950B81B81AD460003D7CB /* NotificationCell.m in Sources */,
+				1BF213FA1B70E374000186A9 /* BrandTabData.m in Sources */,
+				1873E3B61C11B01700DE243A /* BKMoneyUtils.m in Sources */,
+				3C9C802A1B786E3100DAA245 /* SearchRequestHandler.m in Sources */,
+				1B9298A41C06D3C8002BED4C /* MixPanelSuperProperties.m in Sources */,
+				1B5C674D1B9F0C1B00F2DAFC /* MyOrderCostCell.m in Sources */,
+				18AEFF321BCFB9AE001FF77A /* PaymentModeCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7BE65C01B41B1D400653E1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7BE65CB1B41B1D400653E1A /* ExploreTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B7BE65C61B41B1D400653E1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7BE65AA1B41B1D400653E1A /* Explore */;
+			targetProxy = B7BE65C51B41B1D400653E1A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B7BE65BD1B41B1D400653E1A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B7BE65BE1B41B1D400653E1A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B7BE65CC1B41B1D400653E1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shopsense Retail Technologies Private Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shopsense Retail Technologies Private Limited";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Fynd;
+				PROVISIONING_PROFILE = "bce848f5-0a42-4285-bf0a-86eebd6f8581";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B7BE65CD1B41B1D400653E1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shopsense Retail Technologies Private Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shopsense Retail Technologies Private Limited";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Fynd;
+				PROVISIONING_PROFILE = "bce848f5-0a42-4285-bf0a-86eebd6f8581";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B7BE65CF1B41B1D400653E1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90CA6B640B7A307326A8BA49 /* Pods-Explore.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shopsense Retail Technologies Private Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shopsense Retail Technologies Private Limited";
+				COMPRESS_PNG_FILES = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Explore/Frameworks",
+				);
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Google\"",
+					"\"${PODS_ROOT}/Headers/Public/Google/Google\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleNetworkingUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/Mixpanel\"",
+				);
+				INFOPLIST_FILE = Explore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Explore/Payment/PaytmSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shopsense.fynd;
+				PRODUCT_NAME = Fynd;
+				PROVISIONING_PROFILE = "bce848f5-0a42-4285-bf0a-86eebd6f8581";
+			};
+			name = Debug;
+		};
+		B7BE65D01B41B1D400653E1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C047372AE1FE27802F020329 /* Pods-Explore.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shopsense Retail Technologies Private Limited";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shopsense Retail Technologies Private Limited";
+				COMPRESS_PNG_FILES = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Explore/Frameworks",
+				);
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Google\"",
+					"\"${PODS_ROOT}/Headers/Public/Google/Google\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleAnalytics\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleNetworkingUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleSymbolUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/GoogleUtilities\"",
+					"\"${PODS_ROOT}/Headers/Public/Mixpanel\"",
+				);
+				INFOPLIST_FILE = Explore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Explore/Payment/PaytmSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shopsense.fynd;
+				PRODUCT_NAME = Fynd;
+				PROVISIONING_PROFILE = "bce848f5-0a42-4285-bf0a-86eebd6f8581";
+			};
+			name = Release;
+		};
+		B7BE65D21B41B1D400653E1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ExploreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shopsense.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Explore.app/Explore";
+			};
+			name = Debug;
+		};
+		B7BE65D31B41B1D400653E1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ExploreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shopsense.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Explore.app/Explore";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B7BE65A61B41B1D400653E1A /* Build configuration list for PBXProject "Explore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7BE65CC1B41B1D400653E1A /* Debug */,
+				B7BE65CD1B41B1D400653E1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7BE65CE1B41B1D400653E1A /* Build configuration list for PBXNativeTarget "Explore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7BE65CF1B41B1D400653E1A /* Debug */,
+				B7BE65D01B41B1D400653E1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B7BE65D11B41B1D400653E1A /* Build configuration list for PBXNativeTarget "ExploreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7BE65D21B41B1D400653E1A /* Debug */,
+				B7BE65D31B41B1D400653E1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B7BE65A31B41B1D400653E1A /* Project object */;
+}

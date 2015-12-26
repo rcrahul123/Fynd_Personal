@@ -1,0 +1,855 @@
+//
+//  ProductDetailView.m
+//  ParallexPDPSample
+//
+//  Created by Pranav on 08/07/15.
+//  Copyright (c) 2015 Pranav. All rights reserved.
+//
+
+#import "ProductDetailView.h"
+#import "PDPMoreDetail.h"
+#import <QuartzCore/QuartzCore.h>
+#import "CustomPopUp.h"
+#import "SSLine.h"
+#import "SSUtility.h"
+
+//#define HELVETICA_BOLD   @"Helvetica-Bold"
+//#define HELVETICA        @"Helvetica"
+//#define HELVETICA_NEUE_ITALIC      @"HelveticaNeue-Italic"
+//#define HELVETICA_NEUE      @"HelveticaNeue"
+//#define HelveticaNeue_Thin @"HelveticaNeue-Thin"
+
+
+
+
+
+@interface ProductDetailView()<PDPMoreDetailDelegate>
+
+@property (nonatomic,strong) UIImageView *logoImage;
+@property (nonatomic,strong) UILabel     *productName;
+@property (nonatomic,strong) UILabel     *productPrice;
+@property (nonatomic,strong) UILabel     *strikeOutPrice;
+@property (nonatomic,strong) UIButton *likeImage;
+@property (nonatomic,strong) UILabel     *likeCount;
+@property (nonatomic,strong) UIImageView *pickSizeImage;
+@property (nonatomic,strong) UILabel     *pickSizeHeading;
+//@property (nonatomic,strong) UILabel     *sizeGuide;
+@property (nonatomic,strong) UIButton     *sizeGuide;
+@property (nonatomic,strong) UIScrollView *sizeScrollContainer;
+
+@property (nonatomic,strong) UIImageView  *coupanImage;
+@property (nonatomic,strong) UILabel      *availableCoupans;
+
+@property (nonatomic,strong) UIView       *firstStripView;
+@property (nonatomic,strong) UIView       *secondStripView;
+@property (nonatomic,strong) UIView       *thirdStripView;
+@property (nonatomic,strong) UIView        *deliveryOptionView;
+@property (nonatomic,strong) UIView        *nearestStoreView;
+
+@property (nonatomic,strong) UIButton      *tryAtHomeButton;
+@property (nonatomic,strong) UIButton      *pickAtStoreButton;
+@property (nonatomic,strong) UIButton      *addToCartButton;
+
+@property (nonatomic,strong) PDPMoreDetail *pdpMoreDetail;
+@property (nonatomic,strong) UIView        *feedBackView;
+
+@property (nonatomic, strong) UIView *gridContainerView;
+@property (nonatomic, strong) GridView *suggestedProductView;
+@property (nonatomic,strong)  CustomPopUp *popUp;
+@property (nonatomic,strong) NSMutableArray *sizeBtnArray;
+@property (nonatomic,strong) UIImageView *pdpCurveImage;
+
+- (void)generateProductInfo;
+- (UIView*)generateFirstStrip;
+- (UIView*)generateSecondStrip;
+- (UIView*)generateThirdStrip;
+- (UIView *)checkDeliveryOptionsView;
+- (UIView*)generateNearestStoreView;
+- (void)generatePDPMoreDetals;
+- (UIView *)generateFeedBackView;
+@end
+
+@implementation ProductDetailView
+
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+}
+*/
+
+- (id)initWithFrame:(CGRect)frame{
+    if(self == [super initWithFrame:frame]){
+//        [self setBackgroundColor:[UIColor orangeColor]];
+        [self setBackgroundColor:[UIColor whiteColor]];
+//        [self generateProductInfo];
+    }
+    return self;
+}
+
+- (void)generateProductInfo{
+    
+    self.firstStripView =  [self generateFirstStrip];
+    [self addSubview:self.firstStripView];
+
+    
+    self.secondStripView = [self generateSecondStrip];
+    [self addSubview:self.secondStripView];
+    /*
+    floatingButtonsStartingFrame = CGRectMake(self.frame.origin.x
+                                              , self.productPrice.frame.origin.y + 30, self.productPrice.frame.size.width, self.productPrice.frame.size.height);
+     */
+    floatingButtonsStartingFrame = CGRectMake(self.frame.origin.x
+                                              , self.firstStripView.frame.origin.y+13, self.firstStripView.frame.size.width, self.firstStripView.frame.size.height);
+    
+    floatingButtonsFixedFrame = CGRectMake(self.frame.origin.x, self.secondStripView.frame.origin.y + self.secondStripView.frame.size.height + 20,self.frame.size.width, 50);
+
+    self.thirdStripView = [self generateThirdStrip];
+    [self addSubview:self.thirdStripView];
+    
+//    floatingButtonsFixedFrame = CGRectMake(self.frame.origin.x, self.addToCartButton.frame.origin.y + self.addToCartButton.frame.size.height + 10,self.frame.size.width, 50);
+
+    
+
+    self.deliveryOptionView =[self checkDeliveryOptionsView];
+    [self addSubview:self.deliveryOptionView];
+    
+    self.nearestStoreView = [self generateNearestStoreView];
+    [self addSubview:self.nearestStoreView];
+    
+    [self generatePDPMoreDetals];
+    
+    self.feedBackView = [self generateFeedBackView];
+    [self addSubview:self.feedBackView];
+//    NSLog(@"self.feedBackView  Frame ..... .    X =%f   Y= %f  W =%f  H =%f",self.feedBackView.frame.origin.x,self.feedBackView.frame.origin.y,self.feedBackView.frame.size.width,self.feedBackView.frame.size.height);
+
+    
+//    [self showSuggestedProducts];
+    
+}
+
+- (UIView*)generateFirstStrip{
+
+    UIView *aView = [[UIView alloc] initWithFrame:CGRectMake(self.frame.origin.x, 0, self.frame.size.width, 80)];
+    [aView setBackgroundColor:[UIColor whiteColor]];
+    
+//    self.logoImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 20, 50, 40)];
+    self.logoImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, 20, 41, 36)];
+    [self.logoImage setBackgroundColor:[UIColor clearColor]];
+
+    ImageData *logoData = self.productData.logoImageData;
+    if(logoData.imageUrl && logoData.imageUrl.length >0)
+    {
+        // Asynchronously retrieve image
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:logoData.imageUrl]];
+            
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self.logoImage setImage:[UIImage imageWithData:imageData]];
+            });
+        });
+    }
+
+    
+    [aView addSubview:self.logoImage];
+    
+//    self.productName = [[UILabel alloc] initWithFrame:CGRectMake(self.logoImage.frame.origin.x + self.logoImage.frame.size.width + 10, self.logoImage.frame.origin.y, 200, 40)];
+    
+    self.productName = [[UILabel alloc] initWithFrame:CGRectMake(self.logoImage.frame.origin.x + self.logoImage.frame.size.width + 10, self.logoImage.frame.origin.y, 200, 20)];
+    [self.productName setBackgroundColor:[UIColor clearColor]];
+    [self.productName setText:self.productData.productName];
+    [self.productName setFont:[UIFont fontWithName:kMontserrat_Light size:14.0f]];
+    [aView addSubview:self.productName];
+    
+    self.likeImage = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width -RelativeSize(36, 320), self.productName.frame.origin.y, 32, 32)];
+    [self.likeImage setBackgroundColor:[UIColor clearColor]];
+    if(self.productData.productBookMerked)
+        [self.likeImage setBackgroundImage:[UIImage imageNamed:@"wishlist_Large_Filled"] forState:UIControlStateNormal];
+    else
+        [self.likeImage setBackgroundImage:[UIImage imageNamed:@"wishlist_Large"] forState:UIControlStateNormal];
+    [self.likeImage addTarget:self action:@selector(toggleLike) forControlEvents:UIControlEventTouchUpInside];
+    [aView addSubview:self.likeImage];
+    
+    self.likeCount = [[UILabel alloc] initWithFrame:CGRectMake(self.likeImage.frame.origin.x + self.likeImage.frame.size.width/2 - 5, self.likeImage.frame.origin.y + self.likeImage.frame.size.height, 30, 20)];
+    [self.likeCount setBackgroundColor:[UIColor clearColor]];
+    [self.likeCount setText:[NSString stringWithFormat:@"%ld",self.productData.bookmarkCount]];
+    [self.likeCount setFont:[UIFont fontWithName:kMontserrat_Regular size:9.0f]];
+    [aView addSubview:self.likeCount];
+
+
+    NSString *priceString = [NSString stringWithFormat:@"%@ %ld",kRupeeSymbol,self.productData.productEffectivePrice];
+    UIFont *price_String = [UIFont fontWithName:kMontserrat_Regular size:14.0f];
+    CGSize priceSize = [SSUtility getLabelDynamicSize:priceString withFont:price_String withSize:CGSizeMake(MAXFLOAT, MAXFLOAT)];
+    
+    self.productPrice = [[UILabel alloc] initWithFrame:CGRectMake(self.productName.frame.origin.x, self.productName.frame.origin.y + self.productName.frame.size.height + 5, priceSize.width, priceSize.height)];
+    [self.productPrice setBackgroundColor:[UIColor clearColor]];
+
+    [self.productPrice setText:priceString];
+    [self.productPrice setFont:price_String];
+    [aView addSubview:self.productPrice];
+    
+    NSString *str = [NSString stringWithFormat:@"%ld",self.productData.productMarkedPrice];
+    NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:str];
+    [attributeString addAttributes:@{NSStrikethroughStyleAttributeName: @(NSUnderlineStyleSingle)
+                                     , NSStrikethroughColorAttributeName: UIColorFromRGB(kLightGreyColor)
+                                     } range:NSMakeRange(0, str.length)];
+
+    
+    CGSize markedOutPriceSize = [SSUtility getLabelDynamicSize:str withFont:[UIFont fontWithName:kMontserrat_Regular size:12.0f] withSize:CGSizeMake(MAXFLOAT, MAXFLOAT)];
+
+//    self.strikeOutPrice = [[UILabel alloc] initWithFrame:CGRectMake(self.productPrice.frame.origin.x + self.productPrice.frame.size.width +5, self.productPrice.frame.origin.y, self.productPrice.frame.size.width, self.productPrice.frame.size.height)];
+    
+    self.strikeOutPrice = [[UILabel alloc] initWithFrame:CGRectMake(self.productPrice.frame.origin.x + self.productPrice.frame.size.width +5, self.productPrice.frame.origin.y+2, markedOutPriceSize.width, markedOutPriceSize.height)];
+    [self.strikeOutPrice setBackgroundColor:[UIColor clearColor]];
+    [self.strikeOutPrice setAttributedText:attributeString];
+    [self.strikeOutPrice setTextColor:UIColorFromRGB(kLightGreyColor)];
+    [self.strikeOutPrice setFont:[UIFont fontWithName:kMontserrat_Regular size:12.0f]];
+    [aView addSubview:self.strikeOutPrice];
+    
+    return aView;
+}
+
+
+#define kSizeButtonsPadding 10
+#define kSizeButtonWidth    45
+#define kSizeBoxCount       8
+- (UIView*)generateSecondStrip{
+    UIView *bView = [[UIView alloc] initWithFrame:CGRectMake(self.frame.origin.x, self.firstStripView.frame.origin.y + self.firstStripView.frame.size.height, self.firstStripView.frame.size.width, self.firstStripView.frame.size.height+60)];
+    [bView setBackgroundColor:[UIColor clearColor]];
+    
+    self.pickSizeImage = [[UIImageView alloc] initWithFrame:CGRectMake(15, 5, 32, 32)];
+    [self.pickSizeImage setBackgroundColor:[UIColor clearColor]];
+    [self.pickSizeImage setImage:[UIImage imageNamed:@"size"]];
+    [bView addSubview:self.pickSizeImage];
+    
+
+    self.pickSizeHeading = [[UILabel alloc] initWithFrame:CGRectMake(self.pickSizeImage.frame.origin.x + self.pickSizeImage.frame.size.width+10, self.pickSizeImage.frame.origin.y + self.pickSizeImage.frame.size.height/2 -10, 100, 20)];
+    [self.pickSizeHeading setBackgroundColor:[UIColor clearColor]];
+    [self.pickSizeHeading setText:@"Pick Size"];
+    [self.pickSizeHeading setTextColor:UIColorFromRGB(0x4D4E65)];
+    [self.pickSizeHeading setFont:[UIFont fontWithName:kMontserrat_Regular size:12.0f]];
+    [bView addSubview:self.pickSizeHeading];
+    
+    self.sizeGuide = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.sizeGuide setBackgroundColor:[UIColor clearColor]];
+    [self.sizeGuide setTitle:@"Size Guide" forState:UIControlStateNormal];
+    [self.sizeGuide setTitleColor:UIColorFromRGB(0x5F9DE5) forState:UIControlStateNormal];
+    [self.sizeGuide setFrame:CGRectMake(self.frame.size.width -(100), self.pickSizeHeading.frame.origin.y, 100, 20)];
+    [self.sizeGuide.titleLabel setFont:[UIFont fontWithName:kMontserrat_Regular size:11.0f]];
+    [self.sizeGuide addTarget:self action:@selector(displaySizeGuide:) forControlEvents:UIControlEventTouchUpInside];
+    [bView addSubview:self.sizeGuide];
+    
+    self.sizeScrollContainer = [[UIScrollView alloc] initWithFrame:CGRectMake(kSizeButtonsPadding, self.pickSizeHeading.frame.origin.y + self.pickSizeHeading.frame.size.height , bView.frame.size.width -5, kSizeButtonsPadding + kSizeButtonWidth)];
+    [self.sizeScrollContainer setBackgroundColor:[UIColor clearColor]];
+
+    
+    NSInteger sizeBoxCount = [self.productData.sizeArray count];
+    CGFloat calculateSize = sizeBoxCount *kSizeButtonWidth + (sizeBoxCount+1)*kSizeButtonsPadding;
+    [self.sizeScrollContainer setContentSize:CGSizeMake(calculateSize,self.sizeScrollContainer.frame.size.height)];
+    self.sizeBtnArray = [[NSMutableArray alloc] initWithCapacity:0];
+    for(NSInteger counter=0; counter < sizeBoxCount; counter++){
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btn setBackgroundColor:[UIColor whiteColor]];
+        btn.layer.borderColor = UIColorFromRGB(0xBDBDBD).CGColor;
+        btn.layer.borderWidth = 1.0f;
+        btn.layer.cornerRadius = 5.0f;
+        [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [btn.titleLabel setFont:[UIFont fontWithName:kMontserrat_Regular size:12.0f]];
+        [btn addTarget:self action:@selector(sizeSelected:) forControlEvents:UIControlEventTouchUpInside];
+        [self.sizeBtnArray addObject:btn];
+        
+        ProductSize *sizeData = [self.productData.sizeArray objectAtIndex:counter];
+
+        [btn setTitle:sizeData.sizeDisplay forState:UIControlStateNormal];
+        [btn setFrame:CGRectMake((counter+1)*kSizeButtonsPadding + counter*kSizeButtonWidth, 5, kSizeButtonWidth, kSizeButtonWidth)];
+        
+        if(sizeData.sizeAvailable){
+            btn.enabled = TRUE;
+            btn.alpha = 1.0f;
+        }else{
+            btn.enabled = FALSE;
+            btn.alpha = 0.2f;
+        }
+        [self.sizeScrollContainer addSubview:btn];
+    }
+    [bView addSubview:self.sizeScrollContainer];
+    [self.sizeScrollContainer setBackgroundColor:[UIColor clearColor]];
+    
+    SSLine *line = [[SSLine alloc] initWithFrame:CGRectMake(bView.frame.origin.x, self.sizeScrollContainer.frame.origin.y + self.sizeScrollContainer.frame.size.height+5, bView.frame.size.width, 1)];
+    [bView addSubview:line];
+    
+    
+    self.coupanImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.sizeScrollContainer.frame.origin.x, self.sizeScrollContainer.frame.origin.y + self.sizeScrollContainer.frame.size.height + 12, 32, 32)];
+    [self.coupanImage setBackgroundColor:[UIColor clearColor]];
+    [self.coupanImage setImage:[UIImage imageNamed:@"coupons"]];
+    [bView addSubview:self.coupanImage];
+
+    CGFloat previousHeight = self.coupanImage.frame.origin.y + self.coupanImage.frame.size.height/2 - 10;
+//    for(NSInteger couponCounter=0; couponCounter < [self.productData.coupans count]; couponCounter++){
+        UILabel *coupon = [[UILabel alloc] initWithFrame:CGRectMake(self.coupanImage.frame.origin.x + self.coupanImage.frame.size.width,previousHeight, 300, 20)];
+        [coupon setBackgroundColor:[UIColor clearColor]];
+        [coupon setText:[self.productData.coupans objectAtIndex:0]];
+        [coupon setTextColor:UIColorFromRGB(0x4D4E65)];
+        [coupon setFont:[UIFont fontWithName:kMontserrat_Light size:12.0f]];
+//        previousHeight+= coupon.frame.size.height;
+        [bView addSubview:coupon];
+
+//    }
+    
+    [bView setFrame:CGRectMake(bView.frame.origin.x, bView.frame.origin.y, bView.frame.size.width, previousHeight)];
+    return bView;
+}
+
+- (UIView*)generateThirdStrip{
+    
+//    UIView *cView = [[UIView alloc] initWithFrame:CGRectMake(self.frame.origin.x, floatingButtonsStartingFrame.origin.y , self.frame.size.width, 60)];
+    UIView *cView = [[UIView alloc] initWithFrame:CGRectMake(self.frame.origin.x, floatingButtonsFixedFrame.origin.y , self.frame.size.width, 60)];
+    [cView setBackgroundColor:[UIColor whiteColor]];
+
+    NSInteger addToCartStartPoint =10;
+    if(self.productData.pickAtStoreAvailable){
+        addToCartStartPoint+=  self.pickAtStoreButton.frame.origin.x + self.pickAtStoreButton.frame.size.width+10;
+    }
+
+    self.tryAtHomeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.tryAtHomeButton setFrame:CGRectMake(addToCartStartPoint, self.pickAtStoreButton.frame.origin.y + 5, self.frame.size.width/3, 50)];
+    [self.tryAtHomeButton setBackgroundColor:UIColorFromRGB(0x33CC99)];
+    [self.tryAtHomeButton setTitle:@"TRY @ HOME" forState:UIControlStateNormal];
+    self.tryAtHomeButton.titleLabel.font = [UIFont fontWithName:kMontserrat_Bold size:13.0f];
+    [self.tryAtHomeButton addTarget:self action:@selector(pickAtStore:) forControlEvents:UIControlEventTouchUpInside];
+    [cView addSubview:self.tryAtHomeButton];
+    addToCartStartPoint+=  self.tryAtHomeButton.frame.origin.x + self.tryAtHomeButton.frame.size.width;
+    
+    self.addToCartButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.addToCartButton setFrame:CGRectMake(addToCartStartPoint, self.pickAtStoreButton.frame.origin.y+5, self.frame.size.width - addToCartStartPoint-10, 50)];
+
+    [self.addToCartButton setBackgroundColor:UIColorFromRGB(0xEE365E)];
+    [self.addToCartButton setTitle:@"BUY NOW" forState:UIControlStateNormal];
+    [self.addToCartButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.addToCartButton.titleLabel.font = [UIFont fontWithName:kMontserrat_Bold size:13.0f];
+    [cView addSubview:self.addToCartButton];
+    
+    SSLine *line = [[SSLine alloc] initWithFrame:CGRectMake(cView.frame.origin.x, self.addToCartButton.frame.origin.y + self.addToCartButton.frame.size.height+10, cView.frame.size.width, 1)];
+    [cView addSubview:line];
+    
+    
+    return cView;
+}
+
+- (UIView *)checkDeliveryOptionsView{
+    UIView *storeView = [[UIView alloc] initWithFrame:CGRectMake(self.frame.origin.x, floatingButtonsFixedFrame.origin.y + floatingButtonsFixedFrame.size.height +30, self.frame.size.width, 40)];
+
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showDeliveryOptions:)];
+    tapGesture.numberOfTapsRequired = 1;
+    [storeView addGestureRecognizer:tapGesture];
+    
+    UIImageView *checkDeliveryImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, storeView.frame.size.height/2 - 16,32, 32)];
+    [checkDeliveryImage setBackgroundColor:[UIColor clearColor]];
+    [checkDeliveryImage setImage:[UIImage imageNamed:@"delivery"]];
+    [storeView addSubview:checkDeliveryImage];
+
+    
+    UIButton *checkDeliveryBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [checkDeliveryBtn setFrame:CGRectMake(checkDeliveryImage.frame.origin.x + checkDeliveryImage.frame.size.width, 5, 250, 30)];
+    [checkDeliveryBtn setBackgroundColor:[UIColor clearColor]];
+    [checkDeliveryBtn setTitle:@"Check Delivery Options (PINCODE)" forState:UIControlStateNormal];
+    [checkDeliveryBtn.titleLabel setFont:[UIFont fontWithName:kMontserrat_Regular size:12.0f]];
+    [checkDeliveryBtn addTarget:self action:@selector(showDeliveryOptions:) forControlEvents:UIControlEventTouchUpInside];
+    [checkDeliveryBtn setTitleColor:UIColorFromRGB(0x4D4E65) forState:UIControlStateNormal];
+    checkDeliveryBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [storeView addSubview:checkDeliveryBtn];
+    
+    UIImageView *arrowImage = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width - 36, storeView.frame.size.height/2 - 5,6, 11)];
+    [arrowImage setBackgroundColor:[UIColor clearColor]];
+    [arrowImage setImage:[UIImage imageNamed:@"CheckDelivery_arrow.png"]];
+    [storeView addSubview:arrowImage];
+    
+    [storeView setBackgroundColor:[UIColor whiteColor]];
+    
+    SSLine *line = [[SSLine alloc] initWithFrame:CGRectMake(storeView.frame.origin.x, checkDeliveryBtn.frame.origin.y + checkDeliveryBtn.frame.size.height+5, storeView.frame.size.width, 1)];
+    [storeView addSubview:line];
+
+    return storeView;
+}
+
+- (void)showDeliveryOptions:(id)sender{
+//    NSLog(@"showDeliveryOptions");
+    if([self.detailDelegate respondsToSelector:@selector(displayPopUp:)]){
+        [self.detailDelegate displayPopUp:PDPPinCodePopUp];
+    }
+}
+
+-(UIView *)generateNearestStoreView{
+    
+    UIView *nearStoreView = [[UIView alloc] initWithFrame:CGRectMake(self.frame.origin.x, self.checkDeliveryOptionsView.frame.origin.y + self.checkDeliveryOptionsView.frame.size.height +10, self.frame.size.width, 150)];
+    [nearStoreView setBackgroundColor:[UIColor whiteColor]];
+    
+    UIImageView *imageView= [[UIImageView alloc] initWithFrame:CGRectMake(10,5, 32, 32)];
+    [imageView setBackgroundColor:[UIColor clearColor]];
+    [imageView setImage:[UIImage imageNamed:@"store"]];
+    [nearStoreView addSubview:imageView];
+    
+    UILabel *nearestStoreName = [[UILabel alloc] initWithFrame:CGRectMake(imageView.frame.origin.x + imageView.frame.size.width,imageView.frame.origin.y + imageView.frame.size.height/2 - 10 , 180, 20)];
+    [nearestStoreName setBackgroundColor:[UIColor clearColor]];
+    [nearestStoreName setText:@"Nearest Store in SakiNaka"];
+    [nearestStoreName setFont:[UIFont fontWithName:kMontserrat_Regular size:12.0f]];
+    [nearestStoreName setTextColor:UIColorFromRGB(0x4D4E65)];
+    [nearStoreView addSubview:nearestStoreName];
+    
+    UIButton *seeAllStores = [UIButton buttonWithType:UIButtonTypeCustom];
+    [seeAllStores setBackgroundColor:[UIColor clearColor]];
+    seeAllStores.tag = 20;
+//    [seeAllStores setFrame:CGRectMake(nearestStoreName.frame.origin.x + nearestStoreName.frame.size.width, nearestStoreName.frame.origin.y, 110, 20)];
+    [seeAllStores setFrame:CGRectMake(self.frame.size.width - 110, nearestStoreName.frame.origin.y, 110, 20)];
+
+    [seeAllStores.titleLabel setFont:[UIFont fontWithName:kMontserrat_Regular size:11.0f]];
+    [seeAllStores setTitle:@"View All Stores" forState:UIControlStateNormal];
+    [seeAllStores setTitleColor:UIColorFromRGB(0x5F9DE5) forState:UIControlStateNormal];
+    [seeAllStores addTarget:self action:@selector(displayAllStores:) forControlEvents:UIControlEventTouchUpInside];
+
+    [nearStoreView addSubview:seeAllStores];
+    
+    UIImageView *indicatoreImage= [[UIImageView alloc] initWithFrame:CGRectMake(seeAllStores.frame.origin.x+ seeAllStores.frame.size.width+5, nearStoreView.frame.size.height/2 - 5, 6,11)];
+    [indicatoreImage setBackgroundColor:[UIColor clearColor]];
+    [indicatoreImage setImage:[UIImage imageNamed:@"CheckDelivery_arrow.png"]];
+//    [nearStoreView addSubview:indicatoreImage];
+    
+    Store *nearestStore = [self.productData.stores objectAtIndex:0];
+    NSString *storeName = [NSString stringWithFormat:@"%@",nearestStore.storeName];
+    CGSize storeNameSize = [SSUtility getLabelDynamicSize:storeName withFont:[UIFont fontWithName:kMontserrat_Regular size:12.0f] withSize:CGSizeMake(MAXFLOAT, 20)];
+    
+    UILabel *address = [[UILabel alloc] initWithFrame:CGRectMake(imageView.frame.origin.x, imageView.frame.origin.y + imageView.frame.size.height +20, storeNameSize.width + 10, 20)];
+    [address setBackgroundColor:[UIColor clearColor]];
+    
+
+    [address setText:storeName];
+    [address setFont:[UIFont fontWithName:kMontserrat_Regular size:12.0f]];
+    [address setTextColor:UIColorFromRGB(0x33CC99)];
+    [nearStoreView addSubview:address];
+    
+    UILabel *storeDistance = [[UILabel alloc] initWithFrame:CGRectMake(address.frame.origin.x+address.frame.size.width, address.frame.origin.y, 250, 20)];
+    [storeDistance setBackgroundColor:[UIColor clearColor]];
+    NSString *storeDistanceValue = [NSString stringWithFormat:@"(%@)",nearestStore.storeDistance];
+    
+    [storeDistance setText:storeDistanceValue];
+    [storeDistance setFont:[UIFont fontWithName:kMontserrat_Light size:12.0f]];
+    [storeDistance setTextColor:UIColorFromRGB(kLightGreyColor)];
+    [nearStoreView addSubview:storeDistance];
+    
+    UILabel *addressDetail = [[UILabel alloc] initWithFrame:CGRectMake(address.frame.origin.x, address.frame.origin.y + address.frame.size.height +5, 300, 20)];
+    [addressDetail setText:nearestStore.storeAddress];
+    [addressDetail setTextColor:UIColorFromRGB(kLightGreyColor)];
+    [addressDetail setFont:[UIFont fontWithName:kMontserrat_Light size:12.0f]];
+    [nearStoreView addSubview:addressDetail];
+    
+    /* // I Think its not required
+    UIView *seeAllStoreContainerView= [[UIView alloc] initWithFrame:CGRectMake(imageView.frame.origin.x, addressDetail.frame.origin.y + addressDetail.frame.size.height +20, 150, 30)];
+    [seeAllStoreContainerView setBackgroundColor:[UIColor clearColor]];
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(displayAllStores:)];
+    [seeAllStoreContainerView addGestureRecognizer:tapGesture];
+     */
+    
+    
+    self.pickAtStoreButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.pickAtStoreButton.tag = 10;
+    [self.pickAtStoreButton setFrame:CGRectMake(10, addressDetail.frame.origin.y + addressDetail.frame.size.height+5, 100, 40)];
+    [self.pickAtStoreButton setBackgroundColor:[UIColor whiteColor]];
+    self.pickAtStoreButton.layer.cornerRadius = 4.0f;
+    self.pickAtStoreButton.layer.borderWidth  = 1.0f;
+    self.pickAtStoreButton.layer.borderColor = UIColorFromRGB(kGreenColor).CGColor;
+    [self.pickAtStoreButton setTitle:@"PICK @ STORE" forState:UIControlStateNormal];
+    [self.pickAtStoreButton setTitleColor:UIColorFromRGB(kGreenColor) forState:UIControlStateNormal];
+    self.pickAtStoreButton.titleLabel.font = [UIFont fontWithName:kMontserrat_Bold size:12.0f];
+    [self.pickAtStoreButton addTarget:self action:@selector(displayAllStores:) forControlEvents:UIControlEventTouchUpInside];
+    [nearStoreView addSubview:self.pickAtStoreButton];
+   
+    
+//    [nearStoreView addSubview:seeAllStoreContainerView];
+    
+    SSLine *line = [[SSLine alloc] initWithFrame:CGRectMake(nearStoreView.frame.origin.x, self.pickAtStoreButton.frame.origin.y + self.pickAtStoreButton.frame.size.height+10, nearStoreView.frame.size.width, 1)];
+    [nearStoreView addSubview:line];
+    
+    return nearStoreView;
+    
+}
+
+- (void)displayAllStores:(id)sender{
+//    NSLog(@"displayAllStores");
+    UIButton *btn = (UIButton *)sender;
+    if([self.detailDelegate respondsToSelector:@selector(displayPopUp:)]){
+        //        [self.detailDelegate displayPopUp:CGRectZero index:0];
+        if(btn.tag==20)
+            [self.detailDelegate displayPopUp:PDPSeeAllStorePopUp];
+        else
+            [self.detailDelegate displayPopUp:PDPPickAtStorePopUp];
+    }
+}
+
+- (void)pickAtStore:(id)sender{
+//    NSLog(@"pickAtStore");
+    if([self.detailDelegate respondsToSelector:@selector(displayPopUp:)]){
+        [self.detailDelegate displayPopUp:/*PDPPickAtStorePopUp*/PDPTRYAtHomePopUp];
+    }
+}
+
+- (void)generatePDPMoreDetals{
+    
+    self.pdpMoreDetail = [[PDPMoreDetail alloc] initWithFrame:CGRectMake(self.frame.origin.x, self.nearestStoreView.frame.origin.y + self.nearestStoreView.frame.size.height + 5, self.frame.size.width, 150)];
+    self.pdpMoreDetail.moreDetailDelegate = self;
+    self.pdpMoreDetail.productMoreDescription = self.productData.productDescription;
+    [self.pdpMoreDetail setBackgroundColor:[UIColor whiteColor]];
+
+    [self.pdpMoreDetail generatePDPMoreDetail];
+    [self addSubview:self.pdpMoreDetail];
+   
+
+}
+
+- (UIView *)generateFeedBackView{
+    UIView *feedbackView = [[UIView alloc] initWithFrame:CGRectMake(self.frame.origin.x, self.pdpMoreDetail.frame.origin.y + self.pdpMoreDetail.frame.size.height-20, self.frame.size.width, 20)];
+<<<<<<< HEAD
+
+    UIImageView *feedBackImage = [[UIImageView alloc] initWithFrame:CGRectMake(RelativeSize(10, 320), feedbackView.frame.size.height/2 - 16, 32, 32)];
+=======
+    
+    UIImageView *feedBackImage = [[UIImageView alloc] initWithFrame:CGRectMake(10, feedbackView.frame.size.height/2 - 9, 16, 18)];
+>>>>>>> db977d0de471a95b5932ebd3d827d90e6717b923
+    [feedBackImage setBackgroundColor:[UIColor clearColor]];
+    [feedBackImage setImage:[UIImage imageNamed:@"feedback"]];
+    [feedbackView addSubview:feedBackImage];
+    
+<<<<<<< HEAD
+//    UILabel *feedBackLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 200, 20)];
+    UILabel *feedBackLabel = [[UILabel alloc] initWithFrame:CGRectMake(feedBackImage.frame.origin.x + feedBackImage.frame.size.width, 0, 200, 20)];
+=======
+    UILabel *feedBackLabel = [[UILabel alloc] initWithFrame:CGRectMake(feedBackImage.frame.origin.x + feedBackImage.frame.size.width + 10 , 0, 200, 20)];
+>>>>>>> db977d0de471a95b5932ebd3d827d90e6717b923
+    [feedBackLabel setBackgroundColor:[UIColor clearColor]];
+    [feedBackLabel setText:@"Feedback"];
+    [feedBackLabel setTextColor:UIColorFromRGB(kDarkGreyColor)];
+    [feedBackLabel setFont:[UIFont fontWithName:kMontserrat_Regular size:12.0f]];
+    [feedbackView addSubview:feedBackLabel];
+    
+    UIImageView *navigationIcon = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width - 36, feedbackView.frame.size.height/2 - 5,6, 11)];
+    [navigationIcon setImage:[UIImage imageNamed:@"CheckDelivery_arrow.png"]];
+    [navigationIcon setBackgroundColor:[UIColor clearColor]];
+    [feedbackView addSubview:navigationIcon];
+
+    return feedbackView;
+}
+
+
+
+-(void)showSuggestedProducts{
+
+    self.gridContainerView = [[UIView alloc] initWithFrame:CGRectMake(self.frame.origin.x, self.feedBackView.frame.origin.y + self.feedBackView.frame.size.height + 5, self.frame.size.width, 200)];
+    [self.gridContainerView setBackgroundColor:UIColorFromRGB(kBackgroundGreyColor)];
+    [self addSubview:self.gridContainerView];
+    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.gridContainerView.frame.size.width, 30)];
+    [headerLabel setCenter:CGPointMake(self.gridContainerView.frame.size.width/2, 25)];
+    [headerLabel setBackgroundColor:[UIColor clearColor]];
+    [headerLabel setTextColor:UIColorFromRGB(kDarkGreyColor)];
+    [headerLabel setTextAlignment:NSTextAlignmentCenter];
+    [headerLabel setText:@"SIMILAR PRODUCTS"];
+    [self.gridContainerView addSubview:headerLabel];
+    self.suggestedProductView = [[GridView alloc] initWithFrame:CGRectMake(0, 50, self.gridContainerView.frame.size.width, 100)];
+    [self.gridContainerView addSubview:self.suggestedProductView];
+    
+    
+    NSString *dataURL = [NSString stringWithFormat:@"http://128.199.116.47/feeds/?page=%d", 1];
+    //    NSString *dataURL = @"http://demo6558887.mockable.io/feed";
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:dataURL]];
+    [req setValue:@"am9zaHVhOmNhcHR1cmVyZXRhaWw=" forHTTPHeaderField:@"Authorization"];
+    
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:req completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        if(data.length > 0){
+            
+            [self parseJSON:data];
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                
+                [self addObserver:self forKeyPath:@"self.suggestedProductView.collectionView.contentSize" options:NSKeyValueObservingOptionOld context:NULL];
+
+                [self.suggestedProductView addCollectionView];
+                
+                //add grid view
+//                isFetching = false;
+            });
+        }
+    }];
+//    if(!isFetching){
+        [dataTask resume];
+//        isFetching = true;
+//    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if([keyPath isEqualToString:@"self.suggestedProductView.collectionView.contentSize"]) {
+        [self.suggestedProductView setFrame:CGRectMake(self.suggestedProductView.frame.origin.x, self.suggestedProductView.frame.origin.y
+                                                       , self.suggestedProductView.frame.size.width, self.suggestedProductView.collectionView.contentSize.height)];
+        [self.gridContainerView setFrame:CGRectMake(self.gridContainerView.frame.origin.x, self.gridContainerView.frame.origin.y, self.gridContainerView.frame.size.width, self.suggestedProductView.frame.origin.y + self.suggestedProductView.frame.size.height)];
+        [self.suggestedProductView.collectionView setFrame:CGRectMake(self.suggestedProductView.collectionView.frame.origin.x, self.suggestedProductView.collectionView.frame.origin.y, self.suggestedProductView.collectionView.frame.size.width, self.suggestedProductView.frame.size.height)];
+        [self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.gridContainerView.frame.origin.y + self.gridContainerView.frame.size.height + 10)];
+        
+        [self removeObserver:self forKeyPath:@"self.suggestedProductView.collectionView.contentSize"];
+    }
+    
+}
+
+
+-(void)parseJSON:(NSData *)data{
+    
+    //    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"json"];
+    //    NSData *data = [NSData dataWithContentsOfFile:filePath];
+    NSMutableArray *parsedDataArray = [[NSMutableArray alloc] initWithCapacity:0];
+    NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    
+    for(int i = 0; i < [json count]; i ++){
+        
+        CGFloat width = 0;
+        CGFloat height = 0;
+        
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+        
+        [dict setObject:[[json objectAtIndex:i] objectForKey:@"tile_size"] forKey:@"tile_size"];
+        
+        if([[[[json objectAtIndex:i] objectForKey:@"tile_size"] stringValue] isEqualToString:@"1"] || [[[[json objectAtIndex:i] objectForKey:@"tile_size"] stringValue] isEqualToString:@"0"]){
+            
+            //            width = self.view.frame.size.width/2;
+            width = self.suggestedProductView.collectionView.frame.size.width/2;
+            [dict setObject:[NSNumber numberWithFloat:width] forKey:@"width"];
+            
+        }else if([[[[json objectAtIndex:i] objectForKey:@"tile_size"] stringValue] isEqualToString:@"2"]){
+            
+            //            width = self.view.frame.size.width;
+            width = self.suggestedProductView.collectionView.frame.size.width;
+            [dict setObject:[NSNumber numberWithFloat:width] forKey:@"width"];
+        }
+        
+        [dict setObject:[[json objectAtIndex:i] valueForKey:@"tile_type"] forKey:@"tile_type"];
+        
+        //        height = [self getHeightFromAspectRatio:[[json objectAtIndex:i] objectForKey:@"aspect_ratio"] andWidth:width];
+        
+        if([[[json objectAtIndex:i] objectForKey:@"tile_type"] isEqualToString:@"product"]){
+            
+            //            height += RelativeSize(42, 320);
+            ProductTileModel *prod = [[ProductTileModel alloc] initWithDictionary:[[json objectAtIndex:i] objectForKey:@"values"]];
+            height = [self getHeightFromAspectRatio:prod.aspect_ratio andWidth:width];
+            height += RelativeSize(42, 320);
+            [dict setObject:prod forKey:@"values"];
+            
+        }
+        else if ([[[json objectAtIndex:i] objectForKey:@"tile_type"] isEqualToString:@"tip"]){
+            
+            TipTileModel *tip = [[TipTileModel alloc] initWithDictionary:[[json objectAtIndex:i] objectForKey:@"values"]];
+            //            height = [self getHeightFromAspectRatio:tip.aspect_ratio andWidth:width];
+            [dict setObject:tip forKey:@"values"];
+            height = [self getProductsAspectRatio:tip.aspect_ratio andWidth:width];
+            
+        }
+        else if ([[[json objectAtIndex:i] objectForKey:@"tile_type"] isEqualToString:@"brand"]){
+            
+            BrandTileModel *brand = [[BrandTileModel alloc] initWithDictionary:[[json objectAtIndex:i] objectForKey:@"values"]];
+            height = [self calculateBrandCellHeight:brand];
+            [dict setObject:brand forKey:@"values"];
+            
+        }else if ([[[json objectAtIndex:i] objectForKey:@"tile_type"] isEqualToString:@"collection"]){
+            
+            CollectionTileModel *collection = [[CollectionTileModel alloc] initWithDictionary:[[json objectAtIndex:i] objectForKey:@"values"]];
+            height = [self calculateCollectionGridHeight:collection];
+            [dict setObject:collection forKey:@"values"];
+        }
+        
+        [dict setObject:[NSNumber numberWithFloat:height] forKey:@"height"];
+        [parsedDataArray addObject:dict];
+    }
+    self.suggestedProductView.parsedDataArray = parsedDataArray;
+}
+
+CGSize gridSize ;
+CGSize productAspectRatioSize;
+- (CGFloat)calculateBrandCellHeight:(BrandTileModel *)brandData{
+    CGFloat dynamicHeight = 0.0f;
+    //    CGFloat bannerDynamicHeight = [self getHeightFromAspectRatio:@"4:1.7" andWidth:self.view.frame.size.width];
+    CGFloat bannerDynamicHeight = [self getHeightFromAspectRatio:brandData.brandBannerAspectRatio andWidth:self.frame.size.width];
+    dynamicHeight += bannerDynamicHeight + kGridComponentPadding;
+    
+    gridSize = [SSUtility getLabelDynamicSize:brandData.banner_title withFont:[UIFont fontWithName:@"Helvetica-Bold" size:15.0f] withSize:CGSizeMake(MAXFLOAT, MAXFLOAT)];
+    dynamicHeight += kGridComponentPadding + gridSize.height;
+    
+    NSString *modifiedString = [NSString stringWithFormat:@"Nearest %@",brandData.nearest_store];
+    gridSize = [SSUtility getLabelDynamicSize:modifiedString withFont:[UIFont fontWithName:@"HelveticaNeue" size:10.0f] withSize:CGSizeMake(250, MAXFLOAT)];
+    dynamicHeight += kGridComponentPadding + gridSize.height;
+    
+    CGFloat calculatedWidth = ((self.suggestedProductView.collectionView.frame.size.width - 2*kGridComponentPadding) - 2*kGridComponentPadding)/3.5;
+    //    CGFloat productContainerHeight = [self getProductsAspectRatio:@"2:3" andWidth:calculatedWidth];
+    
+    SubProductModel *subProduct = [brandData.products objectAtIndex:0];
+    CGFloat productContainerHeight = [self getProductsAspectRatio:subProduct.subProductAspectRatio andWidth:calculatedWidth];
+    
+    productAspectRatioSize = CGSizeMake(calculatedWidth,productContainerHeight);
+    dynamicHeight += productContainerHeight + kGridComponentPadding;
+    dynamicHeight += kGridComponentPadding + 60;
+    return dynamicHeight;
+}
+
+
+- (CGFloat)calculateCollectionGridHeight:(CollectionTileModel *)collectionData{
+    CGFloat dynamicHeight = 0.0f;
+    //    CGFloat bannerDynamicHeight = [self getHeightFromAspectRatio:@"4:1.7" andWidth:self.view.frame.size.width];
+    CGFloat bannerDynamicHeight = [self getHeightFromAspectRatio:collectionData.bannerAspectRatio andWidth:self.frame.size.width];
+    dynamicHeight += bannerDynamicHeight + kGridComponentPadding;
+    
+    gridSize = [SSUtility getLabelDynamicSize:collectionData.banner_title withFont:[UIFont fontWithName:@"Helvetica-Bold" size:15.0f] withSize:CGSizeMake(MAXFLOAT, MAXFLOAT)];
+    dynamicHeight += kGridComponentPadding + gridSize.height;
+    
+    NSString *modifiedString = [NSString stringWithFormat:@"Last Updated %@",collectionData.last_updated];
+    gridSize = [SSUtility getLabelDynamicSize:modifiedString withFont:[UIFont fontWithName:@"HelveticaNeue" size:10.0f] withSize:CGSizeMake(250, MAXFLOAT)];
+    dynamicHeight += kGridComponentPadding + gridSize.height;
+    
+    CGFloat calculatedWidth = ((self.suggestedProductView.collectionView.frame.size.width - 2*kGridComponentPadding) - 2*kGridComponentPadding)/3.5;
+    //    CGFloat productContainerHeight = [self getProductsAspectRatio:@"2:3" andWidth:calculatedWidth];
+    SubProductModel *subProduct = [collectionData.products objectAtIndex:0];
+    CGFloat productContainerHeight = [self getProductsAspectRatio:subProduct.subProductAspectRatio andWidth:calculatedWidth];
+    
+    productAspectRatioSize = CGSizeMake(calculatedWidth,productContainerHeight);
+    dynamicHeight += productContainerHeight + kGridComponentPadding;
+    dynamicHeight += kGridComponentPadding + 60;
+    return dynamicHeight;
+}
+
+
+-(CGFloat)getHeightFromAspectRatio:(NSString *)aspectRatio andWidth:(CGFloat)width{
+    CGFloat height = 0;
+    NSArray *ratioArray = [aspectRatio componentsSeparatedByString:@":"];
+    height = (width - RelativeSize(20, 320)) * [[ratioArray lastObject] floatValue] / [[ratioArray firstObject] floatValue];
+    return height;
+}
+
+- (CGFloat)getProductsAspectRatio:(NSString *)aspectRatio andWidth:(CGFloat)width{
+    CGFloat height = 0;
+    NSArray *ratioArray = [aspectRatio componentsSeparatedByString:@":"];
+    height = (width) * [[ratioArray lastObject] floatValue] / [[ratioArray firstObject] floatValue];
+    return height;
+}
+
+
+-(void)updateFloatingButtons:(CGPoint)contenttOffset{
+    
+//    if(contenttOffset.y <=  -500){
+//        [self.thirdStripView setFrame:floatingButtonsStartingFrame];
+//    }else if(contenttOffset.y + 64 + floatingButtonsStartingFrame.origin.y < floatingButtonsFixedFrame.origin.y){
+//        [self.thirdStripView setFrame:CGRectMake(self.thirdStripView.frame.origin.x, floatingButtonsStartingFrame.origin.y + contenttOffset.y + 84, self.thirdStripView.frame.size.width, self.thirdStripView.frame.size.height)];
+//    }
+//    
+    
+//    NSLog(@"third strip view %@", self.thirdStripView);
+}
+
+-(void)displaySizeGuide:(id)sender{
+//    NSLog(@"displaySizeGuide");
+    
+    
+    if([self.detailDelegate respondsToSelector:@selector(displayPopUp:)]){
+//        [self.detailDelegate displayPopUp:CGRectZero index:0];
+        [self.detailDelegate displayPopUp:PDPSizeGuidePopUp];
+    }
+
+}
+
+-(void)displayPinCodePopUp:(id)sender{
+//    NSLog(@"displayPinCodePopUp...");
+    if([self.detailDelegate respondsToSelector:@selector(displayPopUp:)]){
+        //        [self.detailDelegate displayPopUp:CGRectZero index:0];
+        [self.detailDelegate displayPopUp:PDPPinCodePopUp];
+    }
+}
+
+
+-(void)sizeSelected:(id)sender{
+    UIButton *selectedSizeButton= (id)sender;
+    [selectedSizeButton setBackgroundColor:UIColorFromRGB(0xEE365E)];
+    [selectedSizeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    for(UIButton *eachSizeButton in self.sizeBtnArray){
+        if(eachSizeButton!=selectedSizeButton){
+            [eachSizeButton setBackgroundColor:[UIColor whiteColor]];
+            [eachSizeButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        }
+    }
+}
+
+
+-(void)toggleLike{
+    
+    if(likeTimer){
+        [likeTimer invalidate];
+        likeTimer = nil;
+    }
+    likeTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(hitLike) userInfo:nil repeats:NO];
+    
+    self.productData.productBookMerked = !self.productData.productBookMerked;
+    [self.likeImage setBackgroundImage:self.productData.productBookMerked ? [UIImage imageNamed:@"wishlist_Large_Filled"] : [UIImage imageNamed:@"wishlist_Large"] forState:UIControlStateNormal];
+}
+
+-(void)hitLike{
+    NSString *dataURL;
+    if(!self.productData.productBookMerked ){
+        dataURL = [NSString stringWithFormat:@"http://orbis-staging.addsale.com/api/v1/inventory/follow/?product_id=1"];
+    }else{
+        dataURL = [NSString stringWithFormat:@"http://orbis-staging.addsale.com/api/v1/inventory/unfollow/?product_id=1"];
+    }
+    
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:dataURL]];
+    [req setValue:@"am9zaHVhOmNhcHR1cmVyZXRhaWw=" forHTTPHeaderField:@"Authorization"];
+    
+    NSURLSessionDataTask *likeTask = [session dataTaskWithRequest:req completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        if([json count] > 0){
+            
+        }else {
+        }
+    }];
+    [likeTask resume];
+}
+
+
+
+#pragma mark PDPMoreDetail Delegate
+ - (void)moreInfoTabChanged:(NSInteger)anIndex{
+    
+    CGFloat newHeight = 0.0f;
+    NSDictionary *dict = [self.productData.productDescription objectAtIndex:anIndex];
+    CGSize descriptionSize = [SSUtility getLabelDynamicSize:[dict objectForKey:@"text"] withFont:[UIFont fontWithName:kMontserrat_Light size:12.0f] withSize:CGSizeMake(self.frame.size.width, MAXFLOAT)];
+
+    NSInteger descriptionContentHeight = descriptionSize.height;
+    NSMutableArray *detailData = [dict objectForKey:@"details"];
+    descriptionContentHeight += [detailData count]* (2*kPDPElementsPadding);
+    
+    newHeight = 40 + descriptionContentHeight +(1*kPDPElementsPadding);;
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.3f];
+    
+    [self.pdpMoreDetail setFrame:CGRectMake(self.pdpMoreDetail.frame.origin.x, self.pdpMoreDetail.frame.origin.y, self.pdpMoreDetail.frame.size.width, newHeight)];
+   
+    [self.feedBackView setFrame:CGRectMake(self.feedBackView.frame.origin.x, self.pdpMoreDetail.frame.origin.y + self.pdpMoreDetail.frame.size.height+10, self.feedBackView.frame.size.width, self.feedBackView.frame.size.height)];
+    
+    [self.gridContainerView setFrame:CGRectMake(self.gridContainerView.frame.origin.x, self.feedBackView.frame.origin.y+self.feedBackView.frame.size.height, self.gridContainerView.frame.size.width, self.suggestedProductView.frame.origin.y + self.suggestedProductView.frame.size.height)];
+    
+    
+    [UIView commitAnimations];
+    
+    if([self.detailDelegate respondsToSelector:@selector(updateProductInfoLayout:)]){
+        [self.detailDelegate updateProductInfoLayout:anIndex];
+    }
+}
+
+@end
+
+//[self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.gridContainerView.frame.origin.y + self.gridContainerView.frame.size.height + 10)];
+

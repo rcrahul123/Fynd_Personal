@@ -1,0 +1,422 @@
+//
+//  PrefixHeader.pch
+//  Explore
+//
+//  Created by Rahul on 7/2/15.
+//  Copyright (c) 2015 Rahul. All rights reserved.
+//
+
+#ifndef Explore_PrefixHeader_pch
+#define Explore_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "SSUtility.h"
+#import "UINavigationBar+Transparency.h"
+#import <Mixpanel.h>
+#import "FyndAnalytics.h"
+#import "FyndActivityIndicator.h"
+#import "MixPanelSuperProperties.h"
+#import "UIFont+FontWithNameAndSize.h"
+#define FYND_MIXPANEL_DEVELOPMENT_TOKEN @"144bd14c0d048ef0784c6fd68d98cc8a"
+#define FYND_MIXPANEL_QC_TOKEN       @"c2fd90b85b3587a0db55b8c4ce12450f"
+#define FYND_MIXPANEL_PRODUCTION_TOKEN @"3501ebbaacdd2c530542acb5943d1476"
+
+#define DeviceWidth  [UIScreen mainScreen].bounds.size.width
+#define kDeviceHeight  [UIScreen mainScreen].bounds.size.height
+
+
+#define RelativeSize(value,relativeTo) (value * DeviceWidth)/relativeTo
+#define RelativeSizeHeight(value,relativeTo) (value * kDeviceHeight)/relativeTo
+
+#define kGridComponentPadding 10
+#define kBannerFixedHeight 200
+#define kGridProductContainerHeight 180
+#define kBannerAspectRatio 4:1.7
+#define kProductAspectRatio 2:3
+#define maxProductsVisible 3.5
+
+#define buttonMargin 32
+#define kKeyboardHeight 255
+
+
+#define IMAGE_VIEW_TAG 100
+#define IMAGE_SCROLL_VIEW_TAG 101
+#define CONTENT_IMAGE_VIEW_TAG 102
+
+#define kRedColor 0xED365E
+#define kGreenColor 0x33CC99
+#define kDarkPurpleColor 0x4D4E65
+#define kLightGreyColor 0x9B9B9B
+#define kBlueColor 0x4A90E2
+#define kBackgroundGreyColor 0xE4E5E6
+#define kHeaderBackgroundColor 0xF2F2F2
+#define KTextColor 0x4D4E65
+#define kShadowColor 0x000000
+#define kTurquoiseColor 0x33B2C1
+#define KTextFieldBorderColor 0xD7D7D7
+#define kPinkColor 0xEE478D
+#define kBorderColor 0xDDDDDD
+#define kCouponSucessColor   0x00a300
+
+#define kFBButtonColor 0x3B5998
+#define kFBButtonTouchColor 0x4868AC
+
+#define kSignUpColor 0x41434c
+#define kSignUpTouchColor 0x83889A
+
+#define kButtonTouchStateColor 0x66BECB
+#define kGenderSelectorTintColor 0x999B9E
+
+#define KPurpleColor 0xEE478D
+#define kLightPurpleColor 0xF282A9
+
+#define kButtonPurpleColor 0x8871B3
+#define kButtonPurpleTouchColor 0x9880C4
+#define kDarkTouchStateColor  0x5A5C64
+
+
+
+#define kMontserrat_Black @"Montserrat-Black"
+#define kMontserrat_Bold @"Montserrat-Bold"
+#define kMontserrat_Hairline @"Montserrat-Hairline"
+#define kMontserrat_Light @"Montserrat-Light"
+#define kMontserrat_Regular @"Montserrat-Regular"
+
+
+// PDP Macros
+//#define kPDPNameStripHeight                 100
+//#define kPDPDefaultSizeStripHeight          110
+//#define kPDPElementsPadding                  10
+//#define kPDPOrderButtonsHeight               50
+//#define kPDPDeliveryOptionsViewHeight        40
+//#define kPDPNearestStoreViewHeight          150
+//#define kPDPMoreDetailHeader                 50
+//#define kPDPFeedBackViewHeight               50//20
+
+
+#define kPDPNameStripHeight                 80
+#define kPDPDefaultSizeStripHeight          158
+#define kPDPElementsPadding                  10
+#define kPDPOrderButtonsHeight               50
+#define kPDPDeliveryOptionsViewHeight        50
+#define kPDPNearestStoreViewHeight          150
+#define kPDPMoreDetailHeader                 50
+#define kPDPFeedBackViewHeight               50//20
+
+
+
+
+//typedef NS_OPTIONS(NSUInteger, RPWOverlayType){
+//    SizeGuideOverlay = 0,
+//    NearestStoreOverlay
+//    
+//};
+
+//typedef PopOverlayType{
+//    SizeGuideOverlay,
+//    NearestStoreOverlay
+//    
+//};
+
+/*
+ typedef NS_OPTIONS(NSUInteger,PDPPopUpType){
+ PDPSizeGuidePopUp=0,
+ PDPPickAtStorePopUp,
+ PDPSeeAllStorePopUp
+ };
+ */
+
+typedef enum PDPPopUp{
+    PDPSizeGuidePopUp,
+    PDPPickAtStorePopUp,
+    PDPSeeAllStorePopUp,
+    PDPTRYAtHomePopUp,
+    PDPPinCodePopUp
+}PDPPopUpType;
+
+
+
+typedef enum AccountDetailPageType{
+    AccountDetailEditProfile,
+    AccountDetailMyBrands,
+    AccountDetailMyCollections,
+    AccountDetailMyCoupons,
+    AccountDetailNotificationSettings,
+    AccountDetailFreeShopping,
+    AccountDetailShippingAddress,
+    AccountDetailPaymentInformation,
+    AccountDetailFAQ,
+    AccountDetailCallUS,
+    AccountDetailRateUS,
+    AccountDetailTermsOfService,
+    AccountDetailPrivacyPolicy,
+    AccountDetailChangePassword,
+    AccountDetailReturnPolicy,
+    AccountDetailPayments
+    
+}AccountDetailType;
+
+typedef enum OTPNavigationOption{
+    OTPNavigatedFromSignUp = 0,
+    OTPNavigatedFromFacebook,
+    OTPNavigatedFromForgotPassword,
+    OTPNavigatedFromEditProfile,
+    OTPNavigatedFromChangePassword
+}OTPNavigationOption;
+
+
+typedef enum TextFieldType{
+    TextFieldTypeFirstName,
+    TextFieldTypeLastName,
+    TextFieldTypeMobile,
+    TextFieldTypeEmail,
+    TextFieldTypePassword,
+    TextfielTypeOTP,
+    TextFieldTypeAddress,
+    TextFieldTypePinCode,
+    TextFieldTypeUserName,
+    TextFieldTypeCoupon
+    
+}TextFieldType;
+
+typedef enum ProductTileType{
+    ProductTilePlain,
+    ProductTileWishList,
+    ProductTileAddToCartFromWishlist
+}ProductTileType;
+
+typedef enum TryAtHomePopUpType{
+    TryAtHomeFirstTime,
+    TryAtHomePDP,
+    TryAtHomeCart,
+    TryAtHomeAddItemInCart,
+    TryAtHomeExchangeItem
+}TryAtHomeType;
+
+typedef enum BrandTileType{
+    BrandTilePlain,
+    BrandTileMyBrand
+    
+}BrandTileType;
+
+typedef enum CollectionTileType{
+    CollectionTilePlain,
+    CollectionTileMyCollection
+    
+}CollectionTileType;
+
+
+typedef enum FyndErroPageImage{
+    ErrorSystemDown,
+    ErrorNoOrders,
+    ErrorNoSearchResults,
+    ErrorNoWishlist,
+    ErroNoCartItem,
+    ErrorNoNotifications,
+    ErrorNoBrands,
+    ErrorNoCollections,
+    ErrorEmptyBrandsTab,
+    ErrorEmptyCollectionsTab,
+    ErrorEmptyAddFromWishlist
+}ErrorBlankImage;
+
+typedef enum ShippingAddressType{
+    ShippingAddressProfile,
+    ShippingAddressCart
+}ShippingAddressType;
+
+
+typedef enum SelectSizeAction{
+    SelectSizeFromAddToCart,
+    SelectSizeFromEditSize,
+    SelectSizeFromWishlist
+}SelectSizeActionType;
+
+typedef enum CartScreenNavigation{
+    CartScreenNavigationFromRoot,
+    CartScreenNavigationFromAddressTime,
+    CartScreenNavigationFromWishlist,
+    CartScreenNavigationFromAddress,
+    CartScreenNavigationFromPaymentMode,
+    CartScreenNavigationFromPayment
+    
+}CartScreenNavigationType;
+
+typedef enum AddressTimeScreen{
+    AddressTimeScreenTypeCart,
+    AddressTimeScreenTypeReturn,
+    AddressTimeScreenTypeExchange
+}AddressTimeScreenType;
+
+
+typedef enum BranchScreen{
+    BranchScreenFeed,
+    BranchScreenBrands,
+    BranchScreenCollections,
+    BranchScreenBrandPage,
+    BranchScreenCollectionPage,
+    BranchScreenBag,
+    BranchScreenProfile,
+    BranchScreenBrowse,
+    BranchScreenSearch
+}BranchScreenType;
+
+
+typedef enum BankCardType{
+    AmexBankCard,
+    DinersBankCard,
+    MaestroBankCard,
+    MasterBankCard,
+    RupayBankCard,
+    VisaBankCard,
+    VisaElectronBankCard,
+    UnknownBankCard
+    
+}BankCard;
+
+
+
+#define HELVETICA_BOLD   @"Helvetica-Bold"
+#define HELVETICA        @"Helvetica"
+#define HELVETICA_NEUE_ITALIC      @"HelveticaNeue-Italic"
+#define HELVETICA_NEUE      @"HelveticaNeue"
+#define HelveticaNeue_Thin @"HelveticaNeue-Thin"
+
+#define UIColorFromRGB(rgbValue) \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 \
+alpha:1.0]
+
+#define kPreviousSearchKey @"previousSearchArray"
+
+
+#define SESSION_EXPIRED @"Well, the server says you have been inactive on the server for too long, time for you to reauthenticate youself"
+
+#define SERVER_ERROR @"Hmmm... It seems some error has occured @ the server. Please try again after some time"
+#define SERVER_ERROR_TITLE @"Server Error"
+
+#define ERROR_TITLE_KEY @"title"
+#define ERROR_MESSAGE_KEY @"message"
+
+
+//#define NETWORK_ERROR_MESSAGE @"There Seems to be some problem while connecting to network. Please check your Wifi or Mobile Data settings and click on \"Try Again\""
+#define NETWORK_ERROR_MESSAGE @"Please check your Wifi or Mobile Data settings"
+
+#define NETWORK_ERROR_TITLE @"Network Error Occured"
+
+#define HOST_NAME_NOT_REACHABLE @"The server is down or application is not reachable. It may be down. Please try again."
+#define HOST_NAME_NOT_REACHABLE_TITLE @"Host Not Reachable"
+
+#define INAPPROPRIATE_RESPONSE_MESSAGE  @"There is some problem occured at server end" // @"Something went wrong!." //TODO: Add proper message
+#define SOMETHING_WENT_WRONG    @"Oops! Something went wrong"
+
+#define kRupeeSymbol    @"\u20B9"
+
+#define kProductID @"product_id"
+#define kBrandID @"brand"
+#define kCollectionID @"collection_id"
+
+#define kProductLikeURL @"follow/?product_id="
+#define kProductUnlikeURL @"unfollow/?product_id="
+
+#define kBrandFollowURL     @"follow/?"
+#define kBrandUnfollowURL   @"unfollow/?"
+#define kFynaAFitSizesURL   @"get-fynd-a-fit-sizes/?"
+
+//#define kCollectionFollowURL @"http://orbis-staging.addsale.com/api/v1/inventory/follow/?"
+//#define kCollectionUnfollowURL @"http://orbis-staging.addsale.com/api/v1/inventory/unfollow/?"
+
+#define kFyndUserKey        @"FyndUserData"
+#define kPasswordEyeImage   @"ShowPassword"
+
+
+//#define kAPI_Inventory  @"http://128.199.181.146/api/v1/inventory/"
+//#define kAPI_Accounts  @"http://128.199.181.146/api/v1/accounts/"
+//#define kAPI_AVIS       @"https://avis-staging.gofynd.com/api/v1/oms/"
+//#define kCheckSumURL    @"https://avis-staging.gofynd.com/api/v1/oms/order-callback"
+//#define kGenerationURL  @"http://128.199.181.146/api/v1/inventory/generate-checksum/"
+
+
+//public static final String baseURL = "/orbis.gofynd.com/";
+//public static final String avisURL = "/avis.gofynd.com/";
+
+//Final URL's
+//#define kAPI_Inventory  @"https://voldemort.gofynd.com/orbis/api/v1/inventory/"
+//#define kAPI_Accounts   @"https://voldemort.gofynd.com/orbis/api/v1/accounts/"
+//#define kAPI_AVIS       @"https://voldemort.gofynd.com/avis/api/v1/oms/"
+//#define kCheckSumURL    @"https://voldemort.gofynd.com/avis/api/v1/oms/order-callback/"
+//#define kGenerationURL  @"https://voldemort.gofynd.com/orbis/api/v1/inventory/generate-checksum/"
+
+//Prod
+#define kAPI_Inventory  @"https://orbis.gofynd.com/api/v1/inventory/"
+#define kAPI_Accounts   @"https://orbis.gofynd.com/api/v1/accounts/"
+#define kAPI_AVIS       @"https://avis.gofynd.com/api/v1/oms/"
+#define kCheckSumURL    @"https://avis.gofynd.com/api/v1/oms/order-callback/"
+#define kGenerationURL  @"https://orbis.gofynd.com/api/v1/inventory/generate-checksum/"
+////Prof URL Ends Here
+//
+//#define kStagingChecksumURL @"https://voldemort.gofynd.com/orbis/api/v1/inventory/generate-checksum/"
+//#define kStaginGenerationURL @"https://voldemort.gofynd.com/avis/api/v1/oms/order-callback/"
+
+
+#define kAddItemIntoCart        @"add-item-to-cart/"
+#define kGetCartItems           @"get-cart/?"
+#define kDeleteItemFromCart     @"delete-item-from-cart/"
+#define kCartItemSizes          @"get-item-sizes/?"
+#define kUpdateCartItemSize     @"update-cart/"
+#define kCartApplyCoupon        @"apply-coupon/"
+#define kCartRemoveCoupon       @"remove-coupon/"
+#define kValidateCart           @"validate-cart/"
+#define KGetTimeSlots           @"get-delivery-slots/?"
+#define kUpdateDeliveryAddress  @"update-delivery-address/"
+#define kDeleteDeliveryAddress  @"delete-delivery-address/"
+#define kAddDeliveryAddress     @"add-delivery-address/"
+#define kGetDeliveryAddress     @"get-delivery-address/?"
+#define kGetPaymentModes        @"get-payment-modes/"
+#define kAddOrderPaymentMode    @"add-order-payment-mode/"
+#define kAddressSelect          @"select-cart-address/"
+
+#define kReturnItem             @"return-item/?"
+#define kReturnItemConfirmation @"return-item-confirm/"
+#define kExchangeItem           @"exchange-item/?"
+#define kExchangeItemConfirm    @"exchange-item-confirm/"
+#define kCancelOrder            @"cancel-order/"
+
+#define kNotificationList              @"notification-list/"
+
+#define kExtraPadding           70.0
+#define kBackButtonImage        @"BackGrey"
+#define kBackButtonImageWhite   @"BackWhite"
+#define kBackButtonImageInset        15.0
+
+#define kLogoWidth              50.0f
+#define kFollowBtnWidth         84
+#define kFollowBtnHeight        34
+
+#define kStorePadding           10.0f
+
+#define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
+
+#define kGenderViewHeight   44.0f
+
+#define kAppStoreAppLink        @"https://itunes.apple.com/app/id1048365461"
+#define kFeedbackEmailAddress           @"care@gofynd.com"
+
+#endif
+
+#define kHasItemInBag      @"hasItemInBag"
+#define kTotalCartItemsKey @"cart_items_count"
+#define kShowWelcomeCard    @"shouldShowWelcomeCard"
+#define kNewNotificationKey @"NewNotificationsAvailable"
+
+#define kSearchTextHighlightColor [[UIColor] yellowColor]
+
+
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
